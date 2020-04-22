@@ -164,7 +164,7 @@ type DID struct {
 	PhysLoc      *PhysLoc      `xml:"physloc" json:"physloc,omitempty"`
 	Repository   *Repository   `xml:"repository" json:"repository,omitempty"`
 	UnitTitle    *UnitTitle    `xml:"unittitle" json:"unittitle,omitempty"`
-	UnitID       []*UnitID     `xml:"unitid" json:"unitid,omitempty"`
+	UnitID       *UnitID       `xml:"unitid" json:"unitid,omitempty"`
 	UnitDate     *UnitDate     `xml:"unitdate" json:"unitdate,omitempty"`
 }
 
