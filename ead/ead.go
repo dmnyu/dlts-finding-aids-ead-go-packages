@@ -81,55 +81,31 @@ type Abstract struct {
 }
 
 type ArchDesc struct {
-	AcqInfo        *AcqInfo        `xml:"acqinfo" json:"acqinfo,omitempty"`
+	AcqInfo        *FormattedNoteWithHeader        `xml:"acqinfo" json:"acqinfo,omitempty"`
 	DID            *DID            `xml:"did" json:"did,omitempty"`
 	DSC            *DSC            `xml:"dsc" json:"dsc,omitempty"`
-	ScopeContent   *ScopeContent   `xml:"scopecontent" json:"scopecontent,omitempty"`
-	BiogHist       *BiogHist       `xml:"bioghist" json:"bioghist,omitempty"`
-	AccessRestrict *AccessRestrict `xml:"accessrestrict" json:"accessrestrict,omitempty"`
-	UserRestrict   *UserRestrict   `xml:"userestrict" json:"userestrict,omitempty"`
+	ScopeContent   *FormattedNoteWithHeader   `xml:"scopecontent" json:"scopecontent,omitempty"`
+	BiogHist       *FormattedNoteWithHeader       `xml:"bioghist" json:"bioghist,omitempty"`
+	AccessRestrict *FormattedNoteWithHeader `xml:"accessrestrict" json:"accessrestrict,omitempty"`
+	UserRestrict   *FormattedNoteWithHeader   `xml:"userestrict" json:"userestrict,omitempty"`
 	PreferCite     []*PreferCite   `xml:"prefercite" json:"prefercite,omitempty"`
-	ProcessInfo    *ProcessInfo    `xml:"processinfo" json:"processinfo,omitempty"`
-	Arrangement    *Arrangement    `xml:"arrangement" json:"arrangement,omitempty"`
+	ProcessInfo    *FormattedNoteWithHeader    `xml:"processinfo" json:"processinfo,omitempty"`
+	Arrangement    *FormattedNoteWithHeader    `xml:"arrangement" json:"arrangement,omitempty"`
 	ControlAccess  *ControlAccess  `xml:"controlaccess" json:"controlaccess,omitempty"`
-}
-
-type AccessRestrict struct {
-	Head string  `xml:"head,omitemtpy" json:"head,omitempty"`
-	P    *P      `xml:"p,omitempty" json:"p,omitempty"`
-	Emph []*Emph `xml:"emph" json:"emph,omitempty"`
-}
-
-type AcqInfo struct {
-	Head string  `xml:"head,omitemtpy" json:"head,omitempty"`
-	P    *P      `xml:"p,omitempty" json:"p,omitempty"`
-	Emph []*Emph `xml:"emph" json:"emph,omitempty"`
-}
-
-type Arrangement struct {
-	Head string  `xml:"head,omitemtpy" json:"head,omitempty"`
-	P    *P      `xml:"p,omitempty" json:"p,omitempty"`
-	Emph []*Emph `xml:"emph" json:"emph,omitempty"`
-}
-
-type BiogHist struct {
-	Head string  `xml:"head,omitemtpy" json:"head,omitempty"`
-	P    *P      `xml:"p,omitempty" json:"p,omitempty"`
-	Emph []*Emph `xml:"emph" json:"emph,omitempty"`
 }
 
 type C struct {
 	// Not in FADESIGN-29 model, but including it for debugging
-	AcqInfo        *AcqInfo        `xml:"acqinfo,omitempty" json:"acqinfo,omitempty"`
+	AcqInfo        *FormattedNoteWithHeader        `xml:"acqinfo,omitempty" json:"acqinfo,omitempty"`
 	C              []*C            `xml:"c,omitempty" json:"c,omitempty"`
 	DID            *DID            `xml:"did,omitempty" json:"did,omitempty"`
-	ScopeContent   *ScopeContent   `xml:"scopecontent,omitempty" json:"scopecontent,omitempty"`
-	BiogHist       *BiogHist       `xml:"bioghist,omitempty" json:"bioghist,omitempty"`
-	AccessRestrict *AccessRestrict `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
-	UserRestrict   *UserRestrict   `xml:"userrestrict,omitempty" json:"userrestrict,omitempty"`
-	PreferCite     *PreferCite     `xml:"prefercite,omitempty" json:"prefercite,omitempty"`
-	ProcessInfo    *ProcessInfo    `xml:"processinfo,omitempty" json:"processinfo,omitempty"`
-	Arrangement    *Arrangement    `xml:"arrangement,omitempty" json:"arrangement,omitempty"`
+	ScopeContent   *FormattedNoteWithHeader   `xml:"scopecontent,omitempty" json:"scopecontent,omitempty"`
+	BiogHist       *FormattedNoteWithHeader       `xml:"bioghist,omitempty" json:"bioghist,omitempty"`
+	AccessRestrict *FormattedNoteWithHeader `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
+	UserRestrict   *FormattedNoteWithHeader   `xml:"userrestrict,omitempty" json:"userrestrict,omitempty"`
+	PreferCite     *FormattedNoteWithHeader     `xml:"prefercite,omitempty" json:"prefercite,omitempty"`
+	ProcessInfo    *FormattedNoteWithHeader    `xml:"processinfo,omitempty" json:"processinfo,omitempty"`
+	Arrangement    *FormattedNoteWithHeader    `xml:"arrangement,omitempty" json:"arrangement,omitempty"`
 	DSC            *DSC            `xml:"dsc,omitempty" json:"dsc,omitempty"`
 	Level          string          `xml:"level,attr" json:"level,attr,omitempty"`
 }
@@ -170,6 +146,12 @@ type DSC struct {
 type Emph struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 	Render string `xml:"render,attr" json:"render,attr,omitempty"`
+}
+
+// "eadnote" in current draft of the data model
+type FormattedNoteWithHeader struct {
+	Head string  `xml:"head,omitemtpy" json:"head,omitempty"`
+	P    *P      `xml:"p,omitempty" json:"p,omitempty"`
 }
 
 type GenreForm struct {
@@ -224,21 +206,9 @@ type PreferCite struct {
 	Audience string `xml:"audience,attr" json:"audience,attr,omitempty"`
 }
 
-type ProcessInfo struct {
-	Head string  `xml:"head,omitemtpy" json:"head,omitempty"`
-	P    *P      `xml:"p,omitempty" json:"p,omitempty"`
-	Emph []*Emph `xml:"emph" json:"emph,omitempty"`
-}
-
 type Repository struct {
 	CorpName *CorpName `xml:"corpname" json:"corpname,omitempty"`
 	Emph     []*Emph   `xml:"emph" json:"emph,omitempty"`
-}
-
-type ScopeContent struct {
-	Head string  `xml:"head,omitemtpy" json:"head,omitempty"`
-	P    *P      `xml:"p,omitempty" json:"p,omitempty"`
-	Emph []*Emph `xml:"emph" json:"emph,omitempty"`
 }
 
 type Subject struct {
@@ -256,10 +226,4 @@ type UnitID struct {
 
 type UnitTitle struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
-type UserRestrict struct {
-	Head string  `xml:"head,omitemtpy" json:"head,omitempty"`
-	P    *P      `xml:"p,omitempty" json:"p,omitempty"`
-	Emph []*Emph `xml:"emph" json:"emph,omitempty"`
 }
