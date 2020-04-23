@@ -88,7 +88,7 @@ type ArchDesc struct {
 	BiogHist       *FormattedNoteWithHeader `xml:"bioghist" json:"bioghist,omitempty"`
 	AccessRestrict *FormattedNoteWithHeader `xml:"accessrestrict" json:"accessrestrict,omitempty"`
 	UserRestrict   *FormattedNoteWithHeader `xml:"userestrict" json:"userestrict,omitempty"`
-	PreferCite     []*PreferCite            `xml:"prefercite" json:"prefercite,omitempty"`
+	PreferCite     []*FormattedNoteWithHeader            `xml:"prefercite" json:"prefercite,omitempty"`
 	ProcessInfo    *FormattedNoteWithHeader `xml:"processinfo" json:"processinfo,omitempty"`
 	Arrangement    *FormattedNoteWithHeader `xml:"arrangement" json:"arrangement,omitempty"`
 	ControlAccess  *ControlAccess           `xml:"controlaccess" json:"controlaccess,omitempty"`
@@ -198,12 +198,6 @@ type PhysDesc struct {
 
 type PhysLoc struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
-type PreferCite struct {
-	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
-	ID       string `xml:"id,attr" json:"id,attr,omitempty"`
-	Audience string `xml:"audience,attr" json:"audience,attr,omitempty"`
 }
 
 type Repository struct {
