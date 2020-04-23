@@ -81,17 +81,17 @@ type Abstract struct {
 }
 
 type ArchDesc struct {
-	AcqInfo        *FormattedNoteWithHeader `xml:"acqinfo" json:"acqinfo,omitempty"`
-	DID            *DID                     `xml:"did" json:"did,omitempty"`
-	DSC            *DSC                     `xml:"dsc" json:"dsc,omitempty"`
-	ScopeContent   *FormattedNoteWithHeader `xml:"scopecontent" json:"scopecontent,omitempty"`
-	BiogHist       *FormattedNoteWithHeader `xml:"bioghist" json:"bioghist,omitempty"`
-	AccessRestrict *FormattedNoteWithHeader `xml:"accessrestrict" json:"accessrestrict,omitempty"`
-	UserRestrict   *FormattedNoteWithHeader `xml:"userestrict" json:"userestrict,omitempty"`
-	PreferCite     []*FormattedNoteWithHeader            `xml:"prefercite" json:"prefercite,omitempty"`
-	ProcessInfo    *FormattedNoteWithHeader `xml:"processinfo" json:"processinfo,omitempty"`
-	Arrangement    *FormattedNoteWithHeader `xml:"arrangement" json:"arrangement,omitempty"`
-	ControlAccess  *ControlAccess           `xml:"controlaccess" json:"controlaccess,omitempty"`
+	AcqInfo        *FormattedNoteWithHeader   `xml:"acqinfo" json:"acqinfo,omitempty"`
+	DID            *DID                       `xml:"did" json:"did,omitempty"`
+	DSC            *DSC                       `xml:"dsc" json:"dsc,omitempty"`
+	ScopeContent   *FormattedNoteWithHeader   `xml:"scopecontent" json:"scopecontent,omitempty"`
+	BiogHist       *FormattedNoteWithHeader   `xml:"bioghist" json:"bioghist,omitempty"`
+	AccessRestrict *FormattedNoteWithHeader   `xml:"accessrestrict" json:"accessrestrict,omitempty"`
+	UserRestrict   *FormattedNoteWithHeader   `xml:"userestrict" json:"userestrict,omitempty"`
+	PreferCite     []*FormattedNoteWithHeader `xml:"prefercite" json:"prefercite,omitempty"`
+	ProcessInfo    *FormattedNoteWithHeader   `xml:"processinfo" json:"processinfo,omitempty"`
+	Arrangement    *FormattedNoteWithHeader   `xml:"arrangement" json:"arrangement,omitempty"`
+	ControlAccess  *ControlAccess             `xml:"controlaccess" json:"controlaccess,omitempty"`
 }
 
 type C struct {
