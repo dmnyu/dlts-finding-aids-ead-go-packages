@@ -9,11 +9,11 @@ const (
 )
 
 type EAD struct {
-	Xmlns          string   `xml:"xmlns,attr" json:"xmlns,attr,omitempty"`
-	Xlink          string   `xml:"xlink,attr" json:"xlink,attr,omitempty"`
-	Xsi            string   `xml:"xsi,attr" json:"xsi,attr,omitempty"`
-	SchemaLocation string   `xml:"schemaLocation,attr" json:"schemaLocation,attr,omitempty"`
-	Ns2            string   `xml:"ns2,attr" json:"ns2,attr,omitempty"`
+	XMLNS          string `xml:"xmlns,attr" json:"xmlns,attr,omitempty"`
+	XLink          string `xml:"xlink,attr" json:"xlink,attr,omitempty"`
+	XSI            string `xml:"xsi,attr" json:"xsi,attr,omitempty"`
+	SchemaLocation string `xml:"schemaLocation,attr" json:"schemaLocation,attr,omitempty"`
+	NS2            string `xml:"ns2,attr" json:"ns2,attr,omitempty"`
 	EADHeader      struct {
 		CountryEncoding    string `xml:"countryencoding,attr" json:"countryencoding,attr,omitempty"`
 		DateEncoding       string `xml:"dateencoding,attr" json:"dateencoding,attr,omitempty"`
