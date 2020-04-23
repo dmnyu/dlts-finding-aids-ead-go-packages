@@ -150,7 +150,7 @@ type Emph struct {
 
 // "eadnote" in current draft of the data model
 type FormattedNoteWithHeader struct {
-	Head string `xml:"head,omitemtpy" json:"head,omitempty"`
+	Head Head `xml:"head,omitemtpy" json:"head,omitempty"`
 	P    *P     `xml:"p,omitempty" json:"p,omitempty"`
 }
 
@@ -163,6 +163,8 @@ type GeogName struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 	Source string `xml:"source,attr" json:"source,attr,omitempty"`
 }
+
+type Head string
 
 type LangMaterial struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
