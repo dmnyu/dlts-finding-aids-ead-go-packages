@@ -179,10 +179,7 @@ type Origination struct {
 	PersName *PersName `xml:"persname" json:"persname,omitempty"`
 }
 
-type P struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-	Date  string `xml:"date" json:"date,omitempty"`
-}
+type P string
 
 type PersName struct {
 	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
