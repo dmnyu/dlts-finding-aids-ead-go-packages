@@ -151,7 +151,7 @@ type Emph struct {
 // "eadnote" in current draft of the data model
 type FormattedNoteWithHeader struct {
 	Head Head `xml:"head,omitemtpy" json:"head,omitempty"`
-	P    *P     `xml:"p,omitempty" json:"p,omitempty"`
+	P    *P   `xml:"p,omitempty" json:"p,omitempty"`
 }
 
 type GenreForm struct {
