@@ -234,7 +234,7 @@ type UnitTitle struct {
 }
 
 func (head *Head) MarshalJSON() ([]byte, error) {
-	result, err := getMarshalledJSONForTextWithEmph(head.Value)
+	result, err := getMarshalledJSONForTextWithTags(head.Value)
 	if err != nil {
 		return nil, err
 	}
@@ -243,7 +243,7 @@ func (head *Head) MarshalJSON() ([]byte, error) {
 }
 
 func (p *P) MarshalJSON() ([]byte, error) {
-	result, err := getMarshalledJSONForTextWithEmph(p.Value)
+	result, err := getMarshalledJSONForTextWithTags(p.Value)
 	if err != nil {
 		return nil, err
 	}
@@ -251,7 +251,7 @@ func (p *P) MarshalJSON() ([]byte, error) {
 	return (result), nil
 }
 
-func getMarshalledJSONForTextWithEmph(text string) ([]byte, error) {
+func getMarshalledJSONForTextWithTags(text string) ([]byte, error) {
 	decoder := xml.NewDecoder(strings.NewReader(text))
 
 	var result string
@@ -266,6 +266,7 @@ func getMarshalledJSONForTextWithEmph(text string) ([]byte, error) {
 
 		switch token := token.(type) {
 		case xml.StartElement:
+			var spanClasses string
 			if token.Name.Local == "emph" {
 				var render string
 				for i := range token.Attr {
@@ -274,12 +275,14 @@ func getMarshalledJSONForTextWithEmph(text string) ([]byte, error) {
 						break
 					}
 				}
-				result += fmt.Sprintf("<span class=\"emph emph-%s\">", render)
+				spanClasses = "emph emph-" + render
+			} else {
+				spanClasses = token.Name.Local
 			}
+
+			result += fmt.Sprintf("<span class=\"%s\">", spanClasses)
 		case xml.EndElement:
-			if token.Name.Local == "emph" {
-				result += "</span>"
-			}
+			result += "</span>"
 		case xml.CharData:
 			result += string(token)
 		}
