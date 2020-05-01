@@ -107,6 +107,7 @@ type C struct {
 	AcqInfo        []*FormattedNoteWithHeader `xml:"acqinfo,omitempty" json:"acqinfo,omitempty"`
 	C              []*C                       `xml:"c,omitempty" json:"c,omitempty"`
 	DID            []*DID                     `xml:"did,omitempty" json:"did,omitempty"`
+	ID             string                     `xml:"id,attr" json:"id,attr,omitempty"`
 	ScopeContent   []*FormattedNoteWithHeader `xml:"scopecontent,omitempty" json:"scopecontent,omitempty"`
 	BiogHist       []*FormattedNoteWithHeader `xml:"bioghist,omitempty" json:"bioghist,omitempty"`
 	AccessRestrict []*FormattedNoteWithHeader `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
