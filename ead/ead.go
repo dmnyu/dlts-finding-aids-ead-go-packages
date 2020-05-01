@@ -38,7 +38,7 @@ type EAD struct {
 			TitleStmt struct {
 				TitleProper struct {
 					Value string   `xml:",chardata" json:"value,chardata,omitempty"`
-					Num   []string   `xml:"num" json:"num,omitempty"`
+					Num   []string `xml:"num" json:"num,omitempty"`
 					Emph  []*Emph  `xml:"emph" json:"emph,omitempty"`
 					Lb    []string `xml:"lb" json:"lb,omitempty"`
 				} `xml:"titleproper" json:"titleproper,omitempty"`
@@ -66,7 +66,7 @@ type EAD struct {
 		} `xml:"filedesc" json:"filedesc,omitempty"`
 		ProfileDesc struct {
 			Creation struct {
-				Value string `xml:",chardata" json:"value,chardata,omitempty"`
+				Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 				Date  []string `xml:"date" json:"date,omitempty"`
 			} `xml:"creation" json:"creation,omitempty"`
 			LangUsage []string `xml:"langusage" json:"langusage,omitempty"`
@@ -89,17 +89,17 @@ type Abstract struct {
 }
 
 type ArchDesc struct {
-	AcqInfo        []*FormattedNoteWithHeader   `xml:"acqinfo" json:"acqinfo,omitempty"`
-	DID            []*DID                       `xml:"did" json:"did,omitempty"`
-	DSC            []*DSC                       `xml:"dsc" json:"dsc,omitempty"`
-	ScopeContent   []*FormattedNoteWithHeader   `xml:"scopecontent" json:"scopecontent,omitempty"`
-	BiogHist       []*FormattedNoteWithHeader   `xml:"bioghist" json:"bioghist,omitempty"`
-	AccessRestrict []*FormattedNoteWithHeader   `xml:"accessrestrict" json:"accessrestrict,omitempty"`
-	UserRestrict   []*FormattedNoteWithHeader   `xml:"userestrict" json:"userestrict,omitempty"`
-	PreferCite     []*FormattedNoteWithHeader   `xml:"prefercite" json:"prefercite,omitempty"`
-	ProcessInfo    []*FormattedNoteWithHeader   `xml:"processinfo" json:"processinfo,omitempty"`
-	Arrangement    []*FormattedNoteWithHeader   `xml:"arrangement" json:"arrangement,omitempty"`
-	ControlAccess  []*ControlAccess             `xml:"controlaccess" json:"controlaccess,omitempty"`
+	AcqInfo        []*FormattedNoteWithHeader `xml:"acqinfo" json:"acqinfo,omitempty"`
+	DID            []*DID                     `xml:"did" json:"did,omitempty"`
+	DSC            []*DSC                     `xml:"dsc" json:"dsc,omitempty"`
+	ScopeContent   []*FormattedNoteWithHeader `xml:"scopecontent" json:"scopecontent,omitempty"`
+	BiogHist       []*FormattedNoteWithHeader `xml:"bioghist" json:"bioghist,omitempty"`
+	AccessRestrict []*FormattedNoteWithHeader `xml:"accessrestrict" json:"accessrestrict,omitempty"`
+	UserRestrict   []*FormattedNoteWithHeader `xml:"userestrict" json:"userestrict,omitempty"`
+	PreferCite     []*FormattedNoteWithHeader `xml:"prefercite" json:"prefercite,omitempty"`
+	ProcessInfo    []*FormattedNoteWithHeader `xml:"processinfo" json:"processinfo,omitempty"`
+	Arrangement    []*FormattedNoteWithHeader `xml:"arrangement" json:"arrangement,omitempty"`
+	ControlAccess  []*ControlAccess           `xml:"controlaccess" json:"controlaccess,omitempty"`
 }
 
 type C struct {
@@ -107,6 +107,7 @@ type C struct {
 	AcqInfo        []*FormattedNoteWithHeader `xml:"acqinfo,omitempty" json:"acqinfo,omitempty"`
 	C              []*C                       `xml:"c,omitempty" json:"c,omitempty"`
 	DID            []*DID                     `xml:"did,omitempty" json:"did,omitempty"`
+	ID             string                     `xml:"id,attr" json:"id,attr,omitempty"`
 	ScopeContent   []*FormattedNoteWithHeader `xml:"scopecontent,omitempty" json:"scopecontent,omitempty"`
 	BiogHist       []*FormattedNoteWithHeader `xml:"bioghist,omitempty" json:"bioghist,omitempty"`
 	AccessRestrict []*FormattedNoteWithHeader `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
@@ -115,16 +116,16 @@ type C struct {
 	ProcessInfo    []*FormattedNoteWithHeader `xml:"processinfo,omitempty" json:"processinfo,omitempty"`
 	Arrangement    []*FormattedNoteWithHeader `xml:"arrangement,omitempty" json:"arrangement,omitempty"`
 	DSC            []*DSC                     `xml:"dsc,omitempty" json:"dsc,omitempty"`
-	Level          string                   `xml:"level,attr" json:"level,attr,omitempty"`
+	Level          string                     `xml:"level,attr" json:"level,attr,omitempty"`
 }
 
 type ControlAccess struct {
-	GenreForm  []*GenreForm `xml:"genreform" json:"genreform,omitempty"`
-	GeogName   []*GeogName  `xml:"geogname" json:"geogname,omitempty"`
-	PersName   []*PersName  `xml:"persname" json:"persname,omitempty"`
-	Subject    []*Subject   `xml:"subject" json:"subject,omitempty"`
-	CorpName   []*CorpName  `xml:"corpname" json:"corpname,omitempty"`
-	Occupation []*Occupation  `xml:"occupation" json:"occupation,omitempty"`
+	GenreForm  []*GenreForm  `xml:"genreform" json:"genreform,omitempty"`
+	GeogName   []*GeogName   `xml:"geogname" json:"geogname,omitempty"`
+	PersName   []*PersName   `xml:"persname" json:"persname,omitempty"`
+	Subject    []*Subject    `xml:"subject" json:"subject,omitempty"`
+	CorpName   []*CorpName   `xml:"corpname" json:"corpname,omitempty"`
+	Occupation []*Occupation `xml:"occupation" json:"occupation,omitempty"`
 }
 
 type CorpName struct {
@@ -213,7 +214,7 @@ type PhysLoc struct {
 
 type Repository struct {
 	CorpName []*CorpName `xml:"corpname" json:"corpname,omitempty"`
-	Emph     []*Emph   `xml:"emph" json:"emph,omitempty"`
+	Emph     []*Emph     `xml:"emph" json:"emph,omitempty"`
 }
 
 type Subject struct {
