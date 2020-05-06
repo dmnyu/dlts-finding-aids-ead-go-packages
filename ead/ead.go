@@ -102,7 +102,6 @@ type Change struct {
 
 type ControlAccess struct {
 	GenreForm  []*GenreForm  `xml:"genreform" json:"genreform,omitempty"`
-	GeogName   []*GeogName   `xml:"geogname" json:"geogname,omitempty"`
 	PersName   []*PersName   `xml:"persname" json:"persname,omitempty"`
 	Subject    []*Subject    `xml:"subject" json:"subject,omitempty"`
 	CorpName   []*CorpName   `xml:"corpname" json:"corpname,omitempty"`
