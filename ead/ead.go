@@ -35,14 +35,7 @@ type EAD struct {
 			URL            string `xml:"url,attr" json:"url,attr,omitempty"`
 		} `xml:"eadid" json:"eadid,omitempty"`
 		FileDesc []*FileDesc `xml:"filedesc" json:"filedesc,omitempty"`
-		ProfileDesc struct {
-			Creation struct {
-				Value string   `xml:",chardata" json:"value,chardata,omitempty"`
-				Date  []string `xml:"date" json:"date,omitempty"`
-			} `xml:"creation" json:"creation,omitempty"`
-			LangUsage []string `xml:"langusage" json:"langusage,omitempty"`
-			DescRules []string `xml:"descrules" json:"descrules,omitempty"`
-		} `xml:"profiledesc" json:"profiledesc,omitempty"`
+		ProfileDesc []*ProfileDesc `xml:"profiledesc" json:"profiledesc,omitempty"`
 		RevisionDesc struct {
 			Change []struct {
 				Audience []string `xml:"audience,attr" json:"audience,attr,omitempty"`
@@ -215,6 +208,15 @@ type PhysDesc struct {
 
 type PhysLoc struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
+type ProfileDesc struct {
+	Creation struct {
+		Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+		Date  []string `xml:"date" json:"date,omitempty"`
+	} `xml:"creation" json:"creation,omitempty"`
+	LangUsage []string `xml:"langusage" json:"langusage,omitempty"`
+	DescRules []string `xml:"descrules" json:"descrules,omitempty"`
 }
 
 type Repository struct {
