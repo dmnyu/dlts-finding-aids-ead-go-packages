@@ -45,12 +45,7 @@ type Abstract struct {
 
 type AddressLine struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
-	ExtPtr struct {
-		Href  string `xml:"href,attr" json:"href,attr,omitempty"`
-		Show  string `xml:"show,attr" json:"show,attr,omitempty"`
-		Title string `xml:"title,attr" json:"title,attr,omitempty"`
-		Type  string `xml:"type,attr" json:"type,attr,omitempty"`
-	} `xml:"extptr" json:"extptr,omitempty"`
+	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 }
 
 type ArchDesc struct {
@@ -127,6 +122,13 @@ type EADID struct {
 type Emph struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 	Render string `xml:"render,attr" json:"render,attr,omitempty"`
+}
+
+type ExtPtr struct {
+	Href  string `xml:"href,attr" json:"href,attr,omitempty"`
+	Show  string `xml:"show,attr" json:"show,attr,omitempty"`
+	Title string `xml:"title,attr" json:"title,attr,omitempty"`
+	Type  string `xml:"type,attr" json:"type,attr,omitempty"`
 }
 
 type FileDesc struct {
