@@ -94,6 +94,12 @@ type C struct {
 	UserRestrict    []*FormattedNoteWithHead `xml:"userrestrict,omitempty" json:"userrestrict,omitempty"`
 }
 
+type Change struct {
+	Audience []string `xml:"audience,attr" json:"audience,attr,omitempty"`
+	Date     []string `xml:"date" json:"date,omitempty"`
+	Item     []string `xml:"item" json:"item,omitempty"`
+}
+
 type ControlAccess struct {
 	GenreForm  []*GenreForm  `xml:"genreform" json:"genreform,omitempty"`
 	GeogName   []*GeogName   `xml:"geogname" json:"geogname,omitempty"`
@@ -240,11 +246,7 @@ type Repository struct {
 }
 
 type RevisionDesc struct {
-	Change []struct {
-		Audience []string `xml:"audience,attr" json:"audience,attr,omitempty"`
-		Date     []string `xml:"date" json:"date,omitempty"`
-		Item     []string `xml:"item" json:"item,omitempty"`
-	} `xml:"change" json:"change,omitempty"`
+	Change Change `xml:"change" json:"change,omitempty"`
 }
 
 type Subject struct {
