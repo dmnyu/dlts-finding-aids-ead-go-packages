@@ -28,12 +28,7 @@ type EAD struct {
 		FindAidStatus      string `xml:"findaidstatus,attr" json:"findaidstatus,attr,omitempty"`
 		LangEncoding       string `xml:"langencoding,attr" json:"langencoding,attr,omitempty"`
 		RepositoryEncoding string `xml:"repositoryencoding,attr" json:"repositoryencoding,attr,omitempty"`
-		EADID              struct {
-			Value          string `xml:",chardata" json:"value,chardata,omitempty"`
-			CountryCode    string `xml:"countrycode,attr" json:"countrycode,attr,omitempty"`
-			MainAgencyCode string `xml:"mainagencycode,attr" json:"mainagencycode,attr,omitempty"`
-			URL            string `xml:"url,attr" json:"url,attr,omitempty"`
-		} `xml:"eadid" json:"eadid,omitempty"`
+		EADID              []*EADID `xml:"eadid" json:"eadid,omitempty"`
 		FileDesc []*FileDesc `xml:"filedesc" json:"filedesc,omitempty"`
 		ProfileDesc []*ProfileDesc `xml:"profiledesc" json:"profiledesc,omitempty"`
 		RevisionDesc struct {
@@ -116,6 +111,13 @@ type DID struct {
 
 type DSC struct {
 	C []*C `xml:"c,omitempty" json:"c,omitempty"`
+}
+
+type EADID struct {
+	Value          string `xml:",chardata" json:"value,chardata,omitempty"`
+	CountryCode    string `xml:"countrycode,attr" json:"countrycode,attr,omitempty"`
+	MainAgencyCode string `xml:"mainagencycode,attr" json:"mainagencycode,attr,omitempty"`
+	URL            string `xml:"url,attr" json:"url,attr,omitempty"`
 }
 
 type Emph struct {
