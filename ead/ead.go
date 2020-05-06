@@ -130,21 +130,7 @@ type FileDesc struct {
 		Author  []string `xml:"author" json:"author,omitempty"`
 		Sponsor []string `xml:"sponsor" json:"sponsor,omitempty"`
 	} `xml:"titlestmt" json:"titlestmt,omitempty"`
-	PublicationStmt struct {
-		Publisher []string `xml:"publisher" json:"publisher,omitempty"`
-		P         []*P     `xml:"p" json:"p,omitempty"`
-		Address   []struct {
-			AddressLine []struct {
-				Value  string `xml:",chardata" json:"value,chardata,omitempty"`
-				ExtPtr struct {
-					Href  string `xml:"href,attr" json:"href,attr,omitempty"`
-					Show  string `xml:"show,attr" json:"show,attr,omitempty"`
-					Title string `xml:"title,attr" json:"title,attr,omitempty"`
-					Type  string `xml:"type,attr" json:"type,attr,omitempty"`
-				} `xml:"extptr" json:"extptr,omitempty"`
-			} `xml:"addressline" json:"addressline,omitempty"`
-		} `xml:"address" json:"address,omitempty"`
-	} `xml:"publicationstmt" json:"publicationstmt,omitempty"`
+	PublicationStmt []*PublicationStmt `xml:"publicationstmt" json:"publicationstmt,omitempty"`
 	EditionStmt struct {
 		P []*P `xml:"p" json:"p,omitempty"`
 	} `xml:"editionstmt" json:"editionstmt,omitempty"`
@@ -213,6 +199,22 @@ type ProfileDesc struct {
 	} `xml:"creation" json:"creation,omitempty"`
 	LangUsage []string `xml:"langusage" json:"langusage,omitempty"`
 	DescRules []string `xml:"descrules" json:"descrules,omitempty"`
+}
+
+type PublicationStmt struct {
+	Publisher []string `xml:"publisher" json:"publisher,omitempty"`
+	P         []*P     `xml:"p" json:"p,omitempty"`
+	Address   []struct {
+		AddressLine []struct {
+			Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+			ExtPtr struct {
+				Href  string `xml:"href,attr" json:"href,attr,omitempty"`
+				Show  string `xml:"show,attr" json:"show,attr,omitempty"`
+				Title string `xml:"title,attr" json:"title,attr,omitempty"`
+				Type  string `xml:"type,attr" json:"type,attr,omitempty"`
+			} `xml:"extptr" json:"extptr,omitempty"`
+		} `xml:"addressline" json:"addressline,omitempty"`
+	} `xml:"address" json:"address,omitempty"`
 }
 
 type Repository struct {
