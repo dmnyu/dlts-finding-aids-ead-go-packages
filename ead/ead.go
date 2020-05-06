@@ -34,36 +34,7 @@ type EAD struct {
 			MainAgencyCode string `xml:"mainagencycode,attr" json:"mainagencycode,attr,omitempty"`
 			URL            string `xml:"url,attr" json:"url,attr,omitempty"`
 		} `xml:"eadid" json:"eadid,omitempty"`
-		FileDesc struct {
-			TitleStmt struct {
-				TitleProper struct {
-					Value string   `xml:",chardata" json:"value,chardata,omitempty"`
-					Num   []string `xml:"num" json:"num,omitempty"`
-					Emph  []*Emph  `xml:"emph" json:"emph,omitempty"`
-					Lb    []string `xml:"lb" json:"lb,omitempty"`
-				} `xml:"titleproper" json:"titleproper,omitempty"`
-				Author  []string `xml:"author" json:"author,omitempty"`
-				Sponsor []string `xml:"sponsor" json:"sponsor,omitempty"`
-			} `xml:"titlestmt" json:"titlestmt,omitempty"`
-			PublicationStmt struct {
-				Publisher []string `xml:"publisher" json:"publisher,omitempty"`
-				P         []*P     `xml:"p" json:"p,omitempty"`
-				Address   []struct {
-					AddressLine []struct {
-						Value  string `xml:",chardata" json:"value,chardata,omitempty"`
-						ExtPtr struct {
-							Href  string `xml:"href,attr" json:"href,attr,omitempty"`
-							Show  string `xml:"show,attr" json:"show,attr,omitempty"`
-							Title string `xml:"title,attr" json:"title,attr,omitempty"`
-							Type  string `xml:"type,attr" json:"type,attr,omitempty"`
-						} `xml:"extptr" json:"extptr,omitempty"`
-					} `xml:"addressline" json:"addressline,omitempty"`
-				} `xml:"address" json:"address,omitempty"`
-			} `xml:"publicationstmt" json:"publicationstmt,omitempty"`
-			EditionStmt struct {
-				P []*P `xml:"p" json:"p,omitempty"`
-			} `xml:"editionstmt" json:"editionstmt,omitempty"`
-		} `xml:"filedesc" json:"filedesc,omitempty"`
+		FileDesc []*FileDesc `xml:"filedesc" json:"filedesc,omitempty"`
 		ProfileDesc struct {
 			Creation struct {
 				Value string   `xml:",chardata" json:"value,chardata,omitempty"`
@@ -157,6 +128,37 @@ type DSC struct {
 type Emph struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 	Render string `xml:"render,attr" json:"render,attr,omitempty"`
+}
+
+type FileDesc struct {
+	TitleStmt struct {
+		TitleProper struct {
+			Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+			Num   []string `xml:"num" json:"num,omitempty"`
+			Emph  []*Emph  `xml:"emph" json:"emph,omitempty"`
+			Lb    []string `xml:"lb" json:"lb,omitempty"`
+		} `xml:"titleproper" json:"titleproper,omitempty"`
+		Author  []string `xml:"author" json:"author,omitempty"`
+		Sponsor []string `xml:"sponsor" json:"sponsor,omitempty"`
+	} `xml:"titlestmt" json:"titlestmt,omitempty"`
+	PublicationStmt struct {
+		Publisher []string `xml:"publisher" json:"publisher,omitempty"`
+		P         []*P     `xml:"p" json:"p,omitempty"`
+		Address   []struct {
+			AddressLine []struct {
+				Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+				ExtPtr struct {
+					Href  string `xml:"href,attr" json:"href,attr,omitempty"`
+					Show  string `xml:"show,attr" json:"show,attr,omitempty"`
+					Title string `xml:"title,attr" json:"title,attr,omitempty"`
+					Type  string `xml:"type,attr" json:"type,attr,omitempty"`
+				} `xml:"extptr" json:"extptr,omitempty"`
+			} `xml:"addressline" json:"addressline,omitempty"`
+		} `xml:"address" json:"address,omitempty"`
+	} `xml:"publicationstmt" json:"publicationstmt,omitempty"`
+	EditionStmt struct {
+		P []*P `xml:"p" json:"p,omitempty"`
+	} `xml:"editionstmt" json:"editionstmt,omitempty"`
 }
 
 // "eadnote" in current draft of the data model
