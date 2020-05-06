@@ -117,6 +117,11 @@ type CorpName struct {
 	Role     string `xml:"role,attr" json:"role,attr,omitempty"`
 }
 
+type Creation struct {
+	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+	Date  []string `xml:"date" json:"date,omitempty"`
+}
+
 type DID struct {
 	Abstract     []*Abstract     `xml:"abstract" json:"abstract,omitempty"`
 	LangMaterial []*LangMaterial `xml:"langmaterial" json:"langmaterial,omitempty"`
@@ -226,10 +231,7 @@ type PhysLoc struct {
 }
 
 type ProfileDesc struct {
-	Creation struct {
-		Value string   `xml:",chardata" json:"value,chardata,omitempty"`
-		Date  []string `xml:"date" json:"date,omitempty"`
-	} `xml:"creation" json:"creation,omitempty"`
+	Creation  []*Creation `xml:"creation" json:"creation,omitempty"`
 	LangUsage []string `xml:"langusage" json:"langusage,omitempty"`
 	DescRules []string `xml:"descrules" json:"descrules,omitempty"`
 }
