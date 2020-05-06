@@ -73,20 +73,25 @@ type ArchDesc struct {
 }
 
 type C struct {
-	// Not in FADESIGN-29 model, but including it for debugging
-	AcqInfo        []*FormattedNoteWithHead `xml:"acqinfo,omitempty" json:"acqinfo,omitempty"`
-	C              []*C                     `xml:"c,omitempty" json:"c,omitempty"`
-	DID            []*DID                   `xml:"did,omitempty" json:"did,omitempty"`
-	ID             string                   `xml:"id,attr" json:"id,attr,omitempty"`
-	ScopeContent   []*FormattedNoteWithHead `xml:"scopecontent,omitempty" json:"scopecontent,omitempty"`
-	BiogHist       []*FormattedNoteWithHead `xml:"bioghist,omitempty" json:"bioghist,omitempty"`
-	AccessRestrict []*FormattedNoteWithHead `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
-	UserRestrict   []*FormattedNoteWithHead `xml:"userrestrict,omitempty" json:"userrestrict,omitempty"`
-	PreferCite     []*FormattedNoteWithHead `xml:"prefercite,omitempty" json:"prefercite,omitempty"`
-	ProcessInfo    []*FormattedNoteWithHead `xml:"processinfo,omitempty" json:"processinfo,omitempty"`
-	Arrangement    []*FormattedNoteWithHead `xml:"arrangement,omitempty" json:"arrangement,omitempty"`
-	DSC            []*DSC                   `xml:"dsc,omitempty" json:"dsc,omitempty"`
-	Level          string                   `xml:"level,attr" json:"level,attr,omitempty"`
+	Level      string `xml:"level,attr" json:"level,attr,omitempty"`
+	OtherLevel string `xml:"otherlevel,attr" json:"otherlevel,attr,omitempty"`
+
+	AccessRestrict  []*FormattedNoteWithHead `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
+	Accruals        []*FormattedNoteWithHead `xml:"accruals,omitempty" json:"accruals,omitempty"`
+	Appraisal       []*FormattedNoteWithHead `xml:"appraisal,omitempty" json:"appraisal,omitempty"`
+	Arrangement     []*FormattedNoteWithHead `xml:"arrangement,omitempty" json:"arrangement,omitempty"`
+	BiogHist        []*FormattedNoteWithHead `xml:"bioghist,omitempty" json:"bioghist,omitempty"`
+	C               []*C                     `xml:"c,omitempty" json:"c,omitempty"`
+	ControlAccess   []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
+	DID             []*DID                   `xml:"did,omitempty" json:"did,omitempty"`
+	DSC             []*DSC                   `xml:"dsc,omitempty" json:"dsc,omitempty"`
+	CustodHist      []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
+	PhysTech        []*FormattedNoteWithHead `xml:"phystech,omitempty" json:"phystech,omitempty"`
+	PreferCite      []*FormattedNoteWithHead `xml:"prefercite,omitempty" json:"prefercite,omitempty"`
+	ProcessInfo     []*FormattedNoteWithHead `xml:"processinfo,omitempty" json:"processinfo,omitempty"`
+	RelatedMaterial []*FormattedNoteWithHead `xml:"relatedmaterial,omitempty" json:"relatedmaterial,omitempty"`
+	ScopeContent    []*FormattedNoteWithHead `xml:"scopecontent,omitempty" json:"scopecontent,omitempty"`
+	UserRestrict    []*FormattedNoteWithHead `xml:"userrestrict,omitempty" json:"userrestrict,omitempty"`
 }
 
 type ControlAccess struct {
