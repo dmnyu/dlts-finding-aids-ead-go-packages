@@ -72,6 +72,10 @@ type ArchDesc struct {
 	Bibliography       []*FormattedNoteWithHead `xml:"bibliography" json:"bibliography,omitempty"`
 }
 
+type Author struct {
+	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
 type C struct {
 	Level      string `xml:"level,attr" json:"level,attr,omitempty"`
 	OtherLevel string `xml:"otherlevel,attr" json:"otherlevel,attr,omitempty"`
@@ -164,7 +168,7 @@ type FileDesc struct {
 			Emph  []*Emph  `xml:"emph" json:"emph,omitempty"`
 			Lb    []string `xml:"lb" json:"lb,omitempty"`
 		} `xml:"titleproper" json:"titleproper,omitempty"`
-		Author  []string `xml:"author" json:"author,omitempty"`
+		Author  []*Author `xml:"author" json:"author,omitempty"`
 		Sponsor []string `xml:"sponsor" json:"sponsor,omitempty"`
 	} `xml:"titlestmt" json:"titlestmt,omitempty"`
 	PublicationStmt []*PublicationStmt `xml:"publicationstmt" json:"publicationstmt,omitempty"`
