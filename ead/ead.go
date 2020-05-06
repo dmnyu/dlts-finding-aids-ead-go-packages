@@ -95,9 +95,9 @@ type C struct {
 }
 
 type Change struct {
-	Audience []string `xml:"audience,attr" json:"audience,attr,omitempty"`
-	Date     []string `xml:"date" json:"date,omitempty"`
-	Item     []string `xml:"item" json:"item,omitempty"`
+	Date  []string `xml:"date" json:"date,omitempty"`
+	Item  []string `xml:"item" json:"item,omitempty"`
+	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type ControlAccess struct {
