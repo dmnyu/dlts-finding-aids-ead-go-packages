@@ -85,7 +85,9 @@ type EAD struct {
 
 // https://jira.nyu.edu/jira/browse/FADESIGN-29 additions
 type Abstract struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	ID    string `xml:"id,attr" json:"id,attr,omitempty"`
+	Label string `xml:"label,attr" json:"label,attr,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ArchDesc struct {
