@@ -43,6 +43,16 @@ type Abstract struct {
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
+type AddressLine struct {
+	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+	ExtPtr struct {
+		Href  string `xml:"href,attr" json:"href,attr,omitempty"`
+		Show  string `xml:"show,attr" json:"show,attr,omitempty"`
+		Title string `xml:"title,attr" json:"title,attr,omitempty"`
+		Type  string `xml:"type,attr" json:"type,attr,omitempty"`
+	} `xml:"extptr" json:"extptr,omitempty"`
+}
+
 type ArchDesc struct {
 	AcqInfo        []*FormattedNoteWithHead `xml:"acqinfo" json:"acqinfo,omitempty"`
 	DID            []*DID                   `xml:"did" json:"did,omitempty"`
@@ -204,17 +214,7 @@ type ProfileDesc struct {
 type PublicationStmt struct {
 	Publisher []string `xml:"publisher" json:"publisher,omitempty"`
 	P         []*P     `xml:"p" json:"p,omitempty"`
-	Address   []struct {
-		AddressLine []struct {
-			Value  string `xml:",chardata" json:"value,chardata,omitempty"`
-			ExtPtr struct {
-				Href  string `xml:"href,attr" json:"href,attr,omitempty"`
-				Show  string `xml:"show,attr" json:"show,attr,omitempty"`
-				Title string `xml:"title,attr" json:"title,attr,omitempty"`
-				Type  string `xml:"type,attr" json:"type,attr,omitempty"`
-			} `xml:"extptr" json:"extptr,omitempty"`
-		} `xml:"addressline" json:"addressline,omitempty"`
-	} `xml:"address" json:"address,omitempty"`
+	Address   []*AddressLine `xml:"address" json:"address,omitempty"`
 }
 
 type Repository struct {
