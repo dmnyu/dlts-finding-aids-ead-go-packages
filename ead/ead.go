@@ -49,6 +49,7 @@ type AddressLine struct {
 }
 
 type ArchDesc struct {
+	Level          string                   `xml:"level,attr" json:"level,attr,omitempty"`
 	AcqInfo        []*FormattedNoteWithHead `xml:"acqinfo" json:"acqinfo,omitempty"`
 	DID            []*DID                   `xml:"did" json:"did,omitempty"`
 	DSC            []*DSC                   `xml:"dsc" json:"dsc,omitempty"`
@@ -60,6 +61,16 @@ type ArchDesc struct {
 	ProcessInfo    []*FormattedNoteWithHead `xml:"processinfo" json:"processinfo,omitempty"`
 	Arrangement    []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
 	ControlAccess  []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
+	CustodHist         []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
+	PhysTech           []*FormattedNoteWithHead `xml:"phystech" json:"phystech,omitempty"`
+	Appraisal          []*FormattedNoteWithHead `xml:"appraisal" json:"appraisal,omitempty"`
+	SeparatedMaterial  []*FormattedNoteWithHead `xml:"separatedmaterial" json:"separatedmaterial,omitempty"`
+	RelatedMaterial    []*FormattedNoteWithHead `xml:"relatedmaterial" json:"relatedmaterial,omitempty"`
+	Accruals           []*FormattedNoteWithHead `xml:"accruals" json:"accruals,omitempty"`
+	AltFormatAvailable []*FormattedNoteWithHead `xml:"altformatavailable" json:"altformatavailable,omitempty"`
+	Odd                []*FormattedNoteWithHead `xml:"odd" json:"odd,omitempty"`
+	Bibliography       []*FormattedNoteWithHead `xml:"bibliography" json:"bibliography,omitempty"`
+
 }
 
 type C struct {
