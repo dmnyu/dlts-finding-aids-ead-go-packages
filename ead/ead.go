@@ -31,13 +31,7 @@ type EAD struct {
 		EADID              []*EADID `xml:"eadid" json:"eadid,omitempty"`
 		FileDesc []*FileDesc `xml:"filedesc" json:"filedesc,omitempty"`
 		ProfileDesc []*ProfileDesc `xml:"profiledesc" json:"profiledesc,omitempty"`
-		RevisionDesc struct {
-			Change []struct {
-				Audience []string `xml:"audience,attr" json:"audience,attr,omitempty"`
-				Date     []string `xml:"date" json:"date,omitempty"`
-				Item     []string `xml:"item" json:"item,omitempty"`
-			} `xml:"change" json:"change,omitempty"`
-		} `xml:"revisiondesc" json:"revisiondesc,omitempty"`
+		RevisionDesc []*RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
 	} `xml:"eadheader" json:"eadheader,omitempty"`
 	ArchDesc []*ArchDesc `xml:"archdesc" json:"archdesc,omitempty"`
 }
@@ -224,6 +218,14 @@ type ProfileDesc struct {
 type Repository struct {
 	CorpName []*CorpName `xml:"corpname" json:"corpname,omitempty"`
 	Emph     []*Emph     `xml:"emph" json:"emph,omitempty"`
+}
+
+type RevisionDesc struct {
+	Change []struct {
+		Audience []string `xml:"audience,attr" json:"audience,attr,omitempty"`
+		Date     []string `xml:"date" json:"date,omitempty"`
+		Item     []string `xml:"item" json:"item,omitempty"`
+	} `xml:"change" json:"change,omitempty"`
 }
 
 type Subject struct {
