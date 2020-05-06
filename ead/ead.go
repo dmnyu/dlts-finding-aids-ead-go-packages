@@ -23,15 +23,15 @@ type EAD struct {
 	SchemaLocation string `xml:"schemaLocation,attr" json:"schemaLocation,attr,omitempty"`
 	NS2            string `xml:"ns2,attr" json:"ns2,attr,omitempty"`
 	EADHeader      struct {
-		CountryEncoding    string `xml:"countryencoding,attr" json:"countryencoding,attr,omitempty"`
-		DateEncoding       string `xml:"dateencoding,attr" json:"dateencoding,attr,omitempty"`
-		FindAidStatus      string `xml:"findaidstatus,attr" json:"findaidstatus,attr,omitempty"`
-		LangEncoding       string `xml:"langencoding,attr" json:"langencoding,attr,omitempty"`
-		RepositoryEncoding string `xml:"repositoryencoding,attr" json:"repositoryencoding,attr,omitempty"`
-		EADID              []*EADID `xml:"eadid" json:"eadid,omitempty"`
-		FileDesc []*FileDesc `xml:"filedesc" json:"filedesc,omitempty"`
-		ProfileDesc []*ProfileDesc `xml:"profiledesc" json:"profiledesc,omitempty"`
-		RevisionDesc []*RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
+		CountryEncoding    string          `xml:"countryencoding,attr" json:"countryencoding,attr,omitempty"`
+		DateEncoding       string          `xml:"dateencoding,attr" json:"dateencoding,attr,omitempty"`
+		FindAidStatus      string          `xml:"findaidstatus,attr" json:"findaidstatus,attr,omitempty"`
+		LangEncoding       string          `xml:"langencoding,attr" json:"langencoding,attr,omitempty"`
+		RepositoryEncoding string          `xml:"repositoryencoding,attr" json:"repositoryencoding,attr,omitempty"`
+		EADID              []*EADID        `xml:"eadid" json:"eadid,omitempty"`
+		FileDesc           []*FileDesc     `xml:"filedesc" json:"filedesc,omitempty"`
+		ProfileDesc        []*ProfileDesc  `xml:"profiledesc" json:"profiledesc,omitempty"`
+		RevisionDesc       []*RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
 	} `xml:"eadheader" json:"eadheader,omitempty"`
 	ArchDesc []*ArchDesc `xml:"archdesc" json:"archdesc,omitempty"`
 }
@@ -44,23 +44,23 @@ type Abstract struct {
 }
 
 type AddressLine struct {
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value  string    `xml:",chardata" json:"value,chardata,omitempty"`
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 }
 
 type ArchDesc struct {
-	Level          string                   `xml:"level,attr" json:"level,attr,omitempty"`
-	AcqInfo        []*FormattedNoteWithHead `xml:"acqinfo" json:"acqinfo,omitempty"`
-	DID            []*DID                   `xml:"did" json:"did,omitempty"`
-	DSC            []*DSC                   `xml:"dsc" json:"dsc,omitempty"`
-	ScopeContent   []*FormattedNoteWithHead `xml:"scopecontent" json:"scopecontent,omitempty"`
-	BiogHist       []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
-	AccessRestrict []*FormattedNoteWithHead `xml:"accessrestrict" json:"accessrestrict,omitempty"`
-	UserRestrict   []*FormattedNoteWithHead `xml:"userestrict" json:"userestrict,omitempty"`
-	PreferCite     []*FormattedNoteWithHead `xml:"prefercite" json:"prefercite,omitempty"`
-	ProcessInfo    []*FormattedNoteWithHead `xml:"processinfo" json:"processinfo,omitempty"`
-	Arrangement    []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
-	ControlAccess  []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
+	Level              string                   `xml:"level,attr" json:"level,attr,omitempty"`
+	AcqInfo            []*FormattedNoteWithHead `xml:"acqinfo" json:"acqinfo,omitempty"`
+	DID                []*DID                   `xml:"did" json:"did,omitempty"`
+	DSC                []*DSC                   `xml:"dsc" json:"dsc,omitempty"`
+	ScopeContent       []*FormattedNoteWithHead `xml:"scopecontent" json:"scopecontent,omitempty"`
+	BiogHist           []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
+	AccessRestrict     []*FormattedNoteWithHead `xml:"accessrestrict" json:"accessrestrict,omitempty"`
+	UserRestrict       []*FormattedNoteWithHead `xml:"userestrict" json:"userestrict,omitempty"`
+	PreferCite         []*FormattedNoteWithHead `xml:"prefercite" json:"prefercite,omitempty"`
+	ProcessInfo        []*FormattedNoteWithHead `xml:"processinfo" json:"processinfo,omitempty"`
+	Arrangement        []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
+	ControlAccess      []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
 	CustodHist         []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
 	PhysTech           []*FormattedNoteWithHead `xml:"phystech" json:"phystech,omitempty"`
 	Appraisal          []*FormattedNoteWithHead `xml:"appraisal" json:"appraisal,omitempty"`
@@ -70,7 +70,6 @@ type ArchDesc struct {
 	AltFormatAvailable []*FormattedNoteWithHead `xml:"altformatavailable" json:"altformatavailable,omitempty"`
 	Odd                []*FormattedNoteWithHead `xml:"odd" json:"odd,omitempty"`
 	Bibliography       []*FormattedNoteWithHead `xml:"bibliography" json:"bibliography,omitempty"`
-
 }
 
 type C struct {
@@ -154,7 +153,7 @@ type FileDesc struct {
 		Sponsor []string `xml:"sponsor" json:"sponsor,omitempty"`
 	} `xml:"titlestmt" json:"titlestmt,omitempty"`
 	PublicationStmt []*PublicationStmt `xml:"publicationstmt" json:"publicationstmt,omitempty"`
-	EditionStmt struct {
+	EditionStmt     struct {
 		P []*P `xml:"p" json:"p,omitempty"`
 	} `xml:"editionstmt" json:"editionstmt,omitempty"`
 }
@@ -225,8 +224,8 @@ type ProfileDesc struct {
 }
 
 type PublicationStmt struct {
-	Publisher []string `xml:"publisher" json:"publisher,omitempty"`
-	P         []*P     `xml:"p" json:"p,omitempty"`
+	Publisher []string       `xml:"publisher" json:"publisher,omitempty"`
+	P         []*P           `xml:"p" json:"p,omitempty"`
 	Address   []*AddressLine `xml:"address" json:"address,omitempty"`
 }
 
