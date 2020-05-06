@@ -114,10 +114,6 @@ type ControlAccess struct {
 
 type CorpName struct {
 	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
-	Source   string `xml:"source,attr" json:"source,attr,omitempty"`
-	Audience string `xml:"audience,attr" json:"audience,attr,omitempty"`
-	Rules    string `xml:"rules,attr" json:"rules,attr,omitempty"`
-	Role     string `xml:"role,attr" json:"role,attr,omitempty"`
 }
 
 type Creation struct {
