@@ -99,7 +99,7 @@ type C struct {
 }
 
 type Change struct {
-	Date  []string `xml:"date" json:"date,omitempty"`
+	Date  []*Date `xml:"date" json:"date,omitempty"`
 	Item  []string `xml:"item" json:"item,omitempty"`
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -118,7 +118,11 @@ type CorpName struct {
 
 type Creation struct {
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
-	Date  []string `xml:"date" json:"date,omitempty"`
+	Date  []*Date `xml:"date" json:"date,omitempty"`
+}
+
+type Date struct {
+	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type DID struct {
