@@ -77,6 +77,7 @@ type Author struct {
 }
 
 type C struct {
+	ID         string `xml:"id,attr" json:"id,attr,omitempty"`
 	Level      string `xml:"level,attr" json:"level,attr,omitempty"`
 	OtherLevel string `xml:"otherlevel,attr" json:"otherlevel,attr,omitempty"`
 
