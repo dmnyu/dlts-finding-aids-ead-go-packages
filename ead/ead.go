@@ -17,44 +17,46 @@ const (
 )
 
 type EAD struct {
-	EADHeader []*EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
 	ArchDesc  []*ArchDesc  `xml:"archdesc" json:"archdesc,omitempty"`
+	EADHeader []*EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
 }
 
 // https://jira.nyu.edu/jira/browse/FADESIGN-29 additions
 type Abstract struct {
 	ID    string `xml:"id,attr" json:"id,attr,omitempty"`
+
 	Label string `xml:"label,attr" json:"label,attr,omitempty"`
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type AddressLine struct {
-	Value  string    `xml:",chardata" json:"value,chardata,omitempty"`
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
+	Value  string    `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type ArchDesc struct {
 	Level              string                   `xml:"level,attr" json:"level,attr,omitempty"`
-	AcqInfo            []*FormattedNoteWithHead `xml:"acqinfo" json:"acqinfo,omitempty"`
-	DID                []*DID                   `xml:"did" json:"did,omitempty"`
-	DSC                []*DSC                   `xml:"dsc" json:"dsc,omitempty"`
-	ScopeContent       []*FormattedNoteWithHead `xml:"scopecontent" json:"scopecontent,omitempty"`
-	BiogHist           []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
+
 	AccessRestrict     []*FormattedNoteWithHead `xml:"accessrestrict" json:"accessrestrict,omitempty"`
-	UserRestrict       []*FormattedNoteWithHead `xml:"userestrict" json:"userestrict,omitempty"`
-	PreferCite         []*FormattedNoteWithHead `xml:"prefercite" json:"prefercite,omitempty"`
-	ProcessInfo        []*FormattedNoteWithHead `xml:"processinfo" json:"processinfo,omitempty"`
+	Accruals           []*FormattedNoteWithHead `xml:"accruals" json:"accruals,omitempty"`
+	AcqInfo            []*FormattedNoteWithHead `xml:"acqinfo" json:"acqinfo,omitempty"`
+	AltFormatAvailable []*FormattedNoteWithHead `xml:"altformatavailable" json:"altformatavailable,omitempty"`
+	Appraisal          []*FormattedNoteWithHead `xml:"appraisal" json:"appraisal,omitempty"`
 	Arrangement        []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
+	Bibliography       []*FormattedNoteWithHead `xml:"bibliography" json:"bibliography,omitempty"`
+	BiogHist           []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
 	ControlAccess      []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
 	CustodHist         []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
-	PhysTech           []*FormattedNoteWithHead `xml:"phystech" json:"phystech,omitempty"`
-	Appraisal          []*FormattedNoteWithHead `xml:"appraisal" json:"appraisal,omitempty"`
-	SeparatedMaterial  []*FormattedNoteWithHead `xml:"separatedmaterial" json:"separatedmaterial,omitempty"`
-	RelatedMaterial    []*FormattedNoteWithHead `xml:"relatedmaterial" json:"relatedmaterial,omitempty"`
-	Accruals           []*FormattedNoteWithHead `xml:"accruals" json:"accruals,omitempty"`
-	AltFormatAvailable []*FormattedNoteWithHead `xml:"altformatavailable" json:"altformatavailable,omitempty"`
+	DID                []*DID                   `xml:"did" json:"did,omitempty"`
+	DSC                []*DSC                   `xml:"dsc" json:"dsc,omitempty"`
 	Odd                []*FormattedNoteWithHead `xml:"odd" json:"odd,omitempty"`
-	Bibliography       []*FormattedNoteWithHead `xml:"bibliography" json:"bibliography,omitempty"`
+	PhysTech           []*FormattedNoteWithHead `xml:"phystech" json:"phystech,omitempty"`
+	PreferCite         []*FormattedNoteWithHead `xml:"prefercite" json:"prefercite,omitempty"`
+	ProcessInfo        []*FormattedNoteWithHead `xml:"processinfo" json:"processinfo,omitempty"`
+	RelatedMaterial    []*FormattedNoteWithHead `xml:"relatedmaterial" json:"relatedmaterial,omitempty"`
+	ScopeContent       []*FormattedNoteWithHead `xml:"scopecontent" json:"scopecontent,omitempty"`
+	SeparatedMaterial  []*FormattedNoteWithHead `xml:"separatedmaterial" json:"separatedmaterial,omitempty"`
+	UserRestrict       []*FormattedNoteWithHead `xml:"userestrict" json:"userestrict,omitempty"`
 }
 
 type C struct {
@@ -69,9 +71,9 @@ type C struct {
 	BiogHist        []*FormattedNoteWithHead `xml:"bioghist,omitempty" json:"bioghist,omitempty"`
 	C               []*C                     `xml:"c,omitempty" json:"c,omitempty"`
 	ControlAccess   []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
+	CustodHist      []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
 	DID             []*DID                   `xml:"did,omitempty" json:"did,omitempty"`
 	DSC             []*DSC                   `xml:"dsc,omitempty" json:"dsc,omitempty"`
-	CustodHist      []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
 	PhysTech        []*FormattedNoteWithHead `xml:"phystech,omitempty" json:"phystech,omitempty"`
 	PreferCite      []*FormattedNoteWithHead `xml:"prefercite,omitempty" json:"prefercite,omitempty"`
 	ProcessInfo     []*FormattedNoteWithHead `xml:"processinfo,omitempty" json:"processinfo,omitempty"`
@@ -87,11 +89,11 @@ type Change struct {
 }
 
 type ControlAccess struct {
+	CorpName  []*CorpName  `xml:"corpname" json:"corpname,omitempty"`
 	FamName   []*FamName   `xml:"famname" json:"famname,omitempty"`
 	GenreForm []*GenreForm `xml:"genreform" json:"genreform,omitempty"`
 	PersName  []*PersName  `xml:"persname" json:"persname,omitempty"`
 	Subject   []*Subject   `xml:"subject" json:"subject,omitempty"`
-	CorpName  []*CorpName  `xml:"corpname" json:"corpname,omitempty"`
 }
 
 type CorpName struct {
@@ -99,8 +101,8 @@ type CorpName struct {
 }
 
 type Creation struct {
-	Value string  `xml:",chardata" json:"value,chardata,omitempty"`
 	Date  []*Date `xml:"date" json:"date,omitempty"`
+	Value string  `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Date struct {
@@ -118,9 +120,9 @@ type DID struct {
 	PhysDesc     []*PhysDesc     `xml:"physdesc" json:"physdesc,omitempty"`
 	PhysLoc      []*PhysLoc      `xml:"physloc" json:"physloc,omitempty"`
 	Repository   []*Repository   `xml:"repository" json:"repository,omitempty"`
-	UnitTitle    []*UnitTitle    `xml:"unittitle" json:"unittitle,omitempty"`
-	UnitID       []*UnitID       `xml:"unitid" json:"unitid,omitempty"`
 	UnitDate     []*UnitDate     `xml:"unitdate" json:"unitdate,omitempty"`
+	UnitID       []*UnitID       `xml:"unitid" json:"unitid,omitempty"`
+	UnitTitle    []*UnitTitle    `xml:"unittitle" json:"unittitle,omitempty"`
 }
 
 type DSC struct {
@@ -135,10 +137,11 @@ type EADHeader struct {
 }
 
 type EADID struct {
-	Value          string `xml:",chardata" json:"value,chardata,omitempty"`
 	CountryCode    string `xml:"countrycode,attr" json:"countrycode,attr,omitempty"`
 	MainAgencyCode string `xml:"mainagencycode,attr" json:"mainagencycode,attr,omitempty"`
 	URL            string `xml:"url,attr" json:"url,attr,omitempty"`
+
+	Value          string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Extent struct {
@@ -157,17 +160,18 @@ type FamName struct {
 }
 
 type FileDesc struct {
-	TitleStmt   TitleStmt                `xml:"titlestmt" json:"titlestmt,omitempty"`
-	NoteStmt    []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
 	EditionStmt struct {
 		P []*P `xml:"p" json:"p,omitempty"`
 	} `xml:"editionstmt" json:"editionstmt,omitempty"`
+	TitleStmt   TitleStmt                `xml:"titlestmt" json:"titlestmt,omitempty"`
+	NoteStmt    []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
 }
 
 // "eadnote" in current draft of the data model
 type FormattedNoteWithHead struct {
-	Head []Head `xml:"head,omitemtpy" json:"head,omitempty"`
 	ID   string `xml:"id,attr" json:"id,attr,omitempty"`
+
+	Head []Head `xml:"head,omitemtpy" json:"head,omitempty"`
 	P    []*P   `xml:"p,omitempty" json:"p,omitempty"`
 }
 
@@ -176,13 +180,14 @@ type GenreForm struct {
 }
 
 type GeogName struct {
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 	Source string `xml:"source,attr" json:"source,attr,omitempty"`
+
+	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Head struct {
-	Value  string    `xml:",innerxml" json:"value,chardata,omitempty"`
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
+	Value  string    `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type Item struct {
@@ -191,6 +196,7 @@ type Item struct {
 
 type LangMaterial struct {
 	ID       string      `xml:"id,attr" json:"id,attr,omitempty"`
+
 	Language []*Language `xml:"language" json:"language,omitempty"`
 	Value    string      `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -207,17 +213,20 @@ type LangUsage struct {
 }
 
 type Occupation struct {
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 	Source string `xml:"source,attr" json:"source,attr,omitempty"`
+
+	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Origination struct {
 	Label    string      `xml:"label,attr" json:"label,attr,omitempty"`
+
 	PersName []*PersName `xml:"persname"   json:"persname,omitempty"`
 }
 
 type P struct {
 	ID    string `xml:"id,attr" json:"id,attr,omitempty"`
+
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
@@ -235,8 +244,8 @@ type PhysLoc struct {
 
 type ProfileDesc struct {
 	Creation  []*Creation  `xml:"creation" json:"creation,omitempty"`
-	LangUsage []*LangUsage `xml:"langusage" json:"langusage,omitempty"`
 	DescRules []*DescRules `xml:"descrules" json:"descrules,omitempty"`
+	LangUsage []*LangUsage `xml:"langusage" json:"langusage,omitempty"`
 }
 
 type Repository struct {
@@ -260,14 +269,15 @@ type TitleProper struct {
 }
 
 type TitleStmt struct {
-	TitleProper []*TitleProper `xml:"titleproper" json:"titleproper,omitempty"`
 	Author      []string       `xml:"author" json:"author,omitempty"`
 	Sponsor     []string       `xml:"sponsor" json:"sponsor,omitempty"`
+	TitleProper []*TitleProper `xml:"titleproper" json:"titleproper,omitempty"`
 }
 
 type UnitDate struct {
 	Normal string `xml:"normal,attr" json:"normal,attr,omitempty"`
 	Type   string `xml:"type,attr" json:"type,attr,omitempty"`
+
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
