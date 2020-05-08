@@ -204,12 +204,6 @@ type LangUsage struct {
 	LangCode string `xml:"langcode,attr" json:"langcode,attr,omitempty"`
 }
 
-type Occupation struct {
-	Source string `xml:"source,attr" json:"source,attr,omitempty"`
-
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
 type Origination struct {
 	Label    string      `xml:"label,attr" json:"label,attr,omitempty"`
 
