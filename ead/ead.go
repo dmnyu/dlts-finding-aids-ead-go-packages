@@ -198,6 +198,13 @@ type LangMaterial struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type Language struct {
+	LangCode   string `xml:"langcode,attr" json:"langcode,attr,omitempty"`
+	ScriptCode string `xml:"scriptcode,attr" json:"scriptcode,attr,omitempty"`
+
+	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
 type Occupation struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 	Source string `xml:"source,attr" json:"source,attr,omitempty"`
