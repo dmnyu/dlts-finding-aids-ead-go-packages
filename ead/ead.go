@@ -223,10 +223,6 @@ type P struct {
 
 type PersName struct {
 	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
-	Audience string `xml:"audience,attr" json:"audience,attr,omitempty"`
-	Source   string `xml:"source,attr" json:"source,attr,omitempty"`
-	Rules    string `xml:"rules,attr" json:"rules,attr,omitempty"`
-	Role     string `xml:"role,attr" json:"role,attr,omitempty"`
 }
 
 type PhysDesc struct {
