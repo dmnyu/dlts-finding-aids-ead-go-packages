@@ -187,6 +187,7 @@ type GeogName struct {
 
 type Head struct {
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
+	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 }
 
 type LangMaterial struct {
