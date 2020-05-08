@@ -217,7 +217,8 @@ type Occupation struct {
 }
 
 type Origination struct {
-	PersName []*PersName `xml:"persname" json:"persname,omitempty"`
+	Label      string      `xml:"label,attr" json:"label,attr,omitempty"`
+	PersName   []*PersName `xml:"persname"   json:"persname,omitempty"`
 }
 
 type P struct {
