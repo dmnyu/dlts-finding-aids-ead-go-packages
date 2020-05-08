@@ -217,6 +217,7 @@ type Origination struct {
 }
 
 type P struct {
+	ID    string `xml:"id,attr" json:"id,attr,omitempty"`
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
