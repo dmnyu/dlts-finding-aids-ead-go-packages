@@ -82,7 +82,7 @@ type C struct {
 
 type Change struct {
 	Date  []*Date  `xml:"date" json:"date,omitempty"`
-	Item  []string `xml:"item" json:"item,omitempty"`
+	Item  []*Item  `xml:"item" json:"item,omitempty"`
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
@@ -188,6 +188,10 @@ type GeogName struct {
 type Head struct {
 	Value  string    `xml:",innerxml" json:"value,chardata,omitempty"`
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
+}
+
+type Item struct {
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type LangMaterial struct {
