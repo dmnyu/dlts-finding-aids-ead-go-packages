@@ -17,13 +17,8 @@ const (
 )
 
 type EAD struct {
-	XMLNS          string `xml:"xmlns,attr" json:"xmlns,attr,omitempty"`
-	XLink          string `xml:"xlink,attr" json:"xlink,attr,omitempty"`
-	XSI            string `xml:"xsi,attr" json:"xsi,attr,omitempty"`
-	SchemaLocation string `xml:"schemaLocation,attr" json:"schemaLocation,attr,omitempty"`
-	NS2            string `xml:"ns2,attr" json:"ns2,attr,omitempty"`
-	EADHeader      []*EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
-	ArchDesc []*ArchDesc `xml:"archdesc" json:"archdesc,omitempty"`
+	EADHeader []*EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
+	ArchDesc  []*ArchDesc  `xml:"archdesc" json:"archdesc,omitempty"`
 }
 
 // https://jira.nyu.edu/jira/browse/FADESIGN-29 additions
