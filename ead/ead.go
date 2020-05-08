@@ -276,7 +276,8 @@ type UnitID struct {
 }
 
 type UnitTitle struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Title []*Title `xml:"title" json:"title,omitempty"`
+	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 func (head *Head) MarshalJSON() ([]byte, error) {
