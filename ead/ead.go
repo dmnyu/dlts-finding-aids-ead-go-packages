@@ -141,11 +141,6 @@ type EADID struct {
 	URL            string `xml:"url,attr" json:"url,attr,omitempty"`
 }
 
-type Emph struct {
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
-	Render string `xml:"render,attr" json:"render,attr,omitempty"`
-}
-
 type Extent struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
