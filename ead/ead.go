@@ -283,6 +283,28 @@ type UnitTitle struct {
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+func (abstract *Abstract) MarshalJSON() ([]byte, error) {
+	type AbstractWithTags Abstract
+
+	result, err := getConvertedTextWithTags(abstract.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*AbstractWithTags
+	}{
+		Value : string(result),
+		AbstractWithTags: (*AbstractWithTags)(abstract),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (head *Head) MarshalJSON() ([]byte, error) {
 	type HeadWithTags Head
 
