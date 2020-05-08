@@ -17,7 +17,7 @@ const (
 )
 
 type EAD struct {
-	ArchDesc  []*ArchDesc  `xml:"archdesc" json:"archdesc,omitempty"`
+	ArchDesc  *ArchDesc  `xml:"archdesc" json:"archdesc,omitempty"`
 	EADHeader []*EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
 }
 
