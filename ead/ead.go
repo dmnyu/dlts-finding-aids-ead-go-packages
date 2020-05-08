@@ -128,11 +128,6 @@ type DSC struct {
 }
 
 type EADHeader struct {
-	CountryEncoding    string          `xml:"countryencoding,attr" json:"countryencoding,attr,omitempty"`
-	DateEncoding       string          `xml:"dateencoding,attr" json:"dateencoding,attr,omitempty"`
-	FindAidStatus      string          `xml:"findaidstatus,attr" json:"findaidstatus,attr,omitempty"`
-	LangEncoding       string          `xml:"langencoding,attr" json:"langencoding,attr,omitempty"`
-	RepositoryEncoding string          `xml:"repositoryencoding,attr" json:"repositoryencoding,attr,omitempty"`
 	EADID              []*EADID        `xml:"eadid" json:"eadid,omitempty"`
 	FileDesc           []*FileDesc     `xml:"filedesc" json:"filedesc,omitempty"`
 	ProfileDesc        []*ProfileDesc  `xml:"profiledesc" json:"profiledesc,omitempty"`
