@@ -195,7 +195,9 @@ type Item struct {
 }
 
 type LangMaterial struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	ID    	 string 	 `xml:"id,attr" json:"id,attr,omitempty"`
+	Language []*Language `xml:"language" json:"language,omitempty"`
+	Value 	 string 	 `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Language struct {
