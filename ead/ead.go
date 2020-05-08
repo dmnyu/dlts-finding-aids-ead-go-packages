@@ -248,6 +248,12 @@ type ProfileDesc struct {
 	LangUsage []*LangUsage `xml:"langusage" json:"langusage,omitempty"`
 }
 
+type PublicationStmt struct {
+	AddressLine []*AddressLine `xml:"addressline" json:"addressline,omitempty"`
+	Publisher   string         `xml:"publication" json:"publication,omitempty"`
+	P           []*P           `xml:"p" json:"p,omitempty"`
+}
+
 type Repository struct {
 	CorpName []*CorpName `xml:"corpname" json:"corpname,omitempty"`
 }
