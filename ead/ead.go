@@ -81,34 +81,34 @@ type C struct {
 }
 
 type Change struct {
-	Date  []*Date `xml:"date" json:"date,omitempty"`
+	Date  []*Date  `xml:"date" json:"date,omitempty"`
 	Item  []string `xml:"item" json:"item,omitempty"`
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type ControlAccess struct {
-	FamName    []*FamName    `xml:"famname" json:"famname,omitempty"`
-	GenreForm  []*GenreForm  `xml:"genreform" json:"genreform,omitempty"`
-	PersName   []*PersName   `xml:"persname" json:"persname,omitempty"`
-	Subject    []*Subject    `xml:"subject" json:"subject,omitempty"`
-	CorpName   []*CorpName   `xml:"corpname" json:"corpname,omitempty"`
+	FamName   []*FamName   `xml:"famname" json:"famname,omitempty"`
+	GenreForm []*GenreForm `xml:"genreform" json:"genreform,omitempty"`
+	PersName  []*PersName  `xml:"persname" json:"persname,omitempty"`
+	Subject   []*Subject   `xml:"subject" json:"subject,omitempty"`
+	CorpName  []*CorpName  `xml:"corpname" json:"corpname,omitempty"`
 }
 
 type CorpName struct {
-	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Creation struct {
-	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string  `xml:",chardata" json:"value,chardata,omitempty"`
 	Date  []*Date `xml:"date" json:"date,omitempty"`
 }
 
 type Date struct {
-	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type DescRules struct {
-	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type DID struct {
@@ -128,10 +128,10 @@ type DSC struct {
 }
 
 type EADHeader struct {
-	EADID              []*EADID        `xml:"eadid" json:"eadid,omitempty"`
-	FileDesc           []*FileDesc     `xml:"filedesc" json:"filedesc,omitempty"`
-	ProfileDesc        []*ProfileDesc  `xml:"profiledesc" json:"profiledesc,omitempty"`
-	RevisionDesc       []*RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
+	EADID        []*EADID        `xml:"eadid" json:"eadid,omitempty"`
+	FileDesc     []*FileDesc     `xml:"filedesc" json:"filedesc,omitempty"`
+	ProfileDesc  []*ProfileDesc  `xml:"profiledesc" json:"profiledesc,omitempty"`
+	RevisionDesc []*RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
 }
 
 type EADID struct {
@@ -158,13 +158,13 @@ type ExtPtr struct {
 }
 
 type FamName struct {
-	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type FileDesc struct {
-	TitleStmt TitleStmt `xml:"titlestmt" json:"titlestmt,omitempty"`
-	NoteStmt []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
-	EditionStmt     struct {
+	TitleStmt   TitleStmt                `xml:"titlestmt" json:"titlestmt,omitempty"`
+	NoteStmt    []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
+	EditionStmt struct {
 		P []*P `xml:"p" json:"p,omitempty"`
 	} `xml:"editionstmt" json:"editionstmt,omitempty"`
 }
@@ -177,7 +177,7 @@ type FormattedNoteWithHead struct {
 }
 
 type GenreForm struct {
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type GeogName struct {
@@ -186,7 +186,7 @@ type GeogName struct {
 }
 
 type Head struct {
-	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
+	Value  string    `xml:",innerxml" json:"value,chardata,omitempty"`
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 }
 
@@ -224,8 +224,8 @@ type PhysLoc struct {
 }
 
 type ProfileDesc struct {
-	Creation  []*Creation `xml:"creation" json:"creation,omitempty"`
-	LangUsage []string `xml:"langusage" json:"langusage,omitempty"`
+	Creation  []*Creation  `xml:"creation" json:"creation,omitempty"`
+	LangUsage []string     `xml:"langusage" json:"langusage,omitempty"`
 	DescRules []*DescRules `xml:"descrules" json:"descrules,omitempty"`
 }
 
@@ -243,7 +243,7 @@ type Subject struct {
 	Source string `xml:"source,attr" json:"source,attr,omitempty"`
 }
 
-type TitleProper struct  {
+type TitleProper struct {
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 	Num   []string `xml:"num" json:"num,omitempty"`
 	Emph  []*Emph  `xml:"emph" json:"emph,omitempty"`
@@ -252,8 +252,8 @@ type TitleProper struct  {
 
 type TitleStmt struct {
 	TitleProper []*TitleProper `xml:"titleproper" json:"titleproper,omitempty"`
-	Author  []string `xml:"author" json:"author,omitempty"`
-	Sponsor []string `xml:"sponsor" json:"sponsor,omitempty"`
+	Author      []string       `xml:"author" json:"author,omitempty"`
+	Sponsor     []string       `xml:"sponsor" json:"sponsor,omitempty"`
 }
 
 type UnitDate struct {
