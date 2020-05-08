@@ -160,11 +160,9 @@ type FamName struct {
 }
 
 type FileDesc struct {
-	EditionStmt struct {
-		P []*P `xml:"p" json:"p,omitempty"`
-	} `xml:"editionstmt" json:"editionstmt,omitempty"`
-	TitleStmt   TitleStmt                `xml:"titlestmt" json:"titlestmt,omitempty"`
-	NoteStmt    []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
+	PublicationStmt []*PublicationStmt       `xml:"publicationstmt" json:"publicationstmt,omitempty"`
+	TitleStmt       TitleStmt                `xml:"titlestmt" json:"titlestmt,omitempty"`
+	NoteStmt        []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
 }
 
 // "eadnote" in current draft of the data model
