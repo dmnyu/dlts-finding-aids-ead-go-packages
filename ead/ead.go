@@ -266,7 +266,9 @@ type TitleStmt struct {
 }
 
 type UnitDate struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Normal string `xml:"normal,attr" json:"normal,attr,omitempty"`
+	Type   string `xml:"type,attr" json:"type,attr,omitempty"`
+	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type UnitID struct {
