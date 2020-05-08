@@ -254,6 +254,7 @@ type Subject struct {
 
 type Title struct {
 	Render string `xml:"render,attr" json:"render,attr,omitempty"`
+	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type TitleProper struct {
