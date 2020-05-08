@@ -81,9 +81,9 @@ type C struct {
 }
 
 type Change struct {
-	Date  []*Date  `xml:"date" json:"date,omitempty"`
-	Item  []*Item  `xml:"item" json:"item,omitempty"`
-	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+	Date  []*Date `xml:"date" json:"date,omitempty"`
+	Item  []*Item `xml:"item" json:"item,omitempty"`
+	Value string  `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type ControlAccess struct {
@@ -146,10 +146,10 @@ type Extent struct {
 }
 
 type ExtPtr struct {
-	Href  string `xml:"href,attr" json:"href,attr,omitempty"`
-	Show  string `xml:"show,attr" json:"show,attr,omitempty"`
+	Href  string   `xml:"href,attr" json:"href,attr,omitempty"`
+	Show  string   `xml:"show,attr" json:"show,attr,omitempty"`
 	Title []*Title `xml:"title,attr" json:"title,attr,omitempty"`
-	Type  string `xml:"type,attr" json:"type,attr,omitempty"`
+	Type  string   `xml:"type,attr" json:"type,attr,omitempty"`
 }
 
 type FamName struct {
@@ -190,20 +190,20 @@ type Item struct {
 }
 
 type LangMaterial struct {
-	ID    	 string 	 `xml:"id,attr" json:"id,attr,omitempty"`
+	ID       string      `xml:"id,attr" json:"id,attr,omitempty"`
 	Language []*Language `xml:"language" json:"language,omitempty"`
-	Value 	 string 	 `xml:",chardata" json:"value,chardata,omitempty"`
+	Value    string      `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Language struct {
 	LangCode   string `xml:"langcode,attr" json:"langcode,attr,omitempty"`
 	ScriptCode string `xml:"scriptcode,attr" json:"scriptcode,attr,omitempty"`
 
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type LangUsage struct {
-	LangCode   string `xml:"langcode,attr" json:"langcode,attr,omitempty"`
+	LangCode string `xml:"langcode,attr" json:"langcode,attr,omitempty"`
 }
 
 type Occupation struct {
@@ -212,8 +212,8 @@ type Occupation struct {
 }
 
 type Origination struct {
-	Label      string      `xml:"label,attr" json:"label,attr,omitempty"`
-	PersName   []*PersName `xml:"persname"   json:"persname,omitempty"`
+	Label    string      `xml:"label,attr" json:"label,attr,omitempty"`
+	PersName []*PersName `xml:"persname"   json:"persname,omitempty"`
 }
 
 type P struct {
@@ -222,7 +222,7 @@ type P struct {
 }
 
 type PersName struct {
-	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type PhysDesc struct {
@@ -248,7 +248,7 @@ type RevisionDesc struct {
 }
 
 type Subject struct {
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Title struct {
@@ -256,7 +256,7 @@ type Title struct {
 }
 
 type TitleProper struct {
-	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type TitleStmt struct {
