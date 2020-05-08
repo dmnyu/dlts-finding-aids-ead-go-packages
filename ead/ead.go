@@ -22,17 +22,7 @@ type EAD struct {
 	XSI            string `xml:"xsi,attr" json:"xsi,attr,omitempty"`
 	SchemaLocation string `xml:"schemaLocation,attr" json:"schemaLocation,attr,omitempty"`
 	NS2            string `xml:"ns2,attr" json:"ns2,attr,omitempty"`
-	EADHeader      struct {
-		CountryEncoding    string          `xml:"countryencoding,attr" json:"countryencoding,attr,omitempty"`
-		DateEncoding       string          `xml:"dateencoding,attr" json:"dateencoding,attr,omitempty"`
-		FindAidStatus      string          `xml:"findaidstatus,attr" json:"findaidstatus,attr,omitempty"`
-		LangEncoding       string          `xml:"langencoding,attr" json:"langencoding,attr,omitempty"`
-		RepositoryEncoding string          `xml:"repositoryencoding,attr" json:"repositoryencoding,attr,omitempty"`
-		EADID              []*EADID        `xml:"eadid" json:"eadid,omitempty"`
-		FileDesc           []*FileDesc     `xml:"filedesc" json:"filedesc,omitempty"`
-		ProfileDesc        []*ProfileDesc  `xml:"profiledesc" json:"profiledesc,omitempty"`
-		RevisionDesc       []*RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
-	} `xml:"eadheader" json:"eadheader,omitempty"`
+	EADHeader      []*EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
 	ArchDesc []*ArchDesc `xml:"archdesc" json:"archdesc,omitempty"`
 }
 
@@ -140,6 +130,18 @@ type DID struct {
 
 type DSC struct {
 	C []*C `xml:"c,omitempty" json:"c,omitempty"`
+}
+
+type EADHeader struct {
+	CountryEncoding    string          `xml:"countryencoding,attr" json:"countryencoding,attr,omitempty"`
+	DateEncoding       string          `xml:"dateencoding,attr" json:"dateencoding,attr,omitempty"`
+	FindAidStatus      string          `xml:"findaidstatus,attr" json:"findaidstatus,attr,omitempty"`
+	LangEncoding       string          `xml:"langencoding,attr" json:"langencoding,attr,omitempty"`
+	RepositoryEncoding string          `xml:"repositoryencoding,attr" json:"repositoryencoding,attr,omitempty"`
+	EADID              []*EADID        `xml:"eadid" json:"eadid,omitempty"`
+	FileDesc           []*FileDesc     `xml:"filedesc" json:"filedesc,omitempty"`
+	ProfileDesc        []*ProfileDesc  `xml:"profiledesc" json:"profiledesc,omitempty"`
+	RevisionDesc       []*RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
 }
 
 type EADID struct {
