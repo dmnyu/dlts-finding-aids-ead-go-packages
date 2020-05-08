@@ -331,6 +331,7 @@ func getConvertedTextWithTags(text string) ([]byte, error) {
 	decoder := xml.NewDecoder(strings.NewReader(text))
 
 	var result string
+	needClosingTag := true
 	for {
 		token, err := decoder.Token()
 
@@ -342,23 +343,34 @@ func getConvertedTextWithTags(text string) ([]byte, error) {
 
 		switch token := token.(type) {
 		case xml.StartElement:
-			var spanClasses string
-			if token.Name.Local == "emph" {
-				var render string
-				for i := range token.Attr {
-					if token.Attr[i].Name.Local == "render" {
-						render = token.Attr[i].Value
-						break
+			switch token.Name.Local {
+			default:
+				result += fmt.Sprintf("<span class=\"%s\">", token.Name.Local)
+			case "emph":
+				{
+					var render string
+					for i := range token.Attr {
+						if token.Attr[i].Name.Local == "render" {
+							render = token.Attr[i].Value
+							break
+						}
 					}
+					result += fmt.Sprintf("<span class=\"%s\">", "emph emph-" + render)
 				}
-				spanClasses = "emph emph-" + render
-			} else {
-				spanClasses = token.Name.Local
+			case "lb":
+				{
+					result += "<br>"
+					needClosingTag = false
+				}
 			}
 
-			result += fmt.Sprintf("<span class=\"%s\">", spanClasses)
 		case xml.EndElement:
-			result += "</span>"
+			if (needClosingTag) {
+				result += "</span>"
+			} else {
+				// Reset
+				needClosingTag = true
+			}
 		case xml.CharData:
 			result += string(token)
 		}
