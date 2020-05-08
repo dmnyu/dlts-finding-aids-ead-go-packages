@@ -177,12 +177,6 @@ type GenreForm struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
-type GeogName struct {
-	Source string `xml:"source,attr" json:"source,attr,omitempty"`
-
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
 type Head struct {
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 	Value  string    `xml:",innerxml" json:"value,chardata,omitempty"`
