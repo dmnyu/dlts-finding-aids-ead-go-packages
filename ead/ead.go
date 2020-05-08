@@ -146,6 +146,10 @@ type Emph struct {
 	Render string `xml:"render,attr" json:"render,attr,omitempty"`
 }
 
+type Extent struct {
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
 type ExtPtr struct {
 	Href  string `xml:"href,attr" json:"href,attr,omitempty"`
 	Show  string `xml:"show,attr" json:"show,attr,omitempty"`
@@ -217,9 +221,7 @@ type PersName struct {
 }
 
 type PhysDesc struct {
-	Extent struct {
-		Value string `xml:",chardata" json:"value,chardata,omitempty"`
-	} `xml:"extent" json:"extent,omitempty"`
+	Extent []*Extent `xml:"extent" json:"extent,omitempty"`
 }
 
 type PhysLoc struct {
