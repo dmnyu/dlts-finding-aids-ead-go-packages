@@ -163,7 +163,7 @@ type FamName struct {
 
 type FileDesc struct {
 	TitleStmt TitleStmt `xml:"titlestmt" json:"titlestmt,omitempty"`
-	PublicationStmt []*PublicationStmt `xml:"publicationstmt" json:"publicationstmt,omitempty"`
+	NoteStmt []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
 	EditionStmt     struct {
 		P []*P `xml:"p" json:"p,omitempty"`
 	} `xml:"editionstmt" json:"editionstmt,omitempty"`
@@ -227,12 +227,6 @@ type ProfileDesc struct {
 	Creation  []*Creation `xml:"creation" json:"creation,omitempty"`
 	LangUsage []string `xml:"langusage" json:"langusage,omitempty"`
 	DescRules []*DescRules `xml:"descrules" json:"descrules,omitempty"`
-}
-
-type PublicationStmt struct {
-	Publisher []string       `xml:"publisher" json:"publisher,omitempty"`
-	P         []*P           `xml:"p" json:"p,omitempty"`
-	Address   []*AddressLine `xml:"address" json:"address,omitempty"`
 }
 
 type Repository struct {
