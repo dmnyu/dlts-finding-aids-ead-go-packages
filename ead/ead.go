@@ -178,7 +178,6 @@ type FormattedNoteWithHead struct {
 
 type GenreForm struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
-	Source string `xml:"source,attr" json:"source,attr,omitempty"`
 }
 
 type GeogName struct {
