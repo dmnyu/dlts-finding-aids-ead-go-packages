@@ -148,7 +148,7 @@ type Extent struct {
 type ExtPtr struct {
 	Href  string `xml:"href,attr" json:"href,attr,omitempty"`
 	Show  string `xml:"show,attr" json:"show,attr,omitempty"`
-	Title string `xml:"title,attr" json:"title,attr,omitempty"`
+	Title []*Title `xml:"title,attr" json:"title,attr,omitempty"`
 	Type  string `xml:"type,attr" json:"type,attr,omitempty"`
 }
 
@@ -251,11 +251,12 @@ type Subject struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type Title struct {
+	Render string `xml:"render,attr" json:"render,attr,omitempty"`
+}
+
 type TitleProper struct {
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
-	Num   []string `xml:"num" json:"num,omitempty"`
-	Emph  []*Emph  `xml:"emph" json:"emph,omitempty"`
-	Lb    []string `xml:"lb" json:"lb,omitempty"`
 }
 
 type TitleStmt struct {
