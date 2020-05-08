@@ -205,6 +205,10 @@ type Language struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type LangUsage struct {
+	LangCode   string `xml:"langcode,attr" json:"langcode,attr,omitempty"`
+}
+
 type Occupation struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 	Source string `xml:"source,attr" json:"source,attr,omitempty"`
@@ -236,7 +240,7 @@ type PhysLoc struct {
 
 type ProfileDesc struct {
 	Creation  []*Creation  `xml:"creation" json:"creation,omitempty"`
-	LangUsage []string     `xml:"langusage" json:"langusage,omitempty"`
+	LangUsage []*LangUsage `xml:"langusage" json:"langusage,omitempty"`
 	DescRules []*DescRules `xml:"descrules" json:"descrules,omitempty"`
 }
 
