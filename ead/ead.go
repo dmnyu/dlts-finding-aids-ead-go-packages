@@ -87,11 +87,11 @@ type Change struct {
 }
 
 type ControlAccess struct {
+	FamName    []*FamName    `xml:"famname" json:"famname,omitempty"`
 	GenreForm  []*GenreForm  `xml:"genreform" json:"genreform,omitempty"`
 	PersName   []*PersName   `xml:"persname" json:"persname,omitempty"`
 	Subject    []*Subject    `xml:"subject" json:"subject,omitempty"`
 	CorpName   []*CorpName   `xml:"corpname" json:"corpname,omitempty"`
-	Occupation []*Occupation `xml:"occupation" json:"occupation,omitempty"`
 }
 
 type CorpName struct {
@@ -155,6 +155,10 @@ type ExtPtr struct {
 	Show  string `xml:"show,attr" json:"show,attr,omitempty"`
 	Title string `xml:"title,attr" json:"title,attr,omitempty"`
 	Type  string `xml:"type,attr" json:"type,attr,omitempty"`
+}
+
+type FamName struct {
+	Value    string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type FileDesc struct {
