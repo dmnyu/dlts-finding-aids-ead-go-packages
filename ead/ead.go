@@ -162,16 +162,7 @@ type FamName struct {
 }
 
 type FileDesc struct {
-	TitleStmt struct {
-		TitleProper struct {
-			Value string   `xml:",chardata" json:"value,chardata,omitempty"`
-			Num   []string `xml:"num" json:"num,omitempty"`
-			Emph  []*Emph  `xml:"emph" json:"emph,omitempty"`
-			Lb    []string `xml:"lb" json:"lb,omitempty"`
-		} `xml:"titleproper" json:"titleproper,omitempty"`
-		Author  []string `xml:"author" json:"author,omitempty"`
-		Sponsor []string `xml:"sponsor" json:"sponsor,omitempty"`
-	} `xml:"titlestmt" json:"titlestmt,omitempty"`
+	TitleStmt TitleStmt `xml:"titlestmt" json:"titlestmt,omitempty"`
 	PublicationStmt []*PublicationStmt `xml:"publicationstmt" json:"publicationstmt,omitempty"`
 	EditionStmt     struct {
 		P []*P `xml:"p" json:"p,omitempty"`
@@ -256,6 +247,19 @@ type RevisionDesc struct {
 type Subject struct {
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 	Source string `xml:"source,attr" json:"source,attr,omitempty"`
+}
+
+type TitleProper struct  {
+	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+	Num   []string `xml:"num" json:"num,omitempty"`
+	Emph  []*Emph  `xml:"emph" json:"emph,omitempty"`
+	Lb    []string `xml:"lb" json:"lb,omitempty"`
+}
+
+type TitleStmt struct {
+	TitleProper []*TitleProper `xml:"titleproper" json:"titleproper,omitempty"`
+	Author  []string `xml:"author" json:"author,omitempty"`
+	Sponsor []string `xml:"sponsor" json:"sponsor,omitempty"`
 }
 
 type UnitDate struct {
