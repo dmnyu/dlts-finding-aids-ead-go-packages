@@ -284,24 +284,50 @@ type UnitTitle struct {
 }
 
 func (head *Head) MarshalJSON() ([]byte, error) {
-	result, err := getMarshalledJSONForTextWithTags(head.Value)
+	type HeadWithTags Head
+
+	result, err := getConvertedTextWithTags(head.Value)
 	if err != nil {
 		return nil, err
 	}
 
-	return (result), nil
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*HeadWithTags
+	}{
+		Value : string(result),
+		HeadWithTags: (*HeadWithTags)(head),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
 }
 
 func (p *P) MarshalJSON() ([]byte, error) {
-	result, err := getMarshalledJSONForTextWithTags(p.Value)
+	type PWithTags P
+
+	result, err := getConvertedTextWithTags(p.Value)
 	if err != nil {
 		return nil, err
 	}
 
-	return (result), nil
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*PWithTags
+	}{
+		Value : string(result),
+		PWithTags: (*PWithTags)(p),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
 }
 
-func getMarshalledJSONForTextWithTags(text string) ([]byte, error) {
+func getConvertedTextWithTags(text string) ([]byte, error) {
 	decoder := xml.NewDecoder(strings.NewReader(text))
 
 	var result string
@@ -338,10 +364,5 @@ func getMarshalledJSONForTextWithTags(text string) ([]byte, error) {
 		}
 	}
 
-	jsonData, err := json.Marshal(result)
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
+	return []byte(result), nil
 }
