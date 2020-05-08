@@ -241,11 +241,10 @@ type ProfileDesc struct {
 
 type Repository struct {
 	CorpName []*CorpName `xml:"corpname" json:"corpname,omitempty"`
-	Emph     []*Emph     `xml:"emph" json:"emph,omitempty"`
 }
 
 type RevisionDesc struct {
-	Change Change `xml:"change" json:"change,omitempty"`
+	Change []*Change `xml:"change" json:"change,omitempty"`
 }
 
 type Subject struct {
