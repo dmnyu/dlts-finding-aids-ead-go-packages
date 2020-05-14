@@ -280,7 +280,7 @@ type UnitID struct {
 
 type UnitTitle struct {
 	Title []*Title `xml:"title" json:"title,omitempty"`
-	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 func (abstract *Abstract) MarshalJSON() ([]byte, error) {
@@ -341,6 +341,28 @@ func (p *P) MarshalJSON() ([]byte, error) {
 	}{
 		Value : string(result),
 		PWithTags: (*PWithTags)(p),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (unitTitle *UnitTitle) MarshalJSON() ([]byte, error) {
+	type UnitTitleWithTags UnitTitle
+
+	result, err := getConvertedTextWithTags(unitTitle.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*UnitTitleWithTags
+	}{
+		Value :            string(result),
+		UnitTitleWithTags: (*UnitTitleWithTags)(unitTitle),
 	})
 	if err != nil {
 		return nil, err
