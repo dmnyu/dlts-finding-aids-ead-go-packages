@@ -43,7 +43,7 @@ type ArchDesc struct {
 	AltFormatAvailable []*FormattedNoteWithHead `xml:"altformatavailable" json:"altformatavailable,omitempty"`
 	Appraisal          []*FormattedNoteWithHead `xml:"appraisal" json:"appraisal,omitempty"`
 	Arrangement        []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
-	Bibliography       []*FormattedNoteWithHead `xml:"bibliography" json:"bibliography,omitempty"`
+	Bibliography       []*Bibliography          `xml:"bibliography" json:"bibliography,omitempty"`
 	BiogHist           []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
 	ControlAccess      []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
 	CustodHist         []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
@@ -57,6 +57,17 @@ type ArchDesc struct {
 	ScopeContent       []*FormattedNoteWithHead `xml:"scopecontent" json:"scopecontent,omitempty"`
 	SeparatedMaterial  []*FormattedNoteWithHead `xml:"separatedmaterial" json:"separatedmaterial,omitempty"`
 	UserRestrict       []*FormattedNoteWithHead `xml:"userestrict" json:"userestrict,omitempty"`
+}
+
+type Bibliography struct {
+	ID string `xml:"id,attr" json:"id,attr,omitempty"`
+
+	Head   []Head    `xml:"head,omitemtpy" json:"head,omitempty"`
+	BibRef []*BibRef `xml:"bibref,omitempty" json:"bibref,omitempty"`
+}
+
+type BibRef struct {
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type C struct {
