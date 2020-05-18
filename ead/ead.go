@@ -162,7 +162,7 @@ type ExtPtr struct {
 type FileDesc struct {
 	NoteStmt        []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
 	PublicationStmt []*PublicationStmt       `xml:"publicationstmt" json:"publicationstmt,omitempty"`
-	TitleStmt       TitleStmt                `xml:"titlestmt" json:"titlestmt,omitempty"`
+	TitleStmt       []*TitleStmt             `xml:"titlestmt" json:"titlestmt,omitempty"`
 }
 
 // "eadnote" in current draft of the data model
