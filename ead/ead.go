@@ -84,7 +84,6 @@ type C struct {
 	ControlAccess   []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
 	CustodHist      []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
 	DID             []*DID                   `xml:"did,omitempty" json:"did,omitempty"`
-	DSC             []*DSC                   `xml:"dsc,omitempty" json:"dsc,omitempty"`
 	PhysTech        []*FormattedNoteWithHead `xml:"phystech,omitempty" json:"phystech,omitempty"`
 	PreferCite      []*FormattedNoteWithHead `xml:"prefercite,omitempty" json:"prefercite,omitempty"`
 	ProcessInfo     []*FormattedNoteWithHead `xml:"processinfo,omitempty" json:"processinfo,omitempty"`
