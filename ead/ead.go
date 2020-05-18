@@ -217,6 +217,8 @@ type PhysDesc struct {
 }
 
 type PhysLoc struct {
+	ID string `xml:"id,attr" json:"id,attr,omitempty"`
+
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
