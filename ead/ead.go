@@ -17,7 +17,7 @@ const (
 )
 
 type EAD struct {
-	ArchDesc  *ArchDesc  `xml:"archdesc" json:"archdesc,omitempty"`
+	ArchDesc  *ArchDesc    `xml:"archdesc" json:"archdesc,omitempty"`
 	EADHeader []*EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
 }
 
@@ -35,7 +35,7 @@ type AddressLine struct {
 }
 
 type ArchDesc struct {
-	Level              string                   `xml:"level,attr" json:"level,attr,omitempty"`
+	Level string `xml:"level,attr" json:"level,attr,omitempty"`
 
 	AccessRestrict     []*FormattedNoteWithHead `xml:"accessrestrict" json:"accessrestrict,omitempty"`
 	Accruals           []*FormattedNoteWithHead `xml:"accruals" json:"accruals,omitempty"`
@@ -94,21 +94,21 @@ type C struct {
 
 type Change struct {
 	Date  []string `xml:"date" json:"date,omitempty"`
-	Item  []*Item `xml:"item" json:"item,omitempty"`
-	Value string  `xml:",chardata" json:"value,chardata,omitempty"`
+	Item  []*Item  `xml:"item" json:"item,omitempty"`
+	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type ControlAccess struct {
-	CorpName  []string  `xml:"corpname" json:"corpname,omitempty"`
-	FamName   []string   `xml:"famname" json:"famname,omitempty"`
+	CorpName  []string `xml:"corpname" json:"corpname,omitempty"`
+	FamName   []string `xml:"famname" json:"famname,omitempty"`
 	GenreForm []string `xml:"genreform" json:"genreform,omitempty"`
-	PersName  []string  `xml:"persname" json:"persname,omitempty"`
-	Subject   []string   `xml:"subject" json:"subject,omitempty"`
+	PersName  []string `xml:"persname" json:"persname,omitempty"`
+	Subject   []string `xml:"subject" json:"subject,omitempty"`
 }
 
 type Creation struct {
 	Date  []string `xml:"date" json:"date,omitempty"`
-	Value string  `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type DescRules struct {
@@ -143,7 +143,7 @@ type EADID struct {
 	MainAgencyCode string `xml:"mainagencycode,attr" json:"mainagencycode,attr,omitempty"`
 	URL            string `xml:"url,attr" json:"url,attr,omitempty"`
 
-	Value          string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Extent struct {
@@ -165,7 +165,7 @@ type FileDesc struct {
 
 // "eadnote" in current draft of the data model
 type FormattedNoteWithHead struct {
-	ID   string `xml:"id,attr" json:"id,attr,omitempty"`
+	ID string `xml:"id,attr" json:"id,attr,omitempty"`
 
 	Head []Head `xml:"head,omitemtpy" json:"head,omitempty"`
 	P    []*P   `xml:"p,omitempty" json:"p,omitempty"`
@@ -181,7 +181,7 @@ type Item struct {
 }
 
 type LangMaterial struct {
-	ID       string      `xml:"id,attr" json:"id,attr,omitempty"`
+	ID string `xml:"id,attr" json:"id,attr,omitempty"`
 
 	Language []*Language `xml:"language" json:"language,omitempty"`
 	Value    string      `xml:",chardata" json:"value,chardata,omitempty"`
@@ -199,13 +199,13 @@ type LangUsage struct {
 }
 
 type Origination struct {
-	Label    string      `xml:"label,attr" json:"label,attr,omitempty"`
+	Label string `xml:"label,attr" json:"label,attr,omitempty"`
 
 	PersName []*PersName `xml:"persname"   json:"persname,omitempty"`
 }
 
 type P struct {
-	ID    string `xml:"id,attr" json:"id,attr,omitempty"`
+	ID string `xml:"id,attr" json:"id,attr,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -225,9 +225,9 @@ type ProfileDesc struct {
 }
 
 type PublicationStmt struct {
-	Address     []*AddressLine `xml:"address" json:"address,omitempty"`
-	Publisher   string         `xml:"publication" json:"publication,omitempty"`
-	P           []*P           `xml:"p" json:"p,omitempty"`
+	Address   []*AddressLine `xml:"address" json:"address,omitempty"`
+	Publisher string         `xml:"publication" json:"publication,omitempty"`
+	P         []*P           `xml:"p" json:"p,omitempty"`
 }
 
 type Repository struct {
@@ -257,7 +257,7 @@ type UnitDate struct {
 	Normal string `xml:"normal,attr" json:"normal,attr,omitempty"`
 	Type   string `xml:"type,attr" json:"type,attr,omitempty"`
 
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type UnitID struct {
@@ -266,7 +266,7 @@ type UnitID struct {
 
 type UnitTitle struct {
 	Title []*Title `xml:"title" json:"title,omitempty"`
-	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
+	Value string   `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 func (abstract *Abstract) MarshalJSON() ([]byte, error) {
@@ -281,7 +281,7 @@ func (abstract *Abstract) MarshalJSON() ([]byte, error) {
 		Value string `json:"value,chardata,omitempty"`
 		*AbstractWithTags
 	}{
-		Value : string(result),
+		Value:            string(result),
 		AbstractWithTags: (*AbstractWithTags)(abstract),
 	})
 	if err != nil {
@@ -303,7 +303,7 @@ func (head *Head) MarshalJSON() ([]byte, error) {
 		Value string `json:"value,chardata,omitempty"`
 		*HeadWithTags
 	}{
-		Value : string(result),
+		Value:        string(result),
 		HeadWithTags: (*HeadWithTags)(head),
 	})
 	if err != nil {
@@ -325,7 +325,7 @@ func (p *P) MarshalJSON() ([]byte, error) {
 		Value string `json:"value,chardata,omitempty"`
 		*PWithTags
 	}{
-		Value : string(result),
+		Value:     string(result),
 		PWithTags: (*PWithTags)(p),
 	})
 	if err != nil {
@@ -347,7 +347,7 @@ func (unitTitle *UnitTitle) MarshalJSON() ([]byte, error) {
 		Value string `json:"value,chardata,omitempty"`
 		*UnitTitleWithTags
 	}{
-		Value :            string(result),
+		Value:             string(result),
 		UnitTitleWithTags: (*UnitTitleWithTags)(unitTitle),
 	})
 	if err != nil {
