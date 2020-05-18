@@ -111,10 +111,6 @@ type Creation struct {
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
-type DescRules struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
 type DID struct {
 	Abstract     []*Abstract     `xml:"abstract" json:"abstract,omitempty"`
 	LangMaterial []*LangMaterial `xml:"langmaterial" json:"langmaterial,omitempty"`
@@ -224,7 +220,7 @@ type PhysLoc struct {
 
 type ProfileDesc struct {
 	Creation  []*Creation  `xml:"creation" json:"creation,omitempty"`
-	DescRules []*DescRules `xml:"descrules" json:"descrules,omitempty"`
+	DescRules []*string `xml:"descrules" json:"descrules,omitempty"`
 	LangUsage []*LangUsage `xml:"langusage" json:"langusage,omitempty"`
 }
 
