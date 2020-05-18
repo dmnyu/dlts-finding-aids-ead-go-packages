@@ -93,7 +93,7 @@ type C struct {
 }
 
 type Change struct {
-	Date  []*Date `xml:"date" json:"date,omitempty"`
+	Date  []string `xml:"date" json:"date,omitempty"`
 	Item  []*Item `xml:"item" json:"item,omitempty"`
 	Value string  `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -107,12 +107,8 @@ type ControlAccess struct {
 }
 
 type Creation struct {
-	Date  []*Date `xml:"date" json:"date,omitempty"`
+	Date  []string `xml:"date" json:"date,omitempty"`
 	Value string  `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
-type Date struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type DescRules struct {
