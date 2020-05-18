@@ -128,9 +128,10 @@ type DID struct {
 }
 
 type DSC struct {
-	C []*C `xml:"c,omitempty" json:"c,omitempty"`
+	C    []*C   `xml:"c,omitempty" json:"c,omitempty"`
 	Head []Head `xml:"head,omitemtpy" json:"head,omitempty"`
-	P    []*P   `xml:"p,omitempty" json:"p,omitempty"`}
+	P    []*P   `xml:"p,omitempty" json:"p,omitempty"`
+}
 
 type EADHeader struct {
 	EADID        []*EADID        `xml:"eadid" json:"eadid,omitempty"`
