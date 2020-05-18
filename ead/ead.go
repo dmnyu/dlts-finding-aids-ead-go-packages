@@ -99,15 +99,11 @@ type Change struct {
 }
 
 type ControlAccess struct {
-	CorpName  []*CorpName  `xml:"corpname" json:"corpname,omitempty"`
-	FamName   []*FamName   `xml:"famname" json:"famname,omitempty"`
-	GenreForm []*GenreForm `xml:"genreform" json:"genreform,omitempty"`
-	PersName  []*PersName  `xml:"persname" json:"persname,omitempty"`
-	Subject   []*Subject   `xml:"subject" json:"subject,omitempty"`
-}
-
-type CorpName struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	CorpName  []string  `xml:"corpname" json:"corpname,omitempty"`
+	FamName   []string   `xml:"famname" json:"famname,omitempty"`
+	GenreForm []string `xml:"genreform" json:"genreform,omitempty"`
+	PersName  []string  `xml:"persname" json:"persname,omitempty"`
+	Subject   []string   `xml:"subject" json:"subject,omitempty"`
 }
 
 type Creation struct {
@@ -165,10 +161,6 @@ type ExtPtr struct {
 	Type  string   `xml:"type,attr" json:"type,attr,omitempty"`
 }
 
-type FamName struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
 type FileDesc struct {
 	NoteStmt        []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
 	PublicationStmt []*PublicationStmt       `xml:"publicationstmt" json:"publicationstmt,omitempty"`
@@ -181,10 +173,6 @@ type FormattedNoteWithHead struct {
 
 	Head []Head `xml:"head,omitemtpy" json:"head,omitempty"`
 	P    []*P   `xml:"p,omitempty" json:"p,omitempty"`
-}
-
-type GenreForm struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Head struct {
@@ -226,10 +214,6 @@ type P struct {
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
-type PersName struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
 type PhysDesc struct {
 	Extent []*Extent `xml:"extent" json:"extent,omitempty"`
 }
@@ -251,15 +235,11 @@ type PublicationStmt struct {
 }
 
 type Repository struct {
-	CorpName []*CorpName `xml:"corpname" json:"corpname,omitempty"`
+	CorpName []string `xml:"corpname" json:"corpname,omitempty"`
 }
 
 type RevisionDesc struct {
 	Change []*Change `xml:"change" json:"change,omitempty"`
-}
-
-type Subject struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Title struct {
