@@ -129,7 +129,8 @@ type DID struct {
 
 type DSC struct {
 	C []*C `xml:"c,omitempty" json:"c,omitempty"`
-}
+	Head []Head `xml:"head,omitemtpy" json:"head,omitempty"`
+	P    []*P   `xml:"p,omitempty" json:"p,omitempty"`}
 
 type EADHeader struct {
 	EADID        []*EADID        `xml:"eadid" json:"eadid,omitempty"`
@@ -201,7 +202,7 @@ type LangUsage struct {
 type Origination struct {
 	Label string `xml:"label,attr" json:"label,attr,omitempty"`
 
-	PersName []*PersName `xml:"persname"   json:"persname,omitempty"`
+	PersName []string `xml:"persname"   json:"persname,omitempty"`
 }
 
 type P struct {
