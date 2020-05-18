@@ -149,10 +149,10 @@ type Extent struct {
 }
 
 type ExtPtr struct {
-	Href  string   `xml:"href,attr" json:"href,attr,omitempty"`
-	Show  string   `xml:"show,attr" json:"show,attr,omitempty"`
-	Title string   `xml:"title,attr" json:"title,attr,omitempty"`
-	Type  string   `xml:"type,attr" json:"type,attr,omitempty"`
+	Href  string `xml:"href,attr" json:"href,attr,omitempty"`
+	Show  string `xml:"show,attr" json:"show,attr,omitempty"`
+	Title string `xml:"title,attr" json:"title,attr,omitempty"`
+	Type  string `xml:"type,attr" json:"type,attr,omitempty"`
 }
 
 type FileDesc struct {
@@ -220,7 +220,7 @@ type PhysLoc struct {
 
 type ProfileDesc struct {
 	Creation  []*Creation  `xml:"creation" json:"creation,omitempty"`
-	DescRules []*string `xml:"descrules" json:"descrules,omitempty"`
+	DescRules []*string    `xml:"descrules" json:"descrules,omitempty"`
 	LangUsage []*LangUsage `xml:"langusage" json:"langusage,omitempty"`
 }
 
