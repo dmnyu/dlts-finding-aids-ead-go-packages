@@ -155,7 +155,7 @@ type Extent struct {
 type ExtPtr struct {
 	Href  string   `xml:"href,attr" json:"href,attr,omitempty"`
 	Show  string   `xml:"show,attr" json:"show,attr,omitempty"`
-	Title []*Title `xml:"title,attr" json:"title,attr,omitempty"`
+	Title string   `xml:"title,attr" json:"title,attr,omitempty"`
 	Type  string   `xml:"type,attr" json:"type,attr,omitempty"`
 }
 
