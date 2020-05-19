@@ -375,7 +375,7 @@ func getConvertedTextWithTags(text string) ([]byte, error) {
 		case xml.StartElement:
 			switch token.Name.Local {
 			default:
-				result += fmt.Sprintf("<span class=\"%s\">", token.Name.Local)
+				result += fmt.Sprintf("<span class=\"ead-%s\">", token.Name.Local)
 			case "emph":
 				{
 					var render string
@@ -385,7 +385,7 @@ func getConvertedTextWithTags(text string) ([]byte, error) {
 							break
 						}
 					}
-					result += fmt.Sprintf("<span class=\"%s\">", "emph emph-" + render)
+					result += fmt.Sprintf("<span class=\"%s\">", "ead-emph ead-emph-" + render)
 				}
 			case "lb":
 				{
