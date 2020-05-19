@@ -5,6 +5,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io"
+	"regexp"
 	"strings"
 )
 
@@ -210,6 +211,7 @@ type P struct {
 
 type PhysDesc struct {
 	Extent []*Extent `xml:"extent" json:"extent,omitempty"`
+	Value  string    `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type PhysLoc struct {
@@ -327,6 +329,35 @@ func (p *P) MarshalJSON() ([]byte, error) {
 	}{
 		Value:     string(result),
 		PWithTags: (*PWithTags)(p),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (physDesc *PhysDesc) MarshalJSON() ([]byte, error) {
+	type PhysDescWithTags PhysDesc
+
+	containsNonWhitespace, err := regexp.MatchString(`\S`, physDesc.Value)
+	if (err != nil) {
+		return nil, err
+	}
+
+	var value string
+	if (containsNonWhitespace) {
+		value = physDesc.Value
+	} else {
+		value = ""
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*PhysDescWithTags
+	}{
+		Value:            value,
+		PhysDescWithTags: (*PhysDescWithTags)(physDesc),
 	})
 	if err != nil {
 		return nil, err
