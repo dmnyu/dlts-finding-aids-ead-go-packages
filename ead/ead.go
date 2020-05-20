@@ -293,6 +293,28 @@ func (abstract *Abstract) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (bibRef *BibRef) MarshalJSON() ([]byte, error) {
+	type BibRefWithTags BibRef
+
+	result, err := getConvertedTextWithTags(bibRef.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*BibRefWithTags
+	}{
+		Value:            string(result),
+		BibRefWithTags: (*BibRefWithTags)(bibRef),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (head *Head) MarshalJSON() ([]byte, error) {
 	type HeadWithTags Head
 
