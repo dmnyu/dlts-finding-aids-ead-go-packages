@@ -365,12 +365,12 @@ func (physDesc *PhysDesc) MarshalJSON() ([]byte, error) {
 	type PhysDescWithTags PhysDesc
 
 	containsNonWhitespace, err := regexp.MatchString(`\S`, physDesc.Value)
-	if (err != nil) {
+	if err != nil {
 		return nil, err
 	}
 
 	var value string
-	if (containsNonWhitespace) {
+	if containsNonWhitespace {
 		value = physDesc.Value
 	} else {
 		value = ""
@@ -450,7 +450,7 @@ func getConvertedTextWithTags(text string) ([]byte, error) {
 			}
 
 		case xml.EndElement:
-			if (needClosingTag) {
+			if needClosingTag {
 				result += "</span>"
 			} else {
 				// Reset
