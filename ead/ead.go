@@ -100,13 +100,13 @@ type Change struct {
 }
 
 type ControlAccess struct {
-	CorpName  []string `xml:"corpname" json:"corpname,omitempty"`
-	FamName   []string `xml:"famname" json:"famname,omitempty"`
-	GenreForm []string `xml:"genreform" json:"genreform,omitempty"`
-	GeogName []string `xml:"geogname" json:"geogname,omitempty"`
+	CorpName   []string `xml:"corpname" json:"corpname,omitempty"`
+	FamName    []string `xml:"famname" json:"famname,omitempty"`
+	GenreForm  []string `xml:"genreform" json:"genreform,omitempty"`
+	GeogName   []string `xml:"geogname" json:"geogname,omitempty"`
 	Occupation []string `xml:"occupation" json:"occupation,omitempty"`
-	PersName  []string `xml:"persname" json:"persname,omitempty"`
-	Subject   []string `xml:"subject" json:"subject,omitempty"`
+	PersName   []string `xml:"persname" json:"persname,omitempty"`
+	Subject    []string `xml:"subject" json:"subject,omitempty"`
 }
 
 type Creation struct {
@@ -307,7 +307,7 @@ func (bibRef *BibRef) MarshalJSON() ([]byte, error) {
 		Value string `json:"value,chardata,omitempty"`
 		*BibRefWithTags
 	}{
-		Value:            string(result),
+		Value:          string(result),
 		BibRefWithTags: (*BibRefWithTags)(bibRef),
 	})
 	if err != nil {
