@@ -100,11 +100,13 @@ type Change struct {
 }
 
 type ControlAccess struct {
-	CorpName  []string `xml:"corpname" json:"corpname,omitempty"`
-	FamName   []string `xml:"famname" json:"famname,omitempty"`
-	GenreForm []string `xml:"genreform" json:"genreform,omitempty"`
-	PersName  []string `xml:"persname" json:"persname,omitempty"`
-	Subject   []string `xml:"subject" json:"subject,omitempty"`
+	CorpName   []string `xml:"corpname" json:"corpname,omitempty"`
+	FamName    []string `xml:"famname" json:"famname,omitempty"`
+	GenreForm  []string `xml:"genreform" json:"genreform,omitempty"`
+	GeogName   []string `xml:"geogname" json:"geogname,omitempty"`
+	Occupation []string `xml:"occupation" json:"occupation,omitempty"`
+	PersName   []string `xml:"persname" json:"persname,omitempty"`
+	Subject    []string `xml:"subject" json:"subject,omitempty"`
 }
 
 type Creation struct {
@@ -305,7 +307,7 @@ func (bibRef *BibRef) MarshalJSON() ([]byte, error) {
 		Value string `json:"value,chardata,omitempty"`
 		*BibRefWithTags
 	}{
-		Value:            string(result),
+		Value:          string(result),
 		BibRefWithTags: (*BibRefWithTags)(bibRef),
 	})
 	if err != nil {
@@ -363,12 +365,12 @@ func (physDesc *PhysDesc) MarshalJSON() ([]byte, error) {
 	type PhysDescWithTags PhysDesc
 
 	containsNonWhitespace, err := regexp.MatchString(`\S`, physDesc.Value)
-	if (err != nil) {
+	if err != nil {
 		return nil, err
 	}
 
 	var value string
-	if (containsNonWhitespace) {
+	if containsNonWhitespace {
 		value = physDesc.Value
 	} else {
 		value = ""
@@ -448,7 +450,7 @@ func getConvertedTextWithTags(text string) ([]byte, error) {
 			}
 
 		case xml.EndElement:
-			if (needClosingTag) {
+			if needClosingTag {
 				result += "</span>"
 			} else {
 				// Reset
