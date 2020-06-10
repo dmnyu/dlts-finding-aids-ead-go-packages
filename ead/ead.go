@@ -196,7 +196,7 @@ type Language struct {
 }
 
 type LangUsage struct {
-	LangCode string `xml:"langcode,attr" json:"langcode,attr,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Origination struct {
