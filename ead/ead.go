@@ -171,6 +171,7 @@ type ExtRef struct {
 }
 
 type FileDesc struct {
+	EditionStmt     []*P                     `xml:"editionstmt" json:"editionstmt,omitempty"`
 	NoteStmt        []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
 	PublicationStmt []*PublicationStmt       `xml:"publicationstmt" json:"publicationstmt,omitempty"`
 	TitleStmt       []*TitleStmt             `xml:"titlestmt" json:"titlestmt,omitempty"`
