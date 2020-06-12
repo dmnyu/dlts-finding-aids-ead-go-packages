@@ -159,6 +159,13 @@ type ExtPtr struct {
 	Type  string `xml:"type,attr" json:"type,attr,omitempty"`
 }
 
+type ExtRef struct {
+	Href  string `xml:"href,attr" json:"href,attr,omitempty"`
+	Show  string `xml:"show,attr" json:"show,attr,omitempty"`
+	Title string `xml:"title,attr" json:"title,attr,omitempty"`
+	Type  string `xml:"type,attr" json:"type,attr,omitempty"`
+}
+
 type FileDesc struct {
 	NoteStmt        []*FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
 	PublicationStmt []*PublicationStmt       `xml:"publicationstmt" json:"publicationstmt,omitempty"`
