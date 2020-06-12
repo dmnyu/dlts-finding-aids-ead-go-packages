@@ -102,6 +102,7 @@ type Change struct {
 type ControlAccess struct {
 	CorpName   []string `xml:"corpname" json:"corpname,omitempty"`
 	FamName    []string `xml:"famname" json:"famname,omitempty"`
+	Function   []string `xml:"function" json:"function,omitempty"`
 	GenreForm  []string `xml:"genreform" json:"genreform,omitempty"`
 	GeogName   []string `xml:"geogname" json:"geogname,omitempty"`
 	Occupation []string `xml:"occupation" json:"occupation,omitempty"`
