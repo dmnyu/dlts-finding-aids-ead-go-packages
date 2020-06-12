@@ -221,6 +221,7 @@ type NameWithRole struct {
 type Origination struct {
 	Label string `xml:"label,attr" json:"label,attr,omitempty"`
 
+	CorpName []NameWithRole `xml:"corpname"   json:"corpname,omitempty"`
 	PersName []NameWithRole `xml:"persname"   json:"persname,omitempty"`
 }
 
