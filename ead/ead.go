@@ -100,14 +100,18 @@ type Change struct {
 }
 
 type ControlAccess struct {
-	CorpName   []string `xml:"corpname" json:"corpname,omitempty"`
+	CorpName   []NameWithRole `xml:"corpname" json:"corpname,omitempty"`
 	FamName    []string `xml:"famname" json:"famname,omitempty"`
 	Function   []string `xml:"function" json:"function,omitempty"`
 	GenreForm  []string `xml:"genreform" json:"genreform,omitempty"`
 	GeogName   []string `xml:"geogname" json:"geogname,omitempty"`
 	Occupation []string `xml:"occupation" json:"occupation,omitempty"`
-	PersName   []string `xml:"persname" json:"persname,omitempty"`
+	PersName   []NameWithRole `xml:"persname" json:"persname,omitempty"`
 	Subject    []string `xml:"subject" json:"subject,omitempty"`
+}
+
+type CorpName struct {
+	NameWithRole
 }
 
 type Creation struct {
@@ -207,10 +211,16 @@ type LangUsage struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type NameWithRole struct {
+	Role string `xml:"role,attr" json:"role,attr,omitempty"`
+
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
+}
+
 type Origination struct {
 	Label string `xml:"label,attr" json:"label,attr,omitempty"`
 
-	PersName []string `xml:"persname"   json:"persname,omitempty"`
+	PersName []NameWithRole `xml:"persname"   json:"persname,omitempty"`
 }
 
 type P struct {
@@ -243,7 +253,7 @@ type PublicationStmt struct {
 }
 
 type Repository struct {
-	CorpName []string `xml:"corpname" json:"corpname,omitempty"`
+	CorpName []NameWithRole `xml:"corpname" json:"corpname,omitempty"`
 }
 
 type RevisionDesc struct {
@@ -336,7 +346,7 @@ func (controlAccess *ControlAccess) MarshalJSON() ([]byte, error) {
 	subfieldDelimiterRegex := regexp.MustCompile(" \\|. ")
 	replacementString := " -- "
 
-	regexpReplaceAllLiteralStringInTextSlice(
+	regexpReplaceAllLiteralStringInNameWithRoleSlice(
 		controlAccess.CorpName, subfieldDelimiterRegex, replacementString)
 	regexpReplaceAllLiteralStringInTextSlice(
 		controlAccess.FamName, subfieldDelimiterRegex, replacementString)
@@ -346,7 +356,7 @@ func (controlAccess *ControlAccess) MarshalJSON() ([]byte, error) {
 		controlAccess.GeogName, subfieldDelimiterRegex, replacementString)
 	regexpReplaceAllLiteralStringInTextSlice(
 		controlAccess.Occupation, subfieldDelimiterRegex, replacementString)
-	regexpReplaceAllLiteralStringInTextSlice(
+	regexpReplaceAllLiteralStringInNameWithRoleSlice(
 		controlAccess.PersName, subfieldDelimiterRegex, replacementString)
 	regexpReplaceAllLiteralStringInTextSlice(
 		controlAccess.Subject, subfieldDelimiterRegex, replacementString)
@@ -510,11 +520,22 @@ func getConvertedTextWithTags(text string) ([]byte, error) {
 	return []byte(result), nil
 }
 
+func regexpReplaceAllLiteralStringInNameWithRoleSlice( nameWithRoleSlice []NameWithRole, re *regexp.Regexp, replacementString string ) {
+	nameWithRoleSliceWithSubfieldDelimitersConverted := nameWithRoleSlice[:0]
+	for _, nameWithRole := range nameWithRoleSlice {
+		re.ReplaceAllLiteralString(nameWithRole.Value, replacementString)
+		nameWithRoleSliceWithSubfieldDelimitersConverted = append(
+			nameWithRoleSliceWithSubfieldDelimitersConverted,
+			nameWithRole,
+		)
+	}
+}
+
 func regexpReplaceAllLiteralStringInTextSlice( textSlice []string, re *regexp.Regexp, replacementString string ) {
-	textSliceWithSubfieldDelimitersConverted := textSlice[:0]
+	nameWithRoleSliceWithSubfieldDelimitersConverted := textSlice[:0]
 	for _, text := range textSlice {
-		textSliceWithSubfieldDelimitersConverted = append(
-			textSliceWithSubfieldDelimitersConverted,
+		nameWithRoleSliceWithSubfieldDelimitersConverted = append(
+			nameWithRoleSliceWithSubfieldDelimitersConverted,
 			re.ReplaceAllLiteralString(text, replacementString),
 		)
 	}
