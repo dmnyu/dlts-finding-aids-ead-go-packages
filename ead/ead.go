@@ -420,7 +420,7 @@ func (p *P) MarshalJSON() ([]byte, error) {
 }
 
 func (physDesc *PhysDesc) MarshalJSON() ([]byte, error) {
-	type PhysDescWithTags PhysDesc
+	type PhysDescWithNoWhitespaceOnlyValues PhysDesc
 
 	containsNonWhitespace, err := regexp.MatchString(`\S`, physDesc.Value)
 	if err != nil {
@@ -436,10 +436,10 @@ func (physDesc *PhysDesc) MarshalJSON() ([]byte, error) {
 
 	jsonData, err := json.Marshal(&struct {
 		Value string `json:"value,chardata,omitempty"`
-		*PhysDescWithTags
+		*PhysDescWithNoWhitespaceOnlyValues
 	}{
-		Value:            value,
-		PhysDescWithTags: (*PhysDescWithTags)(physDesc),
+		Value:                              value,
+		PhysDescWithNoWhitespaceOnlyValues: (*PhysDescWithNoWhitespaceOnlyValues)(physDesc),
 	})
 	if err != nil {
 		return nil, err
