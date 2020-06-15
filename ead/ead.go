@@ -525,7 +525,7 @@ func getConvertedTextWithTags(text string) ([]byte, error) {
 func regexpReplaceAllLiteralStringInNameWithRoleSlice( nameWithRoleSlice []NameWithRole, re *regexp.Regexp, replacementString string ) {
 	nameWithRoleSliceWithSubfieldDelimitersConverted := nameWithRoleSlice[:0]
 	for _, nameWithRole := range nameWithRoleSlice {
-		re.ReplaceAllLiteralString(nameWithRole.Value, replacementString)
+		nameWithRole.Value = re.ReplaceAllLiteralString(nameWithRole.Value, replacementString)
 		nameWithRoleSliceWithSubfieldDelimitersConverted = append(
 			nameWithRoleSliceWithSubfieldDelimitersConverted,
 			nameWithRole,
