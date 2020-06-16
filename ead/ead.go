@@ -30,6 +30,10 @@ type Abstract struct {
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
+type Address struct {
+	AddressLine []*AddressLine `xml:"addressline" json:"addressline,omitempty"`
+}
+
 type AddressLine struct {
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 	Value  string    `xml:",chardata" json:"value,chardata,omitempty"`
@@ -249,7 +253,7 @@ type ProfileDesc struct {
 }
 
 type PublicationStmt struct {
-	Address   []*AddressLine `xml:"address" json:"address,omitempty"`
+	Address   []*Address     `xml:"address" json:"address,omitempty"`
 	Publisher string         `xml:"publisher" json:"publisher,omitempty"`
 	P         []*P           `xml:"p" json:"p,omitempty"`
 }
