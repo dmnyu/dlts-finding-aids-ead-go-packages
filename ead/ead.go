@@ -457,6 +457,11 @@ func (p *P) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+// The custom marshalling for DID will prevent PhysDesc from having a Value field
+// that is all whitespace if Extent is nil, but won't prevent PhysDesc from having
+// a Value field that is all whitespace if Extent is not nil.
+// We need to convert Value field values like "\n    \n    \n" to empty string
+// so they can be removed by omitempty struct tag.
 func (physDesc *PhysDesc) MarshalJSON() ([]byte, error) {
 	type PhysDescWithNoWhitespaceOnlyValues PhysDesc
 
