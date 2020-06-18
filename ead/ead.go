@@ -1,3 +1,5 @@
+//go:generate go run generate.go
+
 package ead
 
 // Based on: "Data model for parsing EAD <archdesc> elements": https://jira.nyu.edu/jira/browse/FADESIGN-29
