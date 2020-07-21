@@ -47,6 +47,7 @@ func main() {
 		"BibRef",
 		"Head",
 		"P",
+		"TitleProper",
 		"UnitTitle",
 	}
 

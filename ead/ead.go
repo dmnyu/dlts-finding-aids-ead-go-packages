@@ -265,7 +265,7 @@ type Title struct {
 }
 
 type TitleProper struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type TitleStmt struct {
