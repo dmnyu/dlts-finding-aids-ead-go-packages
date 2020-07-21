@@ -96,6 +96,16 @@ type Change struct {
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type Container struct {
+	AltRender string `xml:"altrender,attr" json:"altrender,attr,omitempty"`
+	ID        string `xml:"id,attr" json:"id,attr,omitempty"`
+	Label     string `xml:"label,attr" json:"label,attr,omitempty"`
+	Parent    string `xml:"parent,attr" json:"parent,attr,omitempty"`
+	Type      string `xml:"type,attr" json:"type,attr,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
 type ControlAccess struct {
 	CorpName   []NameWithRole `xml:"corpname" json:"corpname,omitempty"`
 	FamName    []string `xml:"famname" json:"famname,omitempty"`
