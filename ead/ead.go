@@ -96,6 +96,16 @@ type Change struct {
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type Container struct {
+	AltRender string `xml:"altrender,attr" json:"altrender,attr,omitempty"`
+	ID        string `xml:"id,attr" json:"id,attr,omitempty"`
+	Label     string `xml:"label,attr" json:"label,attr,omitempty"`
+	Parent    string `xml:"parent,attr" json:"parent,attr,omitempty"`
+	Type      string `xml:"type,attr" json:"type,attr,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
 type ControlAccess struct {
 	CorpName   []NameWithRole `xml:"corpname" json:"corpname,omitempty"`
 	FamName    []string `xml:"famname" json:"famname,omitempty"`
@@ -118,6 +128,7 @@ type Creation struct {
 
 type DID struct {
 	Abstract     []*Abstract     `xml:"abstract" json:"abstract,omitempty"`
+	Container    []*Container    `xml:"container" json:"container,omitempty"`
 	LangMaterial []*LangMaterial `xml:"langmaterial" json:"langmaterial,omitempty"`
 	Origination  []*Origination  `xml:"origination" json:"origination,omitempty"`
 	PhysDesc     []*PhysDesc     `xml:"physdesc" json:"physdesc,omitempty"`
