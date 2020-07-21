@@ -128,6 +128,7 @@ type Creation struct {
 
 type DID struct {
 	Abstract     []*Abstract     `xml:"abstract" json:"abstract,omitempty"`
+	Container    []*Container    `xml:"container" json:"container,omitempty"`
 	LangMaterial []*LangMaterial `xml:"langmaterial" json:"langmaterial,omitempty"`
 	Origination  []*Origination  `xml:"origination" json:"origination,omitempty"`
 	PhysDesc     []*PhysDesc     `xml:"physdesc" json:"physdesc,omitempty"`
