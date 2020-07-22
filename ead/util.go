@@ -11,6 +11,8 @@ import (
 func getConvertedTextWithTags(text string) ([]byte, error) {
 	return _getConvertedTextWithTags(text, true)
 }
+
+func getConvertedTextWithTagsNoLBConversion(text string) ([]byte, error) {
 	return _getConvertedTextWithTags(text, false)
 }
 
