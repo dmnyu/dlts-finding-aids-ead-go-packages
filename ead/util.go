@@ -38,11 +38,6 @@ func getConvertedTextWithTags(text string) ([]byte, error) {
 					}
 					result += fmt.Sprintf("<span class=\"%s\">", "ead-emph ead-emph-" + render)
 				}
-			case "lb":
-				{
-					result += "<br>"
-					needClosingTag = false
-				}
 			}
 
 		case xml.EndElement:
