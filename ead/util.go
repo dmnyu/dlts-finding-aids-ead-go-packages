@@ -9,10 +9,12 @@ import (
 )
 
 func getConvertedTextWithTags(text string) ([]byte, error) {
+	return _getConvertedTextWithTags(text, true)
+}
 	return _getConvertedTextWithTags(text, false)
 }
 
-func _getConvertedTextWithTags(text string) ([]byte, error) {
+func _getConvertedTextWithTags(text string, convertLBTags bool) ([]byte, error) {
 	decoder := xml.NewDecoder(strings.NewReader(text))
 
 	var result string
@@ -30,7 +32,7 @@ func _getConvertedTextWithTags(text string) ([]byte, error) {
 		case xml.StartElement:
 			switch token.Name.Local {
 			default:
-				result += fmt.Sprintf("<span class=\"ead-%s\">", token.Name.Local)
+				result += _getConvertedTextWithTagsDefault(token.Name.Local)
 			case "emph":
 				{
 					var render string
@@ -44,8 +46,12 @@ func _getConvertedTextWithTags(text string) ([]byte, error) {
 				}
 			case "lb":
 				{
-					result += "<br>"
-					needClosingTag = false
+					if (convertLBTags) {
+						result += "<br>"
+						needClosingTag = false
+					} else {
+						result += _getConvertedTextWithTagsDefault(token.Name.Local)
+					}
 				}
 			}
 
@@ -62,6 +68,10 @@ func _getConvertedTextWithTags(text string) ([]byte, error) {
 	}
 
 	return []byte(result), nil
+}
+
+func _getConvertedTextWithTagsDefault(tagName string) string {
+	return fmt.Sprintf("<span class=\"ead-%s\">", tagName)
 }
 
 func regexpReplaceAllLiteralStringInNameWithRoleSlice( nameWithRoleSlice []NameWithRole, re *regexp.Regexp, replacementString string ) {
