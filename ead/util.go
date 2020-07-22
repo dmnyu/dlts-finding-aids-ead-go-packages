@@ -9,6 +9,10 @@ import (
 )
 
 func getConvertedTextWithTags(text string) ([]byte, error) {
+	return _getConvertedTextWithTags(text, false)
+}
+
+func _getConvertedTextWithTags(text string) ([]byte, error) {
 	decoder := xml.NewDecoder(strings.NewReader(text))
 
 	var result string
