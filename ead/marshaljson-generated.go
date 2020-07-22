@@ -6,6 +6,28 @@ import (
 	"encoding/json"
 )
 
+func (unittitle *UnitTitle) MarshalJSON() ([]byte, error) {
+	type UnitTitleWithTags UnitTitle
+
+	result, err := getConvertedTextWithTags(unittitle.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*UnitTitleWithTags
+	}{
+		Value:             string(result),
+		UnitTitleWithTags: (*UnitTitleWithTags)(unittitle),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (abstract *Abstract) MarshalJSON() ([]byte, error) {
 	type AbstractWithTags Abstract
 
@@ -97,7 +119,7 @@ func (p *P) MarshalJSON() ([]byte, error) {
 func (titleproper *TitleProper) MarshalJSON() ([]byte, error) {
 	type TitleProperWithTags TitleProper
 
-	result, err := getConvertedTextWithTags(titleproper.Value)
+	result, err := getConvertedTextWithTagsNoLBConversion(titleproper.Value)
 	if err != nil {
 		return nil, err
 	}
@@ -108,28 +130,6 @@ func (titleproper *TitleProper) MarshalJSON() ([]byte, error) {
 	}{
 		Value:               string(result),
 		TitleProperWithTags: (*TitleProperWithTags)(titleproper),
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
-}
-
-func (unittitle *UnitTitle) MarshalJSON() ([]byte, error) {
-	type UnitTitleWithTags UnitTitle
-
-	result, err := getConvertedTextWithTags(unittitle.Value)
-	if err != nil {
-		return nil, err
-	}
-
-	jsonData, err := json.Marshal(&struct {
-		Value string `json:"value,chardata,omitempty"`
-		*UnitTitleWithTags
-	}{
-		Value:             string(result),
-		UnitTitleWithTags: (*UnitTitleWithTags)(unittitle),
 	})
 	if err != nil {
 		return nil, err
