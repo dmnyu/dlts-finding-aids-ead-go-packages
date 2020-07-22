@@ -15,7 +15,7 @@ import (
 const marshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeName}}) MarshalJSON() ([]byte, error) {
 	type {{.TypeName}}WithTags {{.TypeName}}
 
-	result, err := getConvertedTextWithTags({{.VarName}}.Value)
+	result, err := {{.ConversionFunction}}({{.VarName}}.Value)
 	if err != nil {
 		return nil, err
 	}
@@ -35,20 +35,21 @@ const marshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeName}}) MarshalJSON(
 }`
 
 func main() {
-	type varAndTypeName struct{
-		VarName string
+	type templateData struct{
+		ConversionFunction string
 		TypeName string
+		VarName string
 	}
 
 	t := template.Must(template.New("").Parse(marshalJSONCodeTemplate))
 
-	typeNames := []string{
-		"Abstract",
-		"BibRef",
-		"Head",
-		"P",
-		"TitleProper",
-		"UnitTitle",
+	conversionFunctionsForTypes := map[string]string{
+		"Abstract" : "getConvertedTextWithTags",
+		"BibRef" : "getConvertedTextWithTags",
+		"Head" : "getConvertedTextWithTags",
+		"P" : "getConvertedTextWithTags",
+		"TitleProper" : "getConvertedTextWithTagsNoLBConversion",
+		"UnitTitle" : "getConvertedTextWithTags",
 	}
 
 	w := new(bytes.Buffer)
@@ -61,12 +62,13 @@ import (
 	"encoding/json"
 )`)
 
-	for _, typeName := range typeNames {
+	for typeName, conversionFunction := range conversionFunctionsForTypes {
 		w.WriteString("\n\n")
 
-		err := t.Execute(w, varAndTypeName{
-			VarName:  strings.ToLower(typeName),
+		err := t.Execute(w, templateData{
+			ConversionFunction : conversionFunction,
 			TypeName: typeName,
+			VarName:  strings.ToLower(typeName),
 		})
 		if err != nil {
 			panic(err)
