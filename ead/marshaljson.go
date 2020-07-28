@@ -5,44 +5,6 @@ import (
 	"regexp"
 )
 
-func (controlAccess *ControlAccess) MarshalJSON() ([]byte, error) {
-	type ControlAccessWithSubfieldDelimiters ControlAccess
-
-	// http://www.loc.gov/marc/specifications/specrecstruc.html
-	// data element identifier:
-	// A one-character code used to identify individual data elements within a
-	// variable field. The data element may be any ASCII lowercase alphabetic,
-	// numeric, or graphic symbol except blank.
-	subfieldDelimiterRegex := regexp.MustCompile(" \\|. ")
-	replacementString := " -- "
-
-	regexpReplaceAllLiteralStringInNameWithRoleSlice(
-		controlAccess.CorpName, subfieldDelimiterRegex, replacementString)
-	regexpReplaceAllLiteralStringInTextSlice(
-		controlAccess.FamName, subfieldDelimiterRegex, replacementString)
-	regexpReplaceAllLiteralStringInTextSlice(
-		controlAccess.GenreForm, subfieldDelimiterRegex, replacementString)
-	regexpReplaceAllLiteralStringInTextSlice(
-		controlAccess.GeogName, subfieldDelimiterRegex, replacementString)
-	regexpReplaceAllLiteralStringInTextSlice(
-		controlAccess.Occupation, subfieldDelimiterRegex, replacementString)
-	regexpReplaceAllLiteralStringInNameWithRoleSlice(
-		controlAccess.PersName, subfieldDelimiterRegex, replacementString)
-	regexpReplaceAllLiteralStringInTextSlice(
-		controlAccess.Subject, subfieldDelimiterRegex, replacementString)
-
-	jsonData, err := json.Marshal(&struct {
-		*ControlAccessWithSubfieldDelimiters
-	}{
-		ControlAccessWithSubfieldDelimiters: (*ControlAccessWithSubfieldDelimiters)(controlAccess),
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
-}
-
 func (did *DID) MarshalJSON() ([]byte, error) {
 	type DIDWithNoEmptyPhysDesc DID
 
