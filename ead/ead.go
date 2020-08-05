@@ -17,8 +17,8 @@ type EAD struct {
 
 // https://jira.nyu.edu/jira/browse/FADESIGN-29 additions
 type Abstract struct {
-	ID    string `xml:"id,attr" json:"id,attr,omitempty"`
-	Label string `xml:"label,attr" json:"label,attr,omitempty"`
+	ID    string `xml:"id,attr" json:"id,omitempty"`
+	Label string `xml:"label,attr" json:"label,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -58,7 +58,7 @@ type ArchDesc struct {
 }
 
 type Bibliography struct {
-	ID string `xml:"id,attr" json:"id,attr,omitempty"`
+	ID string `xml:"id,attr" json:"id,omitempty"`
 
 	Head   []Head    `xml:"head,omitemtpy" json:"head,omitempty"`
 	BibRef []*BibRef `xml:"bibref,omitempty" json:"bibref,omitempty"`
@@ -69,9 +69,9 @@ type BibRef struct {
 }
 
 type C struct {
-	ID         string `xml:"id,attr" json:"id,attr,omitempty"`
-	Level      string `xml:"level,attr" json:"level,attr,omitempty"`
-	OtherLevel string `xml:"otherlevel,attr" json:"otherlevel,attr,omitempty"`
+	ID         string `xml:"id,attr" json:"id,omitempty"`
+	Level      string `xml:"level,attr" json:"level,omitempty"`
+	OtherLevel string `xml:"otherlevel,attr" json:"otherlevel,omitempty"`
 
 	AccessRestrict  []*FormattedNoteWithHead `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
 	Accruals        []*FormattedNoteWithHead `xml:"accruals,omitempty" json:"accruals,omitempty"`
@@ -97,11 +97,12 @@ type Change struct {
 }
 
 type Container struct {
-	AltRender string `xml:"altrender,attr" json:"altrender,attr,omitempty"`
-	ID        string `xml:"id,attr" json:"id,attr,omitempty"`
-	Label     string `xml:"label,attr" json:"label,attr,omitempty"`
-	Parent    string `xml:"parent,attr" json:"parent,attr,omitempty"`
-	Type      string `xml:"type,attr" json:"type,attr,omitempty"`
+	AltRender string `xml:"altrender,attr" json:"altrender,omitempty"`
+	Barcode   string `json:"barcode,omitempty"`
+	ID        string `xml:"id,attr" json:"id,omitempty"`
+	Label     string `xml:"label,attr" json:"label,omitempty"`
+	Parent    string `xml:"parent,attr" json:"parent,omitempty"`
+	Type      string `xml:"type,attr" json:"type,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -153,9 +154,9 @@ type EADHeader struct {
 }
 
 type EADID struct {
-	CountryCode    string `xml:"countrycode,attr" json:"countrycode,attr,omitempty"`
-	MainAgencyCode string `xml:"mainagencycode,attr" json:"mainagencycode,attr,omitempty"`
-	URL            string `xml:"url,attr" json:"url,attr,omitempty"`
+	CountryCode    string `xml:"countrycode,attr" json:"countrycode,omitempty"`
+	MainAgencyCode string `xml:"mainagencycode,attr" json:"mainagencycode,omitempty"`
+	URL            string `xml:"url,attr" json:"url,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -165,17 +166,17 @@ type Extent struct {
 }
 
 type ExtPtr struct {
-	Href  string `xml:"href,attr" json:"href,attr,omitempty"`
-	Show  string `xml:"show,attr" json:"show,attr,omitempty"`
-	Title string `xml:"title,attr" json:"title,attr,omitempty"`
-	Type  string `xml:"type,attr" json:"type,attr,omitempty"`
+	Href  string `xml:"href,attr" json:"href,omitempty"`
+	Show  string `xml:"show,attr" json:"show,omitempty"`
+	Title string `xml:"title,attr" json:"title,omitempty"`
+	Type  string `xml:"type,attr" json:"type,omitempty"`
 }
 
 type ExtRef struct {
-	Href  string `xml:"href,attr" json:"href,attr,omitempty"`
-	Show  string `xml:"show,attr" json:"show,attr,omitempty"`
-	Title string `xml:"title,attr" json:"title,attr,omitempty"`
-	Type  string `xml:"type,attr" json:"type,attr,omitempty"`
+	Href  string `xml:"href,attr" json:"href,omitempty"`
+	Show  string `xml:"show,attr" json:"show,omitempty"`
+	Title string `xml:"title,attr" json:"title,omitempty"`
+	Type  string `xml:"type,attr" json:"type,omitempty"`
 }
 
 type FileDesc struct {
@@ -187,7 +188,7 @@ type FileDesc struct {
 
 // "eadnote" in current draft of the data model
 type FormattedNoteWithHead struct {
-	ID string `xml:"id,attr" json:"id,attr,omitempty"`
+	ID string `xml:"id,attr" json:"id,omitempty"`
 
 	Head []Head `xml:"head,omitemtpy" json:"head,omitempty"`
 	P    []*P   `xml:"p,omitempty" json:"p,omitempty"`
@@ -203,15 +204,15 @@ type Item struct {
 }
 
 type LangMaterial struct {
-	ID string `xml:"id,attr" json:"id,attr,omitempty"`
+	ID string `xml:"id,attr" json:"id,omitempty"`
 
 	Language []*Language `xml:"language" json:"language,omitempty"`
 	Value    string      `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Language struct {
-	LangCode   string `xml:"langcode,attr" json:"langcode,attr,omitempty"`
-	ScriptCode string `xml:"scriptcode,attr" json:"scriptcode,attr,omitempty"`
+	LangCode   string `xml:"langcode,attr" json:"langcode,omitempty"`
+	ScriptCode string `xml:"scriptcode,attr" json:"scriptcode,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -221,20 +222,20 @@ type LangUsage struct {
 }
 
 type NameWithRole struct {
-	Role string `xml:"role,attr" json:"role,attr,omitempty"`
+	Role string `xml:"role,attr" json:"role,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type Origination struct {
-	Label string `xml:"label,attr" json:"label,attr,omitempty"`
+	Label string `xml:"label,attr" json:"label,omitempty"`
 
 	CorpName []NameWithRole `xml:"corpname"   json:"corpname,omitempty"`
 	PersName []NameWithRole `xml:"persname"   json:"persname,omitempty"`
 }
 
 type P struct {
-	ID string `xml:"id,attr" json:"id,attr,omitempty"`
+	ID string `xml:"id,attr" json:"id,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -245,7 +246,7 @@ type PhysDesc struct {
 }
 
 type PhysLoc struct {
-	ID string `xml:"id,attr" json:"id,attr,omitempty"`
+	ID string `xml:"id,attr" json:"id,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -271,7 +272,7 @@ type RevisionDesc struct {
 }
 
 type Title struct {
-	Render string `xml:"render,attr" json:"render,attr,omitempty"`
+	Render string `xml:"render,attr" json:"render,omitempty"`
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
@@ -286,8 +287,8 @@ type TitleStmt struct {
 }
 
 type UnitDate struct {
-	Normal string `xml:"normal,attr" json:"normal,attr,omitempty"`
-	Type   string `xml:"type,attr" json:"type,attr,omitempty"`
+	Normal string `xml:"normal,attr" json:"normal,omitempty"`
+	Type   string `xml:"type,attr" json:"type,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
