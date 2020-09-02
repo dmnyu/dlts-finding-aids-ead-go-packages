@@ -73,6 +73,35 @@ func (did *DID) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (dao *DAO) MarshalJSON() ([]byte, error) {
+	type DAOWithNoWhitespaceOnlyValues DAO
+
+	containsNonWhitespace, err := regexp.MatchString(`\S`, dao.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	var value string
+	if containsNonWhitespace {
+		value = dao.Value
+	} else {
+		value = ""
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*DAOWithNoWhitespaceOnlyValues
+	}{
+		Value:                         value,
+		DAOWithNoWhitespaceOnlyValues: (*DAOWithNoWhitespaceOnlyValues)(dao),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 // The custom marshalling for DID will prevent PhysDesc from having a Value field
 // that is all whitespace if Extent is nil, but won't prevent PhysDesc from having
 // a Value field that is all whitespace if Extent is not nil.

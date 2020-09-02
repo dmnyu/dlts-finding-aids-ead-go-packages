@@ -127,9 +127,44 @@ type Creation struct {
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type DAO struct {
+	Actuate  string `xml:"actuate,attr" json:"actuate,omitempty"`
+	Audience string `xml:"audience,attr" json:"audience,omitempty"`
+	Href     string `xml:"href,attr" json:"href,omitempty"`
+	Role     string `xml:"role,attr" json:"role,omitempty"`
+	Show     string `xml:"show,attr" json:"show,omitempty"`
+	Title    string `xml:"title,attr" json:"title,omitempty"`
+	Type     string `xml:"type,attr" json:"type,omitempty"`
+
+	DAODesc DAODesc `xml:"daodesc" json:"daodesc,omitempty"`
+	Value   string  `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
+type DAODesc struct {
+	P []*P `xml:"p,omitempty" json:"p,omitempty"`
+}
+
+type DAOGrp struct {
+	Title   string   `xml:"title,attr" json:"title,omitempty"`
+	Type    string   `xml:"type,attr"  json:"type,omitempty"`
+
+	DAODesc DAODesc  `xml:"daodesc" json:"daodesc,omitempty"`
+	DAOLoc  []DAOLoc `xml:"daoloc" json:"daoloc,omitempty"`
+}
+
+type DAOLoc struct {
+	Audience string `xml:"audience,attr" json:"audience,omitempty"`
+	Href     string `xml:"href,attr" json:"href,omitempty"`
+	Role     string `xml:"role,attr" json:"role,omitempty"`
+	Title    string `xml:"title,attr" json:"title,omitempty"`
+	Type     string `xml:"type,attr" json:"type,omitempty"`
+}
+
 type DID struct {
 	Abstract     []*Abstract     `xml:"abstract" json:"abstract,omitempty"`
 	Container    []*Container    `xml:"container" json:"container,omitempty"`
+	DAO          []*DAO          `xml:"dao" json:"dao,omitempty"`
+	DAOGrp       []*DAOGrp       `xml:"daogrp" json:"daogrp,omitempty"`
 	LangMaterial []*LangMaterial `xml:"langmaterial" json:"langmaterial,omitempty"`
 	Origination  []*Origination  `xml:"origination" json:"origination,omitempty"`
 	PhysDesc     []*PhysDesc     `xml:"physdesc" json:"physdesc,omitempty"`
