@@ -127,7 +127,7 @@ type Creation struct {
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
-type DAO []struct {
+type DAO struct {
 	Actuate  string `xml:"actuate,attr" json:"actuate,omitempty"`
 	Audience string `xml:"audience,attr" json:"audience,omitempty"`
 	Href     string `xml:"href,attr" json:"href,omitempty"`
