@@ -6,6 +6,7 @@ import (
 	"bytes"
 	"go/format"
 	"io/ioutil"
+	"sort"
 	"strings"
 	"text/template"
 )
@@ -62,7 +63,16 @@ import (
 	"encoding/json"
 )`)
 
-	for typeName, conversionFunction := range conversionFunctionsForTypes {
+	sortedTypes := make([]string, len(conversionFunctionsForTypes))
+	i := 0
+	for k := range conversionFunctionsForTypes {
+		sortedTypes[i] = k
+		i++
+	}
+	sort.Strings(sortedTypes)
+
+	for _, typeName := range sortedTypes {
+		conversionFunction := conversionFunctionsForTypes[typeName]
 		w.WriteString("\n\n")
 
 		err := t.Execute(w, templateData{
