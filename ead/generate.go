@@ -12,7 +12,7 @@ import (
 
 // NOTE: Currently there is no way to escape backticks in raw strings:
 // https://github.com/golang/go/issues/18221
-const marshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeName}}) MarshalJSON() ([]byte, error) {
+const convertTextWithTagsMarshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeName}}) MarshalJSON() ([]byte, error) {
 	type {{.TypeName}}WithTags {{.TypeName}}
 
 	result, err := {{.ConversionFunction}}({{.VarName}}.Value)
@@ -35,13 +35,22 @@ const marshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeName}}) MarshalJSON(
 }`
 
 func main() {
+	convertTextWithTagsCode := getConvertTextWithTagsCode();
+
+	err := ioutil.WriteFile("marshaljson-generated.go", convertTextWithTagsCode, 0600)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func getConvertTextWithTagsCode() ([]byte) {
 	type templateData struct{
 		ConversionFunction string
 		TypeName string
 		VarName string
 	}
 
-	t := template.Must(template.New("").Parse(marshalJSONCodeTemplate))
+	t := template.Must(template.New("").Parse(convertTextWithTagsMarshalJSONCodeTemplate))
 
 	conversionFunctionsForTypes := map[string]string{
 		"Abstract" : "getConvertedTextWithTags",
@@ -81,8 +90,5 @@ import (
 		panic(err)
 	}
 
-	err = ioutil.WriteFile("marshaljson-generated.go", out, 0600)
-	if err != nil {
-		panic(err)
-	}
+	return out;
 }
