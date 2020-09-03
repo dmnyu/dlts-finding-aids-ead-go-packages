@@ -35,6 +35,12 @@ func (container *Container) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+// Note that this custom marshalling for DID will prevent PhysDesc from having a Value field
+// that is all whitespace if Extent is nil, but won't prevent PhysDesc from having
+// a Value field that is all whitespace if Extent is not nil.
+// We need to convert Value field values like "\n    \n    \n" to empty string
+// so they can be removed by omitempty struct tag.  This is done in the PhysDesc.MarshalJSON
+// in marshal-generated.go.
 func (did *DID) MarshalJSON() ([]byte, error) {
 	type DIDWithNoEmptyPhysDesc DID
 
@@ -72,67 +78,3 @@ func (did *DID) MarshalJSON() ([]byte, error) {
 
 	return jsonData, nil
 }
-
-func (dao *DAO) MarshalJSON() ([]byte, error) {
-	type DAOWithNoWhitespaceOnlyValues DAO
-
-	containsNonWhitespace, err := regexp.MatchString(`\S`, dao.Value)
-	if err != nil {
-		return nil, err
-	}
-
-	var value string
-	if containsNonWhitespace {
-		value = dao.Value
-	} else {
-		value = ""
-	}
-
-	jsonData, err := json.Marshal(&struct {
-		Value string `json:"value,chardata,omitempty"`
-		*DAOWithNoWhitespaceOnlyValues
-	}{
-		Value:                         value,
-		DAOWithNoWhitespaceOnlyValues: (*DAOWithNoWhitespaceOnlyValues)(dao),
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
-}
-
-// The custom marshalling for DID will prevent PhysDesc from having a Value field
-// that is all whitespace if Extent is nil, but won't prevent PhysDesc from having
-// a Value field that is all whitespace if Extent is not nil.
-// We need to convert Value field values like "\n    \n    \n" to empty string
-// so they can be removed by omitempty struct tag.
-func (physDesc *PhysDesc) MarshalJSON() ([]byte, error) {
-	type PhysDescWithNoWhitespaceOnlyValues PhysDesc
-
-	containsNonWhitespace, err := regexp.MatchString(`\S`, physDesc.Value)
-	if err != nil {
-		return nil, err
-	}
-
-	var value string
-	if containsNonWhitespace {
-		value = physDesc.Value
-	} else {
-		value = ""
-	}
-
-	jsonData, err := json.Marshal(&struct {
-		Value string `json:"value,chardata,omitempty"`
-		*PhysDescWithNoWhitespaceOnlyValues
-	}{
-		Value:                              value,
-		PhysDescWithNoWhitespaceOnlyValues: (*PhysDescWithNoWhitespaceOnlyValues)(physDesc),
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
-}
-

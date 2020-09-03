@@ -4,29 +4,8 @@ package ead
 
 import (
 	"encoding/json"
+	"regexp"
 )
-
-func (unittitle *UnitTitle) MarshalJSON() ([]byte, error) {
-	type UnitTitleWithTags UnitTitle
-
-	result, err := getConvertedTextWithTags(unittitle.Value)
-	if err != nil {
-		return nil, err
-	}
-
-	jsonData, err := json.Marshal(&struct {
-		Value string `json:"value,chardata,omitempty"`
-		*UnitTitleWithTags
-	}{
-		Value:             string(result),
-		UnitTitleWithTags: (*UnitTitleWithTags)(unittitle),
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
-}
 
 func (abstract *Abstract) MarshalJSON() ([]byte, error) {
 	type AbstractWithTags Abstract
@@ -130,6 +109,86 @@ func (titleproper *TitleProper) MarshalJSON() ([]byte, error) {
 	}{
 		Value:               string(result),
 		TitleProperWithTags: (*TitleProperWithTags)(titleproper),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (unittitle *UnitTitle) MarshalJSON() ([]byte, error) {
+	type UnitTitleWithTags UnitTitle
+
+	result, err := getConvertedTextWithTags(unittitle.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*UnitTitleWithTags
+	}{
+		Value:             string(result),
+		UnitTitleWithTags: (*UnitTitleWithTags)(unittitle),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (dao *DAO) MarshalJSON() ([]byte, error) {
+	type DAOWithNoWhitespaceOnlyValues DAO
+
+	containsNonWhitespace, err := regexp.MatchString(`\S`, dao.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	var value string
+	if containsNonWhitespace {
+		value = dao.Value
+	} else {
+		value = ""
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*DAOWithNoWhitespaceOnlyValues
+	}{
+		Value:                         value,
+		DAOWithNoWhitespaceOnlyValues: (*DAOWithNoWhitespaceOnlyValues)(dao),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (physdesc *PhysDesc) MarshalJSON() ([]byte, error) {
+	type PhysDescWithNoWhitespaceOnlyValues PhysDesc
+
+	containsNonWhitespace, err := regexp.MatchString(`\S`, physdesc.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	var value string
+	if containsNonWhitespace {
+		value = physdesc.Value
+	} else {
+		value = ""
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*PhysDescWithNoWhitespaceOnlyValues
+	}{
+		Value:                              value,
+		PhysDescWithNoWhitespaceOnlyValues: (*PhysDescWithNoWhitespaceOnlyValues)(physdesc),
 	})
 	if err != nil {
 		return nil, err
