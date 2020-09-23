@@ -133,7 +133,6 @@ type DAO struct {
 	Href     string `xml:"href,attr" json:"href,omitempty"`
 	Role     string `xml:"role,attr" json:"role,omitempty"`
 	Show     string `xml:"show,attr" json:"show,omitempty"`
-	Title    string `xml:"title,attr" json:"title,omitempty"`
 	Type     string `xml:"type,attr" json:"type,omitempty"`
 
 	DAODesc DAODesc `xml:"daodesc" json:"daodesc,omitempty"`
