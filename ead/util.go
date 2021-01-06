@@ -78,6 +78,7 @@ func _getConvertedTextWithTagsDefault(tagName string) string {
 }
 
 func getRelatorAuthoritativeLabel(relatorID string) (string, error) {
+	// Map elements are from
 	// https://jira.nyu.edu/jira/secure/attachment/41923/relator-authoritative-labels-2021-01-05.csv
 	relatorAuthoritativeLabel := map[string]string{
 		"abr" : "Abridger",
