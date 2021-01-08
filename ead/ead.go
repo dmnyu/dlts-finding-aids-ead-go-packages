@@ -118,10 +118,6 @@ type ControlAccess struct {
 	Subject    []string `xml:"subject" json:"subject,omitempty"`
 }
 
-type CorpName struct {
-	NameWithRole
-}
-
 type Creation struct {
 	Date  []string `xml:"date" json:"date,omitempty"`
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
