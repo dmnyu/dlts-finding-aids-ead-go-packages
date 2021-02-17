@@ -245,6 +245,10 @@ type EADID struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type EditionStmt struct {
+	P    []*P `xml:"p,omitempty" json:"p,omitempty"`
+}
+
 type Extent struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
