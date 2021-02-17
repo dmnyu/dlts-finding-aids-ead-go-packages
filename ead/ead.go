@@ -127,12 +127,13 @@ type Container struct {
 type ControlAccess struct {
 	CorpName   []NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
 	FamName    []NameWithRoleRulesSource `xml:"famname" json:"famname,omitempty"`
-	Function   []string                  `xml:"function" json:"function,omitempty"`
-	GenreForm  []string                  `xml:"genreform" json:"genreform,omitempty"`
-	GeogName   []string                  `xml:"geogname" json:"geogname,omitempty"`
-	Occupation []string                  `xml:"occupation" json:"occupation,omitempty"`
+	Function   []Function                `xml:"function" json:"function,omitempty"`
+	GenreForm  []GenreForm               `xml:"genreform" json:"genreform,omitempty"`
+	GeogName   []GeogName                `xml:"geogname" json:"geogname,omitempty"`
+	Occupation []Occupation              `xml:"occupation" json:"occupation,omitempty"`
 	PersName   []NameWithRoleRulesSource `xml:"persname" json:"persname,omitempty"`
-	Subject    []string                  `xml:"subject" json:"subject,omitempty"`
+	Subject    []Subject                 `xml:"subject" json:"subject,omitempty"`
+	Title      []*Title                  `xml:"title" json:"title,omitempty"`
 }
 
 type Creation struct {
@@ -249,6 +250,24 @@ type FormattedNoteWithHead struct {
 	P    []*P   `xml:"p,omitempty" json:"p,omitempty"`
 }
 
+type Function struct {
+	Source string `xml:"source,attr" json:"source,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
+type GenreForm struct {
+	Source string `xml:"source,attr" json:"source,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
+type GeogName struct {
+	Source string `xml:"source,attr" json:"source,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
 type Head struct {
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 	Value  string    `xml:",innerxml" json:"value,chardata,omitempty"`
@@ -295,6 +314,12 @@ type NameWithRoleRulesSource struct {
 	Source string `xml:"source,attr" json:"source,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
+}
+
+type Occupation struct {
+	Type string `xml:"type,attr" json:"type,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Origination struct {
