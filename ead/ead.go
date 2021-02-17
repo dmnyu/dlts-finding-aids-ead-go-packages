@@ -80,25 +80,30 @@ type BibRef struct {
 }
 
 type C struct {
-	ID         string `xml:"id,attr" json:"id,omitempty"`
-	Level      string `xml:"level,attr" json:"level,omitempty"`
-	OtherLevel string `xml:"otherlevel,attr" json:"otherlevel,omitempty"`
-
-	AccessRestrict  []*FormattedNoteWithHead `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
-	Accruals        []*FormattedNoteWithHead `xml:"accruals,omitempty" json:"accruals,omitempty"`
-	Appraisal       []*FormattedNoteWithHead `xml:"appraisal,omitempty" json:"appraisal,omitempty"`
-	Arrangement     []*FormattedNoteWithHead `xml:"arrangement,omitempty" json:"arrangement,omitempty"`
-	BiogHist        []*FormattedNoteWithHead `xml:"bioghist,omitempty" json:"bioghist,omitempty"`
-	C               []*C                     `xml:"c,omitempty" json:"c,omitempty"`
-	ControlAccess   []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
-	CustodHist      []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
-	DID             []*DID                   `xml:"did,omitempty" json:"did,omitempty"`
-	PhysTech        []*FormattedNoteWithHead `xml:"phystech,omitempty" json:"phystech,omitempty"`
-	PreferCite      []*FormattedNoteWithHead `xml:"prefercite,omitempty" json:"prefercite,omitempty"`
-	ProcessInfo     []*FormattedNoteWithHead `xml:"processinfo,omitempty" json:"processinfo,omitempty"`
-	RelatedMaterial []*FormattedNoteWithHead `xml:"relatedmaterial,omitempty" json:"relatedmaterial,omitempty"`
-	ScopeContent    []*FormattedNoteWithHead `xml:"scopecontent,omitempty" json:"scopecontent,omitempty"`
-	UserRestrict    []*FormattedNoteWithHead `xml:"userrestrict,omitempty" json:"userrestrict,omitempty"`
+	ID                string                   `xml:"id,attr" json:"id,omitempty"`
+	Level             string                   `xml:"level,attr" json:"level,omitempty"`
+	OtherLevel        string                   `xml:"otherlevel,attr" json:"otherlevel,omitempty"`
+	AccessRestrict    []*FormattedNoteWithHead `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
+	Accruals          []*FormattedNoteWithHead `xml:"accruals,omitempty" json:"accruals,omitempty"`
+	AcqInfo           []*FormattedNoteWithHead `xml:"acqinfo,omitempty" json:"acqinfo,omitempty"`
+	Appraisal         []*FormattedNoteWithHead `xml:"appraisal,omitempty" json:"appraisal,omitempty"`
+	Arrangement       []*FormattedNoteWithHead `xml:"arrangement,omitempty" json:"arrangement,omitempty"`
+	BiogHist          []*FormattedNoteWithHead `xml:"bioghist,omitempty" json:"bioghist,omitempty"`
+	C                 []*C                     `xml:"c,omitempty" json:"c,omitempty"`
+	ControlAccess     []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
+	CustodHist        []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
+	DID               DID                      `xml:"did,omitempty" json:"did,omitempty"`
+	FilePlan          []*FormattedNoteWithHead `xml:"fileplan,omitempty" json:"fileplan,omitempty"`
+	Odd               []*FormattedNoteWithHead `xml:"odd" json:"odd,omitempty"`
+	OtherFindAid      []*FormattedNoteWithHead `xml:"otherfindaid" json:"otherfindaid,omitempty"`
+	OriginalsLoc      []*FormattedNoteWithHead `xml:"originalsloc" json:"originalsloc,omitempty"`
+	PhysTech          []*FormattedNoteWithHead `xml:"phystech,omitempty" json:"phystech,omitempty"`
+	PreferCite        []*FormattedNoteWithHead `xml:"prefercite,omitempty" json:"prefercite,omitempty"`
+	ProcessInfo       []*FormattedNoteWithHead `xml:"processinfo,omitempty" json:"processinfo,omitempty"`
+	RelatedMaterial   []*FormattedNoteWithHead `xml:"relatedmaterial,omitempty" json:"relatedmaterial,omitempty"`
+	ScopeContent      []*FormattedNoteWithHead `xml:"scopecontent,omitempty" json:"scopecontent,omitempty"`
+	SeparatedMaterial []*FormattedNoteWithHead `xml:"separatedmaterial" json:"separatedmaterial,omitempty"`
+	UserRestrict      []*FormattedNoteWithHead `xml:"userrestrict,omitempty" json:"userrestrict,omitempty"`
 }
 
 type Change struct {
