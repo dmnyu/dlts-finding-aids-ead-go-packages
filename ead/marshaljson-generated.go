@@ -51,6 +51,28 @@ func (bibref *BibRef) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (event *Event) MarshalJSON() ([]byte, error) {
+	type EventWithTags Event
+
+	result, err := getConvertedTextWithTags(event.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*EventWithTags
+	}{
+		Value:         string(result),
+		EventWithTags: (*EventWithTags)(event),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (head *Head) MarshalJSON() ([]byte, error) {
 	type HeadWithTags Head
 
