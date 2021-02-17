@@ -507,8 +507,9 @@ type TitleProper struct {
 }
 
 type TitleStmt struct {
-	Author      []string       `xml:"author" json:"author,omitempty"`
-	Sponsor     []string       `xml:"sponsor" json:"sponsor,omitempty"`
+	Author      string         `xml:"author" json:"author,omitempty"`
+	Sponsor     string         `xml:"sponsor" json:"sponsor,omitempty"`
+	SubTitle    string         `xml:"subtitle" json:"subtitle,omitempty"`
 	TitleProper []*TitleProper `xml:"titleproper" json:"titleproper,omitempty"`
 }
 
