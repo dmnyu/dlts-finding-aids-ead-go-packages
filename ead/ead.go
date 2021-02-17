@@ -113,6 +113,18 @@ type Change struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type ChronItem struct {
+	Date     string      `xml:"date" json:"date,omitempty"`
+	EventGrp []*EventGrp `xml:"eventgrp,omitempty" json:"eventgrp,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
+type ChronList struct {
+	Head      Head         `xml:"head,omitemtpy" json:"head,omitempty"`
+	ChronItem []*ChronItem `xml:"chronitem,omitempty" json:"chronitem,omitempty"`
+}
+
 type Container struct {
 	AltRender string `xml:"altrender,attr" json:"altrender,omitempty"`
 	Barcode   string `json:"barcode,omitempty"`
