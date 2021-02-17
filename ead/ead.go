@@ -64,6 +64,7 @@ type ArchDesc struct {
 
 type ArchRef struct {
 	PhysLoc PhysLoc `xml:"physloc" json:"physloc,omitempty"`
+
 	Value   string  `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
