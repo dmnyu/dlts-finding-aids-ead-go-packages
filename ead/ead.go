@@ -283,10 +283,10 @@ type ExtRef struct {
 }
 
 type FileDesc struct {
-	EditionStmt     EditionStmt           `xml:"editionstmt" json:"editionstmt,omitempty"`
-	NoteStmt        FormattedNoteWithHead `xml:"notestmt" json:"notestmt,omitempty"`
-	PublicationStmt PublicationStmt       `xml:"publicationstmt" json:"publicationstmt,omitempty"`
-	TitleStmt       TitleStmt             `xml:"titlestmt" json:"titlestmt,omitempty"`
+	EditionStmt     EditionStmt     `xml:"editionstmt" json:"editionstmt,omitempty"`
+	NoteStmt        NoteStmt        `xml:"notestmt" json:"notestmt,omitempty"`
+	PublicationStmt PublicationStmt `xml:"publicationstmt" json:"publicationstmt,omitempty"`
+	TitleStmt       TitleStmt       `xml:"titlestmt" json:"titlestmt,omitempty"`
 }
 
 // "eadnote" in current draft of the data model
