@@ -155,13 +155,14 @@ type Creation struct {
 
 type DAO struct {
 	Actuate  string `xml:"actuate,attr" json:"actuate,omitempty"`
-	Audience string `xml:"audience,attr" json:"audience,omitempty"`
 	Href     string `xml:"href,attr" json:"href,omitempty"`
 	Role     string `xml:"role,attr" json:"role,omitempty"`
 	Show     string `xml:"show,attr" json:"show,omitempty"`
+	Title   string   `xml:"title,attr" json:"title,omitempty"`
 	Type     string `xml:"type,attr" json:"type,omitempty"`
 
 	DAODesc DAODesc `xml:"daodesc" json:"daodesc,omitempty"`
+
 	Value   string  `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
