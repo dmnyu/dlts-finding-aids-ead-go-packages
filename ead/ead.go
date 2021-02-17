@@ -108,9 +108,9 @@ type C struct {
 }
 
 type Change struct {
-	Date  []string `xml:"date" json:"date,omitempty"`
-	Item  Item     `xml:"item" json:"item,omitempty"`
-	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+	Date  Date   `xml:"date" json:"date,omitempty"`
+	Item  Item   `xml:"item" json:"item,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Container struct {
@@ -170,6 +170,14 @@ type DAOLoc struct {
 	Role     string `xml:"role,attr" json:"role,omitempty"`
 	Title    string `xml:"title,attr" json:"title,omitempty"`
 	Type     string `xml:"type,attr" json:"type,omitempty"`
+}
+type Date struct {
+	Actuate string `xml:"actuate,attr" json:"actuate,omitempty"`
+	Era     string `xml:"era,attr" json:"era,omitempty"`
+	Normal  string `xml:"normal,attr" json:"normal,omitempty"`
+	Type    string `xml:"type,attr" json:"type,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type DID struct {
