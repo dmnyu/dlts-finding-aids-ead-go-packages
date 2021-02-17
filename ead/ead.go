@@ -208,16 +208,6 @@ type DID struct {
 	UnitTitle    []*UnitTitle    `xml:"unittitle" json:"unittitle,omitempty"`
 }
 
-type Event struct {
-	Title Title `xml:"title" json:"title,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
-type EventGrp struct {
-	Event []*Event `xml:"event" json:"event,omitempty"`
-}
-
 type DSC struct {
 	C    []*C   `xml:"c,omitempty" json:"c,omitempty"`
 	Head []Head `xml:"head,omitemtpy" json:"head,omitempty"`
@@ -255,6 +245,16 @@ type ExtRef struct {
 	Show  string `xml:"show,attr" json:"show,omitempty"`
 	Title string `xml:"title,attr" json:"title,omitempty"`
 	Type  string `xml:"type,attr" json:"type,omitempty"`
+}
+
+type Event struct {
+	Title Title `xml:"title" json:"title,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
+type EventGrp struct {
+	Event []*Event `xml:"event" json:"event,omitempty"`
 }
 
 type FileDesc struct {
