@@ -361,7 +361,9 @@ type Language struct {
 }
 
 type LangUsage struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	EncodingAnalog string `xml:"encodinganalog,attr" json:"encodinganalog,omitempty"`
+
+	Language Language `xml:"language" json:"language,omitempty"`
 }
 
 type NameWithRoleRulesSource struct {
