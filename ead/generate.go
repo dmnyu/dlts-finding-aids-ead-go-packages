@@ -35,35 +35,6 @@ const convertTextWithTagsMarshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeN
 	return jsonData, nil
 }`
 
-const omitWhitespaceOnlyValueFieldsMarshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeName}}) MarshalJSON() ([]byte, error) {
-	type {{.TypeName}}WithNoWhitespaceOnlyValues {{.TypeName}}
-
-	containsNonWhitespace, err := regexp.MatchString(` + "`\\S`" + `, {{.VarName}}.Value)
-	if err != nil {
-		return nil, err
-	}
-
-	var value string
-	if containsNonWhitespace {
-		value = {{.VarName}}.Value
-	} else {
-		value = ""
-	}
-
-	jsonData, err := json.Marshal(&struct {
-		Value string ` + "`" + `json:"value,chardata,omitempty"` + "`" + `
-		*{{.TypeName}}WithNoWhitespaceOnlyValues
-	}{
-		Value: value,
-		{{.TypeName}}WithNoWhitespaceOnlyValues: (*{{.TypeName}}WithNoWhitespaceOnlyValues)({{.VarName}}),
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
-}`
-
 const omitWhitespaceOnlyValueFieldsAndConvertTextWithTagsMarshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeName}}) MarshalJSON() ([]byte, error) {
 	type {{.TypeName}}WithNoWhitespaceOnlyValues {{.TypeName}}
 
@@ -111,7 +82,6 @@ import (
 )`)
 
 	writeConvertTextWithTagsCodeToBuffer(w)
-	writeOmitWhitespaceOnlyValueFieldsCodeToBuffer(w)
 	writeOmitWhitespaceOnlyValueFieldsAndConvertTextWithTagsCodeToBuffer(w)
 
 	// Format with gofmt
@@ -164,31 +134,6 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 
 		err := t.Execute(w, templateData{
 			ConversionFunction : conversionFunction,
-			TypeName: typeName,
-			VarName:  strings.ToLower(typeName),
-		})
-		if err != nil {
-			panic(err)
-		}
-	}
-}
-
-func writeOmitWhitespaceOnlyValueFieldsCodeToBuffer(w *bytes.Buffer) {
-	type templateData struct{
-		TypeName string
-		VarName string
-	}
-
-	t := template.Must(template.New("").Parse(omitWhitespaceOnlyValueFieldsMarshalJSONCodeTemplate))
-
-	sortedTypes := []string{
-		"DAO",
-	}
-
-	for _, typeName := range sortedTypes {
-		w.WriteString("\n\n")
-
-		err := t.Execute(w, templateData{
 			TypeName: typeName,
 			VarName:  strings.ToLower(typeName),
 		})
