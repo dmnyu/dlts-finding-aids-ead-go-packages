@@ -469,9 +469,9 @@ type ProfileDesc struct {
 }
 
 type PublicationStmt struct {
-	Address   []*Address     `xml:"address" json:"address,omitempty"`
-	Publisher string         `xml:"publisher" json:"publisher,omitempty"`
-	P         []*P           `xml:"p" json:"p,omitempty"`
+	Address   Address `xml:"address" json:"address,omitempty"`
+	P         []*P    `xml:"p" json:"p,omitempty"`
+	Publisher string  `xml:"publisher" json:"publisher,omitempty"`
 }
 
 type Repository struct {
