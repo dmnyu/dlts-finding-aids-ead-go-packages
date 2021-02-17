@@ -231,10 +231,10 @@ type DSC struct {
 }
 
 type EADHeader struct {
-	EADID        []*EADID        `xml:"eadid" json:"eadid,omitempty"`
-	FileDesc     []*FileDesc     `xml:"filedesc" json:"filedesc,omitempty"`
-	ProfileDesc  []*ProfileDesc  `xml:"profiledesc" json:"profiledesc,omitempty"`
-	RevisionDesc []*RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
+	EADID        EADID        `xml:"eadid" json:"eadid,omitempty"`
+	FileDesc     FileDesc     `xml:"filedesc" json:"filedesc,omitempty"`
+	ProfileDesc  ProfileDesc  `xml:"profiledesc" json:"profiledesc,omitempty"`
+	RevisionDesc RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
 }
 
 type EADID struct {
