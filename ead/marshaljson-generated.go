@@ -117,6 +117,28 @@ func (head *Head) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (item *Item) MarshalJSON() ([]byte, error) {
+	type ItemWithTags Item
+
+	result, err := getConvertedTextWithTags(item.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*ItemWithTags
+	}{
+		Value:        string(result),
+		ItemWithTags: (*ItemWithTags)(item),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (p *P) MarshalJSON() ([]byte, error) {
 	type PWithTags P
 
