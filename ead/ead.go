@@ -410,9 +410,9 @@ type Occupation struct {
 type Origination struct {
 	Label string `xml:"label,attr" json:"label,omitempty"`
 
-	CorpName []NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
-	FamName  []NameWithRoleRulesSource `xml:"famname" json:"famname,omitempty"`
-	PersName []NameWithRoleRulesSource `xml:"persname" json:"persname,omitempty"`
+	CorpName NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
+	FamName  NameWithRoleRulesSource `xml:"famname" json:"famname,omitempty"`
+	PersName NameWithRoleRulesSource `xml:"persname" json:"persname,omitempty"`
 }
 
 type P struct {
