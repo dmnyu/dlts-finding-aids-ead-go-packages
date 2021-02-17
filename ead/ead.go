@@ -415,8 +415,24 @@ type Origination struct {
 	PersName NameWithRoleRulesSource `xml:"persname" json:"persname,omitempty"`
 }
 
+// TODO: <blockquote>
 type P struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
+
+	Abbr       string                     `xml:"abbr" json:"abbr,omitempty"`
+	Address    []*Address                 `xml:"address" json:"address,omitempty"`
+	ArchRef    []*ArchRef                 `xml:"archref" json:"archref,omitempty"`
+	BibRef     []*BibRef                  `xml:"bibref" json:"bibref,omitempty"`
+	CorpName   []*NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
+	Date       []*Date                    `xml:"date" json:"date,omitempty"`
+	ExtRef     []*ExtRef                  `xml:"extref" json:"extref,omitempty"`
+	GenreForm  []*GenreForm               `xml:"genreform" json:"genreform,omitempty"`
+	List       []*List                    `xml:"list" json:"list,omitempty"`
+	Name       []*NameWithRoleRulesSource `xml:"name" json:"name,omitempty"`
+	Num        []*Num                     `xml:"num" json:"num,omitempty"`
+	Occupation []*Occupation              `xml:"occupation" json:"occupation,omitempty"`
+	Subject    []*Subject                 `xml:"subject" json:"subject,omitempty"`
+	Title      []*Title                   `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
