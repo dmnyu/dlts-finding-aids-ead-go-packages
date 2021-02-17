@@ -260,6 +260,10 @@ type EventGrp struct {
 }
 
 type Extent struct {
+	AltRender string `xml:"altrender,attr" json:"altrender,omitempty"`
+
+	Unit string `xml:"unit" json:"unit,omitempty"`
+
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 

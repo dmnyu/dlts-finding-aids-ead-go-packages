@@ -104,6 +104,7 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 		"Abstract" : "getConvertedTextWithTags",
 		"BibRef" : "getConvertedTextWithTags",
 		"Event" : "getConvertedTextWithTags",
+		"Extent" : "getConvertedTextWithTags",
 		"Head" : "getConvertedTextWithTags",
 		"P" : "getConvertedTextWithTags",
 		"TitleProper" : "getConvertedTextWithTagsNoLBConversion",
