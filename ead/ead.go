@@ -387,6 +387,10 @@ type NameWithRoleRulesSource struct {
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
+type Note struct {
+	P []P `xml:"p" json:"p,omitempty"`
+}
+
 type Occupation struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
