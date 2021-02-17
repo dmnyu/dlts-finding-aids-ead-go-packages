@@ -327,8 +327,8 @@ type Head struct {
 type Index struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
-	Head  Head     `xml:"head,omitemtpy" json:"head,omitempty"`
-	Index []*Index `xml:"index" json:"index,omitempty"`
+	Head       Head          `xml:"head,omitemtpy" json:"head,omitempty"`
+	IndexEntry []*IndexEntry `xml:"indexentry" json:"indexentry,omitempty"`
 }
 
 type IndexEntry struct {
