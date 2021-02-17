@@ -117,7 +117,7 @@ type Change struct {
 }
 
 type ChronItem struct {
-	Date     string      `xml:"date" json:"date,omitempty"`
+	Date     Date        `xml:"date" json:"date,omitempty"`
 	EventGrp []*EventGrp `xml:"eventgrp,omitempty" json:"eventgrp,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
