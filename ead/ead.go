@@ -17,8 +17,8 @@ type EAD struct {
 
 // https://jira.nyu.edu/jira/browse/FADESIGN-29 additions
 type Abstract struct {
-	ID    string `xml:"id,attr" json:"id,omitempty"`
-	Label string `xml:"label,attr" json:"label,omitempty"`
+	ID    string   `xml:"id,attr" json:"id,omitempty"`
+	Label string   `xml:"label,attr" json:"label,omitempty"`
 	Title []*Title `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
@@ -70,7 +70,7 @@ type Bibliography struct {
 
 	Head   Head      `xml:"head,omitemtpy" json:"head,omitempty"`
 	BibRef []*BibRef `xml:"bibref,omitempty" json:"bibref,omitempty"`
-	P 	   []*P      `xml:"p,omitempty" json:"p,omitempty"`
+	P      []*P      `xml:"p,omitempty" json:"p,omitempty"`
 }
 
 type BibRef struct {
@@ -154,16 +154,16 @@ type Creation struct {
 }
 
 type DAO struct {
-	Actuate  string `xml:"actuate,attr" json:"actuate,omitempty"`
-	Href     string `xml:"href,attr" json:"href,omitempty"`
-	Role     string `xml:"role,attr" json:"role,omitempty"`
-	Show     string `xml:"show,attr" json:"show,omitempty"`
-	Title    string `xml:"title,attr" json:"title,omitempty"`
-	Type     string `xml:"type,attr" json:"type,omitempty"`
+	Actuate string `xml:"actuate,attr" json:"actuate,omitempty"`
+	Href    string `xml:"href,attr" json:"href,omitempty"`
+	Role    string `xml:"role,attr" json:"role,omitempty"`
+	Show    string `xml:"show,attr" json:"show,omitempty"`
+	Title   string `xml:"title,attr" json:"title,omitempty"`
+	Type    string `xml:"type,attr" json:"type,omitempty"`
 
 	DAODesc DAODesc `xml:"daodesc" json:"daodesc,omitempty"`
 
-	Value   string  `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type DAODesc struct {
@@ -171,18 +171,18 @@ type DAODesc struct {
 }
 
 type DAOGrp struct {
-	Title   string   `xml:"title,attr" json:"title,omitempty"`
-	Type    string   `xml:"type,attr"  json:"type,omitempty"`
+	Title string `xml:"title,attr" json:"title,omitempty"`
+	Type  string `xml:"type,attr"  json:"type,omitempty"`
 
 	DAODesc DAODesc  `xml:"daodesc" json:"daodesc,omitempty"`
 	DAOLoc  []DAOLoc `xml:"daoloc" json:"daoloc,omitempty"`
 }
 
 type DAOLoc struct {
-	Href     string `xml:"href,attr" json:"href,omitempty"`
-	Role     string `xml:"role,attr" json:"role,omitempty"`
-	Title    string `xml:"title,attr" json:"title,omitempty"`
-	Type     string `xml:"type,attr" json:"type,omitempty"`
+	Href  string `xml:"href,attr" json:"href,omitempty"`
+	Role  string `xml:"role,attr" json:"role,omitempty"`
+	Title string `xml:"title,attr" json:"title,omitempty"`
+	Type  string `xml:"type,attr" json:"type,omitempty"`
 }
 
 type Date struct {
@@ -246,7 +246,7 @@ type EADID struct {
 }
 
 type EditionStmt struct {
-	P    []*P `xml:"p,omitempty" json:"p,omitempty"`
+	P []*P `xml:"p,omitempty" json:"p,omitempty"`
 }
 
 type Event struct {
@@ -317,7 +317,7 @@ type GeogName struct {
 type Head struct {
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 
-	Value  string    `xml:",innerxml" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type Index struct {
@@ -348,7 +348,7 @@ type LangMaterial struct {
 
 	Language Language `xml:"language" json:"language,omitempty"`
 
-	Value    string      `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Language struct {
@@ -450,8 +450,8 @@ type PhysDesc struct {
 }
 
 type PhysFacet struct {
-	ID        string `xml:"id,attr" json:"id,omitempty"`
-	Label     string `xml:"label,attr" json:"label,omitempty"`
+	ID    string `xml:"id,attr" json:"id,omitempty"`
+	Label string `xml:"label,attr" json:"label,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -477,7 +477,7 @@ type PublicationStmt struct {
 type Repository struct {
 	CorpName NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
 
-	Value    string      `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type RevisionDesc struct {
@@ -493,15 +493,15 @@ type Subject struct {
 type Title struct {
 	Render string `xml:"render,attr" json:"render,omitempty"`
 	Source string `xml:"source,attr" json:"source,omitempty"`
-	Type string `xml:"type,attr" json:"type,omitempty"`
+	Type   string `xml:"type,attr" json:"type,omitempty"`
 
-	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type TitleProper struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
-	Num []*string  `xml:"num" json:"num,omitempty"`
+	Num []*string `xml:"num" json:"num,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
