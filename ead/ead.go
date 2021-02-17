@@ -68,8 +68,9 @@ type ArchRef struct {
 type Bibliography struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
-	Head   []Head    `xml:"head,omitemtpy" json:"head,omitempty"`
+	Head   Head      `xml:"head,omitemtpy" json:"head,omitempty"`
 	BibRef []*BibRef `xml:"bibref,omitempty" json:"bibref,omitempty"`
+	P 	   []*P      `xml:"p,omitempty" json:"p,omitempty"`
 }
 
 type BibRef struct {
