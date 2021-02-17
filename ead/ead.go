@@ -340,7 +340,7 @@ type IndexEntry struct {
 type Item struct {
 	BibRef   []BibRef                  `xml:"bibref" json:"bibref,omitempty"`
 	CorpName []NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
-	Name     string                    `xml:"name" json:"name,omitempty"`
+	Name     []NameWithRoleRulesSource `xml:"name" json:"name,omitempty"`
 	PersName []NameWithRoleRulesSource `xml:"persname" json:"persname,omitempty"`
 	Title    Title                     `xml:"title" json:"title,omitempty"`
 
