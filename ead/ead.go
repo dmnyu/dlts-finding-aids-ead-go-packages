@@ -352,8 +352,10 @@ type LangMaterial struct {
 }
 
 type Language struct {
-	LangCode   string `xml:"langcode,attr" json:"langcode,omitempty"`
-	ScriptCode string `xml:"scriptcode,attr" json:"scriptcode,omitempty"`
+	ID             string `xml:"id,attr" json:"id,omitempty"`
+	EncodingAnalog string `xml:"encodinganalog,attr" json:"encodinganalog,omitempty"`
+	LangCode       string `xml:"langcode,attr" json:"langcode,omitempty"`
+	ScriptCode     string `xml:"scriptcode,attr" json:"scriptcode,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
