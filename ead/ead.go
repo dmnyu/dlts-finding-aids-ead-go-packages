@@ -11,8 +11,8 @@ const (
 )
 
 type EAD struct {
-	ArchDesc  *ArchDesc    `xml:"archdesc" json:"archdesc,omitempty"`
-	EADHeader []*EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
+	ArchDesc  *ArchDesc `xml:"archdesc" json:"archdesc,omitempty"`
+	EADHeader EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
 }
 
 // https://jira.nyu.edu/jira/browse/FADESIGN-29 additions
