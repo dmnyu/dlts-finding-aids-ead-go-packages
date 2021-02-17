@@ -130,7 +130,6 @@ type ChronList struct {
 
 type Container struct {
 	AltRender string `xml:"altrender,attr" json:"altrender,omitempty"`
-	Barcode   string `json:"barcode,omitempty"`
 	ID        string `xml:"id,attr" json:"id,omitempty"`
 	Label     string `xml:"label,attr" json:"label,omitempty"`
 	Parent    string `xml:"parent,attr" json:"parent,omitempty"`
