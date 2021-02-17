@@ -60,6 +60,11 @@ type ArchDesc struct {
 	UserRestrict       []*FormattedNoteWithHead `xml:"userestrict" json:"userestrict,omitempty"`
 }
 
+type ArchRef struct {
+	PhysLoc PhysLoc `xml:"physloc" json:"physloc,omitempty"`
+	Value   string  `xml:",innerxml" json:"value,chardata,omitempty"`
+}
+
 type Bibliography struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
