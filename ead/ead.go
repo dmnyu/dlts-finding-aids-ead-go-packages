@@ -31,6 +31,7 @@ type Address struct {
 
 type AddressLine struct {
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
+
 	Value  string    `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
