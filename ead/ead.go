@@ -200,18 +200,21 @@ type DefItem struct {
 }
 
 type DID struct {
-	Abstract     []*Abstract     `xml:"abstract" json:"abstract,omitempty"`
-	Container    []*Container    `xml:"container" json:"container,omitempty"`
-	DAO          []*DAO          `xml:"dao" json:"dao,omitempty"`
-	DAOGrp       []*DAOGrp       `xml:"daogrp" json:"daogrp,omitempty"`
-	LangMaterial []*LangMaterial `xml:"langmaterial" json:"langmaterial,omitempty"`
-	Origination  []*Origination  `xml:"origination" json:"origination,omitempty"`
-	PhysDesc     []*PhysDesc     `xml:"physdesc" json:"physdesc,omitempty"`
-	PhysLoc      []*PhysLoc      `xml:"physloc" json:"physloc,omitempty"`
-	Repository   []*Repository   `xml:"repository" json:"repository,omitempty"`
-	UnitDate     []*UnitDate     `xml:"unitdate" json:"unitdate,omitempty"`
-	UnitID       []*UnitID       `xml:"unitid" json:"unitid,omitempty"`
-	UnitTitle    []*UnitTitle    `xml:"unittitle" json:"unittitle,omitempty"`
+	ID string `xml:"id,attr" json:"id,omitempty"`
+
+	Abstract     []*Abstract              `xml:"abstract" json:"abstract,omitempty"`
+	Container    []*Container             `xml:"container" json:"container,omitempty"`
+	DAO          []*DAO                   `xml:"dao" json:"dao,omitempty"`
+	DAOGrp       []*DAOGrp                `xml:"daogrp" json:"daogrp,omitempty"`
+	LangMaterial []*LangMaterial          `xml:"langmaterial" json:"langmaterial,omitempty"`
+	MaterialSpec []*FormattedNoteWithHead `xml:"materialspec" json:"materialspec,omitempty"`
+	Origination  []*Origination           `xml:"origination" json:"origination,omitempty"`
+	PhysDesc     []*PhysDesc              `xml:"physdesc" json:"physdesc,omitempty"`
+	PhysLoc      []*PhysLoc               `xml:"physloc" json:"physloc,omitempty"`
+	Repository   Repository               `xml:"repository" json:"repository,omitempty"`
+	UnitDate     []*UnitDate              `xml:"unitdate" json:"unitdate,omitempty"`
+	UnitID       string                   `xml:"unitid" json:"unitid,omitempty"`
+	UnitTitle    UnitTitle                `xml:"unittitle" json:"unittitle,omitempty"`
 }
 
 type DSC struct {
