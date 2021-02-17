@@ -137,8 +137,8 @@ type ControlAccess struct {
 }
 
 type Creation struct {
-	Date  []string `xml:"date" json:"date,omitempty"`
-	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
+	Date  string `xml:"date" json:"date,omitempty"`
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type DAO struct {
