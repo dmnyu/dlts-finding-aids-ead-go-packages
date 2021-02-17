@@ -249,6 +249,16 @@ type EditionStmt struct {
 	P    []*P `xml:"p,omitempty" json:"p,omitempty"`
 }
 
+type Event struct {
+	Title Title `xml:"title" json:"title,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
+type EventGrp struct {
+	Event []*Event `xml:"event" json:"event,omitempty"`
+}
+
 type Extent struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -265,16 +275,6 @@ type ExtRef struct {
 	Show  string `xml:"show,attr" json:"show,omitempty"`
 	Title string `xml:"title,attr" json:"title,omitempty"`
 	Type  string `xml:"type,attr" json:"type,omitempty"`
-}
-
-type Event struct {
-	Title Title `xml:"title" json:"title,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
-type EventGrp struct {
-	Event []*Event `xml:"event" json:"event,omitempty"`
 }
 
 type FileDesc struct {
