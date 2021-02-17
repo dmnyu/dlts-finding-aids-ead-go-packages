@@ -426,10 +426,6 @@ type UnitDate struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
-type UnitID struct {
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
 type UnitTitle struct {
 	Title []*Title `xml:"title" json:"title,omitempty"`
 	Value string   `xml:",innerxml" json:"value,chardata,omitempty"`
