@@ -514,8 +514,9 @@ type TitleStmt struct {
 }
 
 type UnitDate struct {
-	Normal string `xml:"normal,attr" json:"normal,omitempty"`
-	Type   string `xml:"type,attr" json:"type,omitempty"`
+	Certainty string `xml:"certainty,attr" json:"certainty,omitempty"`
+	Normal    string `xml:"normal,attr" json:"normal,omitempty"`
+	Type      string `xml:"type,attr" json:"type,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
