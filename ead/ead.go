@@ -19,6 +19,7 @@ type EAD struct {
 type Abstract struct {
 	ID    string `xml:"id,attr" json:"id,omitempty"`
 	Label string `xml:"label,attr" json:"label,omitempty"`
+	Title []*Title `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
