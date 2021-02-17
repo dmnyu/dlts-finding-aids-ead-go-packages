@@ -125,14 +125,14 @@ type Container struct {
 }
 
 type ControlAccess struct {
-	CorpName   []NameWithRole `xml:"corpname" json:"corpname,omitempty"`
-	FamName    []NameWithRole `xml:"famname" json:"famname,omitempty"`
-	Function   []string `xml:"function" json:"function,omitempty"`
-	GenreForm  []string `xml:"genreform" json:"genreform,omitempty"`
-	GeogName   []string `xml:"geogname" json:"geogname,omitempty"`
-	Occupation []string `xml:"occupation" json:"occupation,omitempty"`
-	PersName   []NameWithRole `xml:"persname" json:"persname,omitempty"`
-	Subject    []string `xml:"subject" json:"subject,omitempty"`
+	CorpName   []NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
+	FamName    []NameWithRoleRulesSource `xml:"famname" json:"famname,omitempty"`
+	Function   []string                  `xml:"function" json:"function,omitempty"`
+	GenreForm  []string                  `xml:"genreform" json:"genreform,omitempty"`
+	GeogName   []string                  `xml:"geogname" json:"geogname,omitempty"`
+	Occupation []string                  `xml:"occupation" json:"occupation,omitempty"`
+	PersName   []NameWithRoleRulesSource `xml:"persname" json:"persname,omitempty"`
+	Subject    []string                  `xml:"subject" json:"subject,omitempty"`
 }
 
 type Creation struct {
@@ -262,9 +262,9 @@ type Index struct {
 }
 
 type IndexEntry struct {
-	CorpName   NameWithRole `xml:"corpname" json:"corpname,omitempty"`
-	Name       NameWithRole `xml:"name" json:"name,omitempty"`
-	Subject    string `xml:"subject" json:"subject,omitempty"`
+	CorpName NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
+	Name     NameWithRoleRulesSource `xml:"name" json:"name,omitempty"`
+	Subject  string                  `xml:"subject" json:"subject,omitempty"`
 }
 
 type Item struct {
@@ -289,8 +289,10 @@ type LangUsage struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
-type NameWithRole struct {
-	Role string `xml:"role,attr" json:"role,omitempty"`
+type NameWithRoleRulesSource struct {
+	Role   string `xml:"role,attr" json:"role,omitempty"`
+	Rules  string `xml:"rules,attr" json:"rules,omitempty"`
+	Source string `xml:"source,attr" json:"source,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -298,9 +300,9 @@ type NameWithRole struct {
 type Origination struct {
 	Label string `xml:"label,attr" json:"label,omitempty"`
 
-	CorpName []NameWithRole `xml:"corpname" json:"corpname,omitempty"`
-	FamName  []NameWithRole `xml:"famname" json:"famname,omitempty"`
-	PersName []NameWithRole `xml:"persname" json:"persname,omitempty"`
+	CorpName []NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
+	FamName  []NameWithRoleRulesSource `xml:"famname" json:"famname,omitempty"`
+	PersName []NameWithRoleRulesSource `xml:"persname" json:"persname,omitempty"`
 }
 
 type P struct {
@@ -333,7 +335,7 @@ type PublicationStmt struct {
 }
 
 type Repository struct {
-	CorpName []NameWithRole `xml:"corpname" json:"corpname,omitempty"`
+	CorpName []NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
 }
 
 type RevisionDesc struct {

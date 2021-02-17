@@ -358,22 +358,22 @@ func getRelatorAuthoritativeLabel(relatorID string) (string, error) {
 	}
 }
 
-func regexpReplaceAllLiteralStringInNameWithRoleSlice( nameWithRoleSlice []NameWithRole, re *regexp.Regexp, replacementString string ) {
-	nameWithRoleSliceWithSubfieldDelimitersConverted := nameWithRoleSlice[:0]
-	for _, nameWithRole := range nameWithRoleSlice {
-		nameWithRole.Value = re.ReplaceAllLiteralString(nameWithRole.Value, replacementString)
-		nameWithRoleSliceWithSubfieldDelimitersConverted = append(
-			nameWithRoleSliceWithSubfieldDelimitersConverted,
-			nameWithRole,
+func regexpReplaceAllLiteralStringInNameWithRoleRulesSourceSlice( nameWithRoleRulesSourceSlice []NameWithRoleRulesSource, re *regexp.Regexp, replacementString string ) {
+	nameWithRoleRulesSourceSliceWithSubfieldDelimitersConverted := nameWithRoleRulesSourceSlice[:0]
+	for _, nameWithRoleRulesSource := range nameWithRoleRulesSourceSlice {
+		nameWithRoleRulesSource.Value = re.ReplaceAllLiteralString(nameWithRoleRulesSource.Value, replacementString)
+		nameWithRoleRulesSourceSliceWithSubfieldDelimitersConverted = append(
+			nameWithRoleRulesSourceSliceWithSubfieldDelimitersConverted,
+			nameWithRoleRulesSource,
 		)
 	}
 }
 
 func regexpReplaceAllLiteralStringInTextSlice( textSlice []string, re *regexp.Regexp, replacementString string ) {
-	nameWithRoleSliceWithSubfieldDelimitersConverted := textSlice[:0]
+	nameWithRoleRulesSourceSliceWithSubfieldDelimitersConverted := textSlice[:0]
 	for _, text := range textSlice {
-		nameWithRoleSliceWithSubfieldDelimitersConverted = append(
-			nameWithRoleSliceWithSubfieldDelimitersConverted,
+		nameWithRoleRulesSourceSliceWithSubfieldDelimitersConverted = append(
+			nameWithRoleRulesSourceSliceWithSubfieldDelimitersConverted,
 			re.ReplaceAllLiteralString(text, replacementString),
 		)
 	}
