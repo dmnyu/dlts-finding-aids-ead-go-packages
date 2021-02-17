@@ -165,8 +165,6 @@ type DAO struct {
 	Type    string `xml:"type,attr" json:"type,omitempty"`
 
 	DAODesc DAODesc `xml:"daodesc" json:"daodesc,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type DAODesc struct {
