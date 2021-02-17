@@ -194,6 +194,11 @@ type Date struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
+type DefItem struct {
+	Item  Item   `xml:"item" json:"item,omitempty"`
+	Label string `xml:"label" json:"label,omitempty"`
+}
+
 type DID struct {
 	Abstract     []*Abstract     `xml:"abstract" json:"abstract,omitempty"`
 	Container    []*Container    `xml:"container" json:"container,omitempty"`
