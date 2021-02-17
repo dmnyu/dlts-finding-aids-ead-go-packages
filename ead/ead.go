@@ -463,9 +463,9 @@ type PhysLoc struct {
 }
 
 type ProfileDesc struct {
-	Creation  []*Creation  `xml:"creation" json:"creation,omitempty"`
-	DescRules []*string    `xml:"descrules" json:"descrules,omitempty"`
-	LangUsage []*LangUsage `xml:"langusage" json:"langusage,omitempty"`
+	Creation  Creation  `xml:"creation" json:"creation,omitempty"`
+	DescRules string    `xml:"descrules" json:"descrules,omitempty"`
+	LangUsage LangUsage `xml:"langusage" json:"langusage,omitempty"`
 }
 
 type PublicationStmt struct {
