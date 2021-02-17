@@ -86,6 +86,7 @@ type C struct {
 	ID                string                   `xml:"id,attr" json:"id,omitempty"`
 	Level             string                   `xml:"level,attr" json:"level,omitempty"`
 	OtherLevel        string                   `xml:"otherlevel,attr" json:"otherlevel,omitempty"`
+
 	AccessRestrict    []*FormattedNoteWithHead `xml:"accessrestrict,omitempty" json:"accessrestrict,omitempty"`
 	Accruals          []*FormattedNoteWithHead `xml:"accruals,omitempty" json:"accruals,omitempty"`
 	AcqInfo           []*FormattedNoteWithHead `xml:"acqinfo,omitempty" json:"acqinfo,omitempty"`
