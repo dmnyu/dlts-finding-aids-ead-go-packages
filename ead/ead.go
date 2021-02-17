@@ -184,11 +184,12 @@ type DAOLoc struct {
 	Title    string `xml:"title,attr" json:"title,omitempty"`
 	Type     string `xml:"type,attr" json:"type,omitempty"`
 }
+
 type Date struct {
-	Actuate string `xml:"actuate,attr" json:"actuate,omitempty"`
-	Era     string `xml:"era,attr" json:"era,omitempty"`
-	Normal  string `xml:"normal,attr" json:"normal,omitempty"`
-	Type    string `xml:"type,attr" json:"type,omitempty"`
+	Calendar string `xml:"calendar,attr" json:"calendar,omitempty"`
+	Era      string `xml:"era,attr" json:"era,omitempty"`
+	Normal   string `xml:"normal,attr" json:"normal,omitempty"`
+	Type     string `xml:"type,attr" json:"type,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
