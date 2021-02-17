@@ -372,6 +372,8 @@ type LangUsage struct {
 
 type LegalStatus struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
+
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type List struct {
