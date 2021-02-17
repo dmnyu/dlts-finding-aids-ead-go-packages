@@ -205,6 +205,28 @@ func (physdesc *PhysDesc) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (title *Title) MarshalJSON() ([]byte, error) {
+	type TitleWithTags Title
+
+	result, err := getConvertedTextWithTagsNoLBConversion(title.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*TitleWithTags
+	}{
+		Value:         string(result),
+		TitleWithTags: (*TitleWithTags)(title),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (titleproper *TitleProper) MarshalJSON() ([]byte, error) {
 	type TitleProperWithTags TitleProper
 

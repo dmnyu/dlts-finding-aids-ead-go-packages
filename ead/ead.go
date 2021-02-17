@@ -492,6 +492,9 @@ type Subject struct {
 
 type Title struct {
 	Render string `xml:"render,attr" json:"render,omitempty"`
+	Source string `xml:"source,attr" json:"source,omitempty"`
+	Type string `xml:"type,attr" json:"type,omitempty"`
+
 	Value  string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
