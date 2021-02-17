@@ -139,6 +139,28 @@ func (item *Item) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (langmaterial *LangMaterial) MarshalJSON() ([]byte, error) {
+	type LangMaterialWithTags LangMaterial
+
+	result, err := getConvertedTextWithTags(langmaterial.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*LangMaterialWithTags
+	}{
+		Value:                string(result),
+		LangMaterialWithTags: (*LangMaterialWithTags)(langmaterial),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (p *P) MarshalJSON() ([]byte, error) {
 	type PWithTags P
 

@@ -346,7 +346,8 @@ type Item struct {
 type LangMaterial struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
-	Language []*Language `xml:"language" json:"language,omitempty"`
+	Language Language `xml:"language" json:"language,omitempty"`
+
 	Value    string      `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
