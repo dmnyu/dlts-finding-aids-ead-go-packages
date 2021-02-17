@@ -370,6 +370,15 @@ type LegalStatus struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 }
 
+type List struct {
+	Numeration string `xml:"numeration,attr" json:"numeration,omitempty"`
+	Type       string `xml:"type,attr"  json:"type,omitempty"`
+
+	Head    Head       `xml:"head" json:"head,omitempty"`
+	Item    []Item     `xml:"item" json:"item,omitempty"`
+	DefItem []*DefItem `xml:"defitem" json:"defitem,omitempty"`
+}
+
 type NameWithRoleRulesSource struct {
 	Role   string `xml:"role,attr" json:"role,omitempty"`
 	Rules  string `xml:"rules,attr" json:"rules,omitempty"`
