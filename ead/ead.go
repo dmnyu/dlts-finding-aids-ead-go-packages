@@ -475,7 +475,9 @@ type PublicationStmt struct {
 }
 
 type Repository struct {
-	CorpName []NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
+	CorpName NameWithRoleRulesSource `xml:"corpname" json:"corpname,omitempty"`
+
+	Value    string      `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type RevisionDesc struct {
