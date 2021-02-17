@@ -179,7 +179,6 @@ type DAOGrp struct {
 }
 
 type DAOLoc struct {
-	Audience string `xml:"audience,attr" json:"audience,omitempty"`
 	Href     string `xml:"href,attr" json:"href,omitempty"`
 	Role     string `xml:"role,attr" json:"role,omitempty"`
 	Title    string `xml:"title,attr" json:"title,omitempty"`
