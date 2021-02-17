@@ -109,6 +109,7 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 		"Item" : "getConvertedTextWithTags",
 		"LangMaterial" : "getConvertedTextWithTags",
 		"P" : "getConvertedTextWithTags",
+		"PhysDesc" : "getConvertedTextWithTags",
 		"TitleProper" : "getConvertedTextWithTagsNoLBConversion",
 		"UnitTitle" : "getConvertedTextWithTags",
 	}

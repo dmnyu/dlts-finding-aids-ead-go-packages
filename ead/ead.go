@@ -438,8 +438,22 @@ type P struct {
 }
 
 type PhysDesc struct {
-	Extent []*Extent `xml:"extent" json:"extent,omitempty"`
-	Value  string    `xml:",chardata" json:"value,chardata,omitempty"`
+	AltRender string `xml:"altrender,attr" json:"altrender,omitempty"`
+	ID        string `xml:"id,attr" json:"id,omitempty"`
+	Label     string `xml:"label,attr" json:"label,omitempty"`
+
+	Extent     []*Extent  `xml:"extent" json:"extent,omitempty"`
+	Dimensions Dimensions `xml:"dimensions" json:"dimensions,omitempty"`
+	PhysFacet  PhysFacet  `xml:"physfacet" json:"physfacet,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+}
+
+type PhysFacet struct {
+	ID        string `xml:"id,attr" json:"id,omitempty"`
+	Label     string `xml:"label,attr" json:"label,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type PhysLoc struct {
