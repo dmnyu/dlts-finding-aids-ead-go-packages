@@ -217,6 +217,13 @@ type DID struct {
 	UnitTitle    UnitTitle                `xml:"unittitle" json:"unittitle,omitempty"`
 }
 
+type Dimensions struct {
+	ID    string `xml:"id,attr" json:"id,omitempty"`
+	Label string `xml:"label,attr" json:"label,omitempty"`
+
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
+}
+
 type DSC struct {
 	C    []*C   `xml:"c,omitempty" json:"c,omitempty"`
 	Head []Head `xml:"head,omitemtpy" json:"head,omitempty"`
