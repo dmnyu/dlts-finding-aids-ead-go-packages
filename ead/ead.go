@@ -108,7 +108,7 @@ type C struct {
 
 type Change struct {
 	Date  []string `xml:"date" json:"date,omitempty"`
-	Item  []*Item  `xml:"item" json:"item,omitempty"`
+	Item  Item     `xml:"item" json:"item,omitempty"`
 	Value string   `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
