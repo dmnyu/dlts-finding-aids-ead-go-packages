@@ -366,6 +366,10 @@ type LangUsage struct {
 	Language Language `xml:"language" json:"language,omitempty"`
 }
 
+type LegalStatus struct {
+	ID string `xml:"id,attr" json:"id,omitempty"`
+}
+
 type NameWithRoleRulesSource struct {
 	Role   string `xml:"role,attr" json:"role,omitempty"`
 	Rules  string `xml:"rules,attr" json:"rules,omitempty"`
