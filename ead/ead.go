@@ -94,6 +94,7 @@ type C struct {
 	CustodHist        []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
 	DID               DID                      `xml:"did,omitempty" json:"did,omitempty"`
 	FilePlan          []*FormattedNoteWithHead `xml:"fileplan,omitempty" json:"fileplan,omitempty"`
+	Index             []*Index                 `xml:"index,omitempty" json:"index,omitempty"`
 	Odd               []*FormattedNoteWithHead `xml:"odd" json:"odd,omitempty"`
 	OtherFindAid      []*FormattedNoteWithHead `xml:"otherfindaid" json:"otherfindaid,omitempty"`
 	OriginalsLoc      []*FormattedNoteWithHead `xml:"originalsloc" json:"originalsloc,omitempty"`
@@ -245,6 +246,19 @@ type Head struct {
 	Value  string    `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
+type Index struct {
+	ID string `xml:"id,attr" json:"id,omitempty"`
+
+	Head  Head     `xml:"head,omitemtpy" json:"head,omitempty"`
+	Index []*Index `xml:"index" json:"index,omitempty"`
+}
+
+type IndexEntry struct {
+	CorpName   NameWithRole `xml:"corpname" json:"corpname,omitempty"`
+	Name       NameWithRole `xml:"name" json:"name,omitempty"`
+	Subject    string `xml:"subject" json:"subject,omitempty"`
+}
+
 type Item struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -316,6 +330,12 @@ type Repository struct {
 
 type RevisionDesc struct {
 	Change []*Change `xml:"change" json:"change,omitempty"`
+}
+
+type Subject struct {
+	Source string `xml:"source,attr" json:"source,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Title struct {
