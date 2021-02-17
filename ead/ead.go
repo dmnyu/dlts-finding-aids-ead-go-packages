@@ -391,6 +391,10 @@ type Note struct {
 	P []P `xml:"p" json:"p,omitempty"`
 }
 
+type NoteStmt struct {
+	Note []Note `xml:"note" json:"note,omitempty"`
+}
+
 type Occupation struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
