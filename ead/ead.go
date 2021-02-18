@@ -413,7 +413,7 @@ type P struct {
 	Name       []*AccessTerm `xml:"name" json:"name,omitempty"`
 	Num        []*Num        `xml:"num" json:"num,omitempty"`
 	Occupation []*AccessTerm `xml:"occupation" json:"occupation,omitempty"`
-	Subject    []*Subject    `xml:"subject" json:"subject,omitempty"`
+	Subject    []*AccessTerm `xml:"subject" json:"subject,omitempty"`
 	Title      []*Title      `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
@@ -464,12 +464,6 @@ type Repository struct {
 
 type RevisionDesc struct {
 	Change []*Change `xml:"change" json:"change,omitempty"`
-}
-
-type Subject struct {
-	Source string `xml:"source,attr" json:"source,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type Title struct {
