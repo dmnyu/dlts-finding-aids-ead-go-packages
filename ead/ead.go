@@ -61,7 +61,7 @@ type ArchDesc struct {
 	Arrangement        []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
 	Bibliography       []*Bibliography          `xml:"bibliography" json:"bibliography,omitempty"`
 	BiogHist           []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
-	ControlAccess      ControlAccess            `xml:"controlaccess" json:"controlaccess,omitempty"`
+	ControlAccess      *ControlAccess            `xml:"controlaccess" json:"controlaccess,omitempty"`
 	CustodHist         []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
 	DID                DID                      `xml:"did" json:"did,omitempty"`
 	DSC                *DSC                     `xml:"dsc" json:"dsc,omitempty"`
@@ -78,7 +78,7 @@ type ArchDesc struct {
 }
 
 type ArchRef struct {
-	PhysLoc PhysLoc `xml:"physloc" json:"physloc,omitempty"`
+	PhysLoc *PhysLoc `xml:"physloc" json:"physloc,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -230,7 +230,7 @@ type DID struct {
 	Repository   *Repository              `xml:"repository" json:"repository,omitempty"`
 	UnitDate     []*UnitDate              `xml:"unitdate" json:"unitdate,omitempty"`
 	UnitID       string                   `xml:"unitid" json:"unitid,omitempty"`
-	UnitTitle    UnitTitle                `xml:"unittitle" json:"unittitle,omitempty"`
+	UnitTitle    *UnitTitle                `xml:"unittitle" json:"unittitle,omitempty"`
 }
 
 type Dimensions struct {
@@ -266,7 +266,7 @@ type EditionStmt struct {
 }
 
 type Event struct {
-	Title Title `xml:"title" json:"title,omitempty"`
+	Title *Title `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -458,7 +458,7 @@ type ProfileDesc struct {
 }
 
 type PublicationStmt struct {
-	Address   Address `xml:"address" json:"address,omitempty"`
+	Address   *Address `xml:"address" json:"address,omitempty"`
 	P         []*P    `xml:"p" json:"p,omitempty"`
 	Publisher string  `xml:"publisher" json:"publisher,omitempty"`
 }
