@@ -79,15 +79,15 @@ func (did *DID) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
-func (nameWithRole *NameWithRole) MarshalJSON() ([]byte, error) {
-	type nameWithRoleWithTranslatedRelatorCode NameWithRole
+func (accessTermWithRole *AccessTermWithRole) MarshalJSON() ([]byte, error) {
+	type accessTermWithRoleWithTranslatedRelatorCode AccessTermWithRole
 
 	var (
 		role string
 		err error
 	)
-	if nameWithRole.Role != "" {
-		role, err = getRelatorAuthoritativeLabel(nameWithRole.Role)
+	if accessTermWithRole.Role != "" {
+		role, err = getRelatorAuthoritativeLabel(accessTermWithRole.Role)
 		if err != nil {
 			return nil, err
 		}
@@ -95,10 +95,10 @@ func (nameWithRole *NameWithRole) MarshalJSON() ([]byte, error) {
 
 	jsonData, err := json.Marshal(&struct {
 		Role string `xml:"role,attr" json:"role,omitempty"`
-		*nameWithRoleWithTranslatedRelatorCode
+		*accessTermWithRoleWithTranslatedRelatorCode
 	}{
 		Role: role,
-		nameWithRoleWithTranslatedRelatorCode: (*nameWithRoleWithTranslatedRelatorCode)(nameWithRole),
+		accessTermWithRoleWithTranslatedRelatorCode: (*accessTermWithRoleWithTranslatedRelatorCode)(accessTermWithRole),
 	})
 	if err != nil {
 		return nil, err
