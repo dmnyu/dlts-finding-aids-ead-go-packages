@@ -227,7 +227,7 @@ type DID struct {
 	Origination  []*Origination           `xml:"origination" json:"origination,omitempty"`
 	PhysDesc     []*PhysDesc              `xml:"physdesc" json:"physdesc,omitempty"`
 	PhysLoc      []*PhysLoc               `xml:"physloc" json:"physloc,omitempty"`
-	Repository   *Repository               `xml:"repository" json:"repository,omitempty"`
+	Repository   *Repository              `xml:"repository" json:"repository,omitempty"`
 	UnitDate     []*UnitDate              `xml:"unitdate" json:"unitdate,omitempty"`
 	UnitID       string                   `xml:"unitid" json:"unitid,omitempty"`
 	UnitTitle    UnitTitle                `xml:"unittitle" json:"unittitle,omitempty"`
@@ -241,9 +241,9 @@ type Dimensions struct {
 }
 
 type DSC struct {
-	C    []*C `xml:"c,omitempty" json:"c,omitempty"`
-	Head *Head`xml:"head,omitemtpy" json:"head,omitempty"`
-	P    []*P `xml:"p,omitempty" json:"p,omitempty"`
+	C    []*C  `xml:"c,omitempty" json:"c,omitempty"`
+	Head *Head `xml:"head,omitemtpy" json:"head,omitempty"`
+	P    []*P  `xml:"p,omitempty" json:"p,omitempty"`
 }
 
 type EADHeader struct {
@@ -308,11 +308,11 @@ type FormattedNoteWithHead struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
 	ChronList   *ChronList   `xml:"chronlist" json:"chronlist,omitempty"`
-	DefItem     []*DefItem  `xml:"defitem,omitemtpy" json:"defitem,omitempty"`
-	Head        *Head       `xml:"head,omitemtpy" json:"head,omitempty"`
+	DefItem     []*DefItem   `xml:"defitem,omitemtpy" json:"defitem,omitempty"`
+	Head        *Head        `xml:"head,omitemtpy" json:"head,omitempty"`
 	LegalStatus *LegalStatus `xml:"legalstatus,omitemtpy" json:"legalstatus,omitempty"`
-	List        []*List     `xml:"list,omitemtpy" json:"list,omitempty"`
-	P           []*P        `xml:"p,omitempty" json:"p,omitempty"`
+	List        []*List      `xml:"list,omitemtpy" json:"list,omitempty"`
+	P           []*P         `xml:"p,omitempty" json:"p,omitempty"`
 }
 
 type Head struct {
@@ -431,7 +431,7 @@ type PhysDesc struct {
 	ID        string `xml:"id,attr" json:"id,omitempty"`
 	Label     string `xml:"label,attr" json:"label,omitempty"`
 
-	Extent     []*Extent  `xml:"extent" json:"extent,omitempty"`
+	Extent     []*Extent   `xml:"extent" json:"extent,omitempty"`
 	Dimensions *Dimensions `xml:"dimensions" json:"dimensions,omitempty"`
 	PhysFacet  *PhysFacet  `xml:"physfacet" json:"physfacet,omitempty"`
 
