@@ -139,7 +139,7 @@ type ChronItem struct {
 }
 
 type ChronList struct {
-	Head      Head         `xml:"head,omitemtpy" json:"head,omitempty"`
+	Head      []*Head         `xml:"head,omitemtpy" json:"head,omitempty"`
 	ChronItem []*ChronItem `xml:"chronitem,omitempty" json:"chronitem,omitempty"`
 }
 
@@ -154,14 +154,14 @@ type Container struct {
 }
 
 type ControlAccess struct {
-	CorpName   []AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
-	FamName    []AccessTermWithRole `xml:"famname" json:"famname,omitempty"`
-	Function   []AccessTerm         `xml:"function" json:"function,omitempty"`
-	GenreForm  []AccessTerm         `xml:"genreform" json:"genreform,omitempty"`
-	GeogName   []AccessTerm         `xml:"geogname" json:"geogname,omitempty"`
-	Occupation []AccessTerm         `xml:"occupation" json:"occupation,omitempty"`
-	PersName   []AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
-	Subject    []AccessTerm         `xml:"subject" json:"subject,omitempty"`
+	CorpName   []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
+	FamName    []*AccessTermWithRole `xml:"famname" json:"famname,omitempty"`
+	Function   []*AccessTerm         `xml:"function" json:"function,omitempty"`
+	GenreForm  []*AccessTerm         `xml:"genreform" json:"genreform,omitempty"`
+	GeogName   []*AccessTerm         `xml:"geogname" json:"geogname,omitempty"`
+	Occupation []*AccessTerm         `xml:"occupation" json:"occupation,omitempty"`
+	PersName   []*AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
+	Subject    []*AccessTerm         `xml:"subject" json:"subject,omitempty"`
 	Title      []*Title             `xml:"title" json:"title,omitempty"`
 }
 
@@ -191,7 +191,7 @@ type DAOGrp struct {
 	Type  string `xml:"type,attr"  json:"type,omitempty"`
 
 	DAODesc DAODesc  `xml:"daodesc" json:"daodesc,omitempty"`
-	DAOLoc  []DAOLoc `xml:"daoloc" json:"daoloc,omitempty"`
+	DAOLoc  []*DAOLoc `xml:"daoloc" json:"daoloc,omitempty"`
 }
 
 type DAOLoc struct {
@@ -308,11 +308,11 @@ type FormattedNoteWithHead struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
 	ChronList   ChronList   `xml:"chronlist" json:"chronlist,omitempty"`
-	DefItem     []DefItem   `xml:"defitem,omitemtpy" json:"defitem,omitempty"`
+	DefItem     []*DefItem   `xml:"defitem,omitemtpy" json:"defitem,omitempty"`
 	Head        Head        `xml:"head,omitemtpy" json:"head,omitempty"`
 	LegalStatus LegalStatus `xml:"legalstatus,omitemtpy" json:"legalstatus,omitempty"`
-	List        []List      `xml:"list,omitemtpy" json:"list,omitempty"`
-	P           []P         `xml:"p,omitempty" json:"p,omitempty"`
+	List        []*List      `xml:"list,omitemtpy" json:"list,omitempty"`
+	P           []*P         `xml:"p,omitempty" json:"p,omitempty"`
 }
 
 type Head struct {
@@ -335,11 +335,11 @@ type IndexEntry struct {
 }
 
 type Item struct {
-	BibRef   []BibRef     `xml:"bibref" json:"bibref,omitempty"`
-	CorpName []AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
-	Name     []AccessTermWithRole `xml:"name" json:"name,omitempty"`
-	PersName []AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
-	Title    []Title      `xml:"title" json:"title,omitempty"`
+	BibRef   []*BibRef     `xml:"bibref" json:"bibref,omitempty"`
+	CorpName []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
+	Name     []*AccessTermWithRole `xml:"name" json:"name,omitempty"`
+	PersName []*AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
+	Title    []*Title      `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -378,16 +378,16 @@ type List struct {
 	Type       string `xml:"type,attr"  json:"type,omitempty"`
 
 	Head    Head       `xml:"head" json:"head,omitempty"`
-	Item    []Item     `xml:"item" json:"item,omitempty"`
+	Item    []*Item     `xml:"item" json:"item,omitempty"`
 	DefItem []*DefItem `xml:"defitem" json:"defitem,omitempty"`
 }
 
 type Note struct {
-	P []P `xml:"p" json:"p,omitempty"`
+	P []*P `xml:"p" json:"p,omitempty"`
 }
 
 type NoteStmt struct {
-	Note []Note `xml:"note" json:"note,omitempty"`
+	Note []*Note `xml:"note" json:"note,omitempty"`
 }
 
 type Num struct {
