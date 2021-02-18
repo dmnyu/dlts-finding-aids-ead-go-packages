@@ -507,7 +507,7 @@ type Title struct {
 type TitleProper struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
-	Num []*string `xml:"num" json:"num,omitempty"`
+	Num []*Num `xml:"num" json:"num,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
