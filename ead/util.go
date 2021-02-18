@@ -36,6 +36,10 @@ func _getConvertedTextWithTags(text string, convertLBTags bool) ([]byte, error) 
 			switch token.Name.Local {
 			default:
 				result += _getConvertedTextWithTagsDefault(token.Name.Local)
+			case "blockquote":
+				{
+					result += "<blockquote>"
+				}
 			case "emph":
 				{
 					var render string
@@ -60,6 +64,11 @@ func _getConvertedTextWithTags(text string, convertLBTags bool) ([]byte, error) 
 
 		case xml.EndElement:
 			if needClosingTag {
+				if token.Name.Local == "blockquote" {
+					result += "</blockquote>"
+				} else {
+					result += "</span>"
+				}
 				result += "</span>"
 			} else {
 				// Reset
