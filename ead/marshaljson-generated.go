@@ -51,6 +51,50 @@ func (bibref *BibRef) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (event *Event) MarshalJSON() ([]byte, error) {
+	type EventWithTags Event
+
+	result, err := getConvertedTextWithTags(event.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*EventWithTags
+	}{
+		Value:         string(result),
+		EventWithTags: (*EventWithTags)(event),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (extent *Extent) MarshalJSON() ([]byte, error) {
+	type ExtentWithTags Extent
+
+	result, err := getConvertedTextWithTags(extent.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*ExtentWithTags
+	}{
+		Value:          string(result),
+		ExtentWithTags: (*ExtentWithTags)(extent),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (head *Head) MarshalJSON() ([]byte, error) {
 	type HeadWithTags Head
 
@@ -73,6 +117,50 @@ func (head *Head) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (item *Item) MarshalJSON() ([]byte, error) {
+	type ItemWithTags Item
+
+	result, err := getConvertedTextWithTags(item.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*ItemWithTags
+	}{
+		Value:        string(result),
+		ItemWithTags: (*ItemWithTags)(item),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (langmaterial *LangMaterial) MarshalJSON() ([]byte, error) {
+	type LangMaterialWithTags LangMaterial
+
+	result, err := getConvertedTextWithTags(langmaterial.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*LangMaterialWithTags
+	}{
+		Value:                string(result),
+		LangMaterialWithTags: (*LangMaterialWithTags)(langmaterial),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (p *P) MarshalJSON() ([]byte, error) {
 	type PWithTags P
 
@@ -87,6 +175,50 @@ func (p *P) MarshalJSON() ([]byte, error) {
 	}{
 		Value:     string(result),
 		PWithTags: (*PWithTags)(p),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (physfacet *PhysFacet) MarshalJSON() ([]byte, error) {
+	type PhysFacetWithTags PhysFacet
+
+	result, err := getConvertedTextWithTags(physfacet.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*PhysFacetWithTags
+	}{
+		Value:             string(result),
+		PhysFacetWithTags: (*PhysFacetWithTags)(physfacet),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (title *Title) MarshalJSON() ([]byte, error) {
+	type TitleWithTags Title
+
+	result, err := getConvertedTextWithTagsNoLBConversion(title.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*TitleWithTags
+	}{
+		Value:         string(result),
+		TitleWithTags: (*TitleWithTags)(title),
 	})
 	if err != nil {
 		return nil, err
@@ -139,35 +271,6 @@ func (unittitle *UnitTitle) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
-func (dao *DAO) MarshalJSON() ([]byte, error) {
-	type DAOWithNoWhitespaceOnlyValues DAO
-
-	containsNonWhitespace, err := regexp.MatchString(`\S`, dao.Value)
-	if err != nil {
-		return nil, err
-	}
-
-	var value string
-	if containsNonWhitespace {
-		value = dao.Value
-	} else {
-		value = ""
-	}
-
-	jsonData, err := json.Marshal(&struct {
-		Value string `json:"value,chardata,omitempty"`
-		*DAOWithNoWhitespaceOnlyValues
-	}{
-		Value:                         value,
-		DAOWithNoWhitespaceOnlyValues: (*DAOWithNoWhitespaceOnlyValues)(dao),
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
-}
-
 func (physdesc *PhysDesc) MarshalJSON() ([]byte, error) {
 	type PhysDescWithNoWhitespaceOnlyValues PhysDesc
 
@@ -178,7 +281,12 @@ func (physdesc *PhysDesc) MarshalJSON() ([]byte, error) {
 
 	var value string
 	if containsNonWhitespace {
-		value = physdesc.Value
+		result, err := getConvertedTextWithTags(physdesc.Value)
+		if err != nil {
+			return nil, err
+		}
+
+		value = string(result)
 	} else {
 		value = ""
 	}

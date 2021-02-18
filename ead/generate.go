@@ -35,7 +35,7 @@ const convertTextWithTagsMarshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeN
 	return jsonData, nil
 }`
 
-const omitWhitespaceOnlyValueFieldsMarshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeName}}) MarshalJSON() ([]byte, error) {
+const omitWhitespaceOnlyValueFieldsAndConvertTextWithTagsMarshalJSONCodeTemplate = `func ({{.VarName}} *{{.TypeName}}) MarshalJSON() ([]byte, error) {
 	type {{.TypeName}}WithNoWhitespaceOnlyValues {{.TypeName}}
 
 	containsNonWhitespace, err := regexp.MatchString(` + "`\\S`" + `, {{.VarName}}.Value)
@@ -45,7 +45,12 @@ const omitWhitespaceOnlyValueFieldsMarshalJSONCodeTemplate = `func ({{.VarName}}
 
 	var value string
 	if containsNonWhitespace {
-		value = {{.VarName}}.Value
+		result, err := {{.ConversionFunction}}({{.VarName}}.Value)
+		if err != nil {
+			return nil, err
+		}
+
+		value = string(result)
 	} else {
 		value = ""
 	}
@@ -77,7 +82,7 @@ import (
 )`)
 
 	writeConvertTextWithTagsCodeToBuffer(w)
-	writeOmitWhitespaceOnlyValueFieldsCodeToBuffer(w)
+	writeOmitWhitespaceOnlyValueFieldsAndConvertTextWithTagsCodeToBuffer(w)
 
 	// Format with gofmt
 	out, err := format.Source(w.Bytes())
@@ -103,8 +108,14 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 	conversionFunctionsForTypes := map[string]string{
 		"Abstract" : "getConvertedTextWithTags",
 		"BibRef" : "getConvertedTextWithTags",
+		"Event" : "getConvertedTextWithTags",
+		"Extent" : "getConvertedTextWithTags",
 		"Head" : "getConvertedTextWithTags",
+		"Item" : "getConvertedTextWithTags",
+		"LangMaterial" : "getConvertedTextWithTags",
 		"P" : "getConvertedTextWithTags",
+		"PhysFacet" : "getConvertedTextWithTags",
+		"Title" : "getConvertedTextWithTagsNoLBConversion",
 		"TitleProper" : "getConvertedTextWithTagsNoLBConversion",
 		"UnitTitle" : "getConvertedTextWithTags",
 	}
@@ -132,23 +143,34 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 	}
 }
 
-func writeOmitWhitespaceOnlyValueFieldsCodeToBuffer(w *bytes.Buffer) {
+func writeOmitWhitespaceOnlyValueFieldsAndConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 	type templateData struct{
+		ConversionFunction string
 		TypeName string
 		VarName string
 	}
 
-	t := template.Must(template.New("").Parse(omitWhitespaceOnlyValueFieldsMarshalJSONCodeTemplate))
+	t := template.Must(template.New("").Parse(omitWhitespaceOnlyValueFieldsAndConvertTextWithTagsMarshalJSONCodeTemplate))
 
-	sortedTypes := []string{
-		"DAO",
-		"PhysDesc",
+	conversionFunctionsForTypes := map[string]string{
+		"PhysDesc" : "getConvertedTextWithTags",
 	}
 
+	sortedTypes := make([]string, len(conversionFunctionsForTypes))
+	i := 0
+	for k := range conversionFunctionsForTypes {
+		sortedTypes[i] = k
+		i++
+	}
+	sort.Strings(sortedTypes)
+
 	for _, typeName := range sortedTypes {
+		conversionFunction := conversionFunctionsForTypes[typeName]
+
 		w.WriteString("\n\n")
 
 		err := t.Execute(w, templateData{
+			ConversionFunction : conversionFunction,
 			TypeName: typeName,
 			VarName:  strings.ToLower(typeName),
 		})
