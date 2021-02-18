@@ -149,12 +149,12 @@ type Container struct {
 type ControlAccess struct {
 	CorpName   []AccessTerm `xml:"corpname" json:"corpname,omitempty"`
 	FamName    []AccessTerm `xml:"famname" json:"famname,omitempty"`
-	Function   []Function   `xml:"function" json:"function,omitempty"`
-	GenreForm  []GenreForm  `xml:"genreform" json:"genreform,omitempty"`
-	GeogName   []GeogName   `xml:"geogname" json:"geogname,omitempty"`
-	Occupation []Occupation `xml:"occupation" json:"occupation,omitempty"`
+	Function   []AccessTerm `xml:"function" json:"function,omitempty"`
+	GenreForm  []AccessTerm `xml:"genreform" json:"genreform,omitempty"`
+	GeogName   []AccessTerm `xml:"geogname" json:"geogname,omitempty"`
+	Occupation []AccessTerm `xml:"occupation" json:"occupation,omitempty"`
 	PersName   []AccessTerm `xml:"persname" json:"persname,omitempty"`
-	Subject    []Subject    `xml:"subject" json:"subject,omitempty"`
+	Subject    []AccessTerm `xml:"subject" json:"subject,omitempty"`
 	Title      []*Title     `xml:"title" json:"title,omitempty"`
 }
 
@@ -308,24 +308,6 @@ type FormattedNoteWithHead struct {
 	P           P           `xml:"p,omitempty" json:"p,omitempty"`
 }
 
-type Function struct {
-	Source string `xml:"source,attr" json:"source,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
-type GenreForm struct {
-	Source string `xml:"source,attr" json:"source,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
-type GeogName struct {
-	Source string `xml:"source,attr" json:"source,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
 type Head struct {
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 
@@ -342,7 +324,7 @@ type Index struct {
 type IndexEntry struct {
 	CorpName AccessTerm `xml:"corpname" json:"corpname,omitempty"`
 	Name     AccessTerm `xml:"name" json:"name,omitempty"`
-	Subject  string     `xml:"subject" json:"subject,omitempty"`
+	Subject  AccessTerm `xml:"subject" json:"subject,omitempty"`
 }
 
 type Item struct {
@@ -407,12 +389,6 @@ type Num struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
-type Occupation struct {
-	Type string `xml:"type,attr" json:"type,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
 type Origination struct {
 	Label string `xml:"label,attr" json:"label,omitempty"`
 
@@ -432,11 +408,11 @@ type P struct {
 	CorpName   []*AccessTerm `xml:"corpname" json:"corpname,omitempty"`
 	Date       []*Date       `xml:"date" json:"date,omitempty"`
 	ExtRef     []*ExtRef     `xml:"extref" json:"extref,omitempty"`
-	GenreForm  []*GenreForm  `xml:"genreform" json:"genreform,omitempty"`
+	GenreForm  []*AccessTerm `xml:"genreform" json:"genreform,omitempty"`
 	List       []*List       `xml:"list" json:"list,omitempty"`
 	Name       []*AccessTerm `xml:"name" json:"name,omitempty"`
 	Num        []*Num        `xml:"num" json:"num,omitempty"`
-	Occupation []*Occupation `xml:"occupation" json:"occupation,omitempty"`
+	Occupation []*AccessTerm `xml:"occupation" json:"occupation,omitempty"`
 	Subject    []*Subject    `xml:"subject" json:"subject,omitempty"`
 	Title      []*Title      `xml:"title" json:"title,omitempty"`
 
