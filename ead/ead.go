@@ -305,7 +305,7 @@ type FormattedNoteWithHead struct {
 	Head        Head        `xml:"head,omitemtpy" json:"head,omitempty"`
 	LegalStatus LegalStatus `xml:"legalstatus,omitemtpy" json:"legalstatus,omitempty"`
 	List        []List      `xml:"list,omitemtpy" json:"list,omitempty"`
-	P           P           `xml:"p,omitempty" json:"p,omitempty"`
+	P           []P         `xml:"p,omitempty" json:"p,omitempty"`
 }
 
 type Head struct {
