@@ -34,8 +34,6 @@ type AccessTerm struct {
 
 type AccessTermWithRole struct {
 	Role   string `xml:"role,attr" json:"role,omitempty"`
-	Rules  string `xml:"rules,attr" json:"rules,omitempty"`
-	Source string `xml:"source,attr" json:"source,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
