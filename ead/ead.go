@@ -25,13 +25,6 @@ type Abstract struct {
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
-type AccessTerm struct {
-	Rules  string `xml:"rules,attr" json:"rules,omitempty"`
-	Source string `xml:"source,attr" json:"source,omitempty"`
-
-	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
-}
-
 type AccessTermWithRole struct {
 	Role   string `xml:"role,attr" json:"role,omitempty"`
 
@@ -154,12 +147,12 @@ type Container struct {
 type ControlAccess struct {
 	CorpName   []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 	FamName    []*AccessTermWithRole `xml:"famname" json:"famname,omitempty"`
-	Function   []*AccessTerm         `xml:"function" json:"function,omitempty"`
-	GenreForm  []*AccessTerm         `xml:"genreform" json:"genreform,omitempty"`
-	GeogName   []*AccessTerm         `xml:"geogname" json:"geogname,omitempty"`
-	Occupation []*AccessTerm         `xml:"occupation" json:"occupation,omitempty"`
+	Function   []*string         `xml:"function" json:"function,omitempty"`
+	GenreForm  []*string         `xml:"genreform" json:"genreform,omitempty"`
+	GeogName   []*string         `xml:"geogname" json:"geogname,omitempty"`
+	Occupation []*string         `xml:"occupation" json:"occupation,omitempty"`
 	PersName   []*AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
-	Subject    []*AccessTerm         `xml:"subject" json:"subject,omitempty"`
+	Subject    []*string         `xml:"subject" json:"subject,omitempty"`
 	Title      []*Title              `xml:"title" json:"title,omitempty"`
 }
 
@@ -324,7 +317,7 @@ type Index struct {
 type IndexEntry struct {
 	CorpName *AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 	Name     *AccessTermWithRole `xml:"name" json:"name,omitempty"`
-	Subject  *AccessTerm         `xml:"subject" json:"subject,omitempty"`
+	Subject  *string         `xml:"subject" json:"subject,omitempty"`
 }
 
 type Item struct {
@@ -397,12 +390,12 @@ type P struct {
 	CorpName   []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 	Date       []*Date               `xml:"date" json:"date,omitempty"`
 	ExtRef     []*ExtRef             `xml:"extref" json:"extref,omitempty"`
-	GenreForm  []*AccessTerm         `xml:"genreform" json:"genreform,omitempty"`
+	GenreForm  []*string         `xml:"genreform" json:"genreform,omitempty"`
 	List       []*List               `xml:"list" json:"list,omitempty"`
 	Name       []*AccessTermWithRole `xml:"name" json:"name,omitempty"`
 	Num        []*Num                `xml:"num" json:"num,omitempty"`
-	Occupation []*AccessTerm         `xml:"occupation" json:"occupation,omitempty"`
-	Subject    []*AccessTerm         `xml:"subject" json:"subject,omitempty"`
+	Occupation []*string         `xml:"occupation" json:"occupation,omitempty"`
+	Subject    []*string         `xml:"subject" json:"subject,omitempty"`
 	Title      []*Title              `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
