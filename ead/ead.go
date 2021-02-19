@@ -34,8 +34,6 @@ type AccessTerm struct {
 
 type AccessTermWithRole struct {
 	Role   string `xml:"role,attr" json:"role,omitempty"`
-	Rules  string `xml:"rules,attr" json:"rules,omitempty"`
-	Source string `xml:"source,attr" json:"source,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -202,9 +200,6 @@ type DAOLoc struct {
 }
 
 type Date struct {
-	Calendar string `xml:"calendar,attr" json:"calendar,omitempty"`
-	Era      string `xml:"era,attr" json:"era,omitempty"`
-	Normal   string `xml:"normal,attr" json:"normal,omitempty"`
 	Type     string `xml:"type,attr" json:"type,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
@@ -254,8 +249,6 @@ type EADHeader struct {
 }
 
 type EADID struct {
-	CountryCode    string `xml:"countrycode,attr" json:"countrycode,omitempty"`
-	MainAgencyCode string `xml:"mainagencycode,attr" json:"mainagencycode,omitempty"`
 	URL            string `xml:"url,attr" json:"url,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
@@ -347,24 +340,13 @@ type Item struct {
 type LangMaterial struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
-	Language *Language `xml:"language" json:"language,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
-type Language struct {
-	ID             string `xml:"id,attr" json:"id,omitempty"`
-	EncodingAnalog string `xml:"encodinganalog,attr" json:"encodinganalog,omitempty"`
-	LangCode       string `xml:"langcode,attr" json:"langcode,omitempty"`
-	ScriptCode     string `xml:"scriptcode,attr" json:"scriptcode,omitempty"`
+	Language *string `xml:"language" json:"language,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type LangUsage struct {
-	EncodingAnalog string `xml:"encodinganalog,attr" json:"encodinganalog,omitempty"`
-
-	Language *Language `xml:"language" json:"language,omitempty"`
+	Language *string `xml:"language" json:"language,omitempty"`
 }
 
 type LegalStatus struct {
@@ -497,8 +479,6 @@ type TitleStmt struct {
 }
 
 type UnitDate struct {
-	Certainty string `xml:"certainty,attr" json:"certainty,omitempty"`
-	Normal    string `xml:"normal,attr" json:"normal,omitempty"`
 	Type      string `xml:"type,attr" json:"type,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
