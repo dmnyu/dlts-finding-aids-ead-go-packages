@@ -339,7 +339,9 @@ type LangMaterial struct {
 }
 
 type LangUsage struct {
-	Language *string `xml:"language" json:"language,omitempty"`
+	Language string `xml:"language" json:"language,omitempty"`
+
+	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type LegalStatus struct {
