@@ -340,19 +340,13 @@ type Item struct {
 type LangMaterial struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
-	Language *Language `xml:"language" json:"language,omitempty"`
+	Language *string `xml:"language" json:"language,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
-}
-
-type Language struct {
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
 
 type LangUsage struct {
-	EncodingAnalog string `xml:"encodinganalog,attr" json:"encodinganalog,omitempty"`
-
-	Language *Language `xml:"language" json:"language,omitempty"`
+	Language *string `xml:"language" json:"language,omitempty"`
 }
 
 type LegalStatus struct {
