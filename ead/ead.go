@@ -26,7 +26,7 @@ type Abstract struct {
 }
 
 type AccessTermWithRole struct {
-	Role   string `xml:"role,attr" json:"role,omitempty"`
+	Role string `xml:"role,attr" json:"role,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -52,7 +52,7 @@ type ArchDesc struct {
 	Arrangement        []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
 	Bibliography       []*Bibliography          `xml:"bibliography" json:"bibliography,omitempty"`
 	BiogHist           []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
-	ControlAccess      *ControlAccess            `xml:"controlaccess" json:"controlaccess,omitempty"`
+	ControlAccess      *ControlAccess           `xml:"controlaccess" json:"controlaccess,omitempty"`
 	CustodHist         []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
 	DID                DID                      `xml:"did" json:"did,omitempty"`
 	DSC                *DSC                     `xml:"dsc" json:"dsc,omitempty"`
@@ -147,12 +147,12 @@ type Container struct {
 type ControlAccess struct {
 	CorpName   []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 	FamName    []*AccessTermWithRole `xml:"famname" json:"famname,omitempty"`
-	Function   []*string         `xml:"function" json:"function,omitempty"`
-	GenreForm  []*string         `xml:"genreform" json:"genreform,omitempty"`
-	GeogName   []*string         `xml:"geogname" json:"geogname,omitempty"`
-	Occupation []*string         `xml:"occupation" json:"occupation,omitempty"`
+	Function   []*string             `xml:"function" json:"function,omitempty"`
+	GenreForm  []*string             `xml:"genreform" json:"genreform,omitempty"`
+	GeogName   []*string             `xml:"geogname" json:"geogname,omitempty"`
+	Occupation []*string             `xml:"occupation" json:"occupation,omitempty"`
 	PersName   []*AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
-	Subject    []*string         `xml:"subject" json:"subject,omitempty"`
+	Subject    []*string             `xml:"subject" json:"subject,omitempty"`
 	Title      []*Title              `xml:"title" json:"title,omitempty"`
 }
 
@@ -193,7 +193,7 @@ type DAOLoc struct {
 }
 
 type Date struct {
-	Type     string `xml:"type,attr" json:"type,omitempty"`
+	Type string `xml:"type,attr" json:"type,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -218,7 +218,7 @@ type DID struct {
 	Repository   *Repository              `xml:"repository" json:"repository,omitempty"`
 	UnitDate     []*UnitDate              `xml:"unitdate" json:"unitdate,omitempty"`
 	UnitID       string                   `xml:"unitid" json:"unitid,omitempty"`
-	UnitTitle    *UnitTitle                `xml:"unittitle" json:"unittitle,omitempty"`
+	UnitTitle    *UnitTitle               `xml:"unittitle" json:"unittitle,omitempty"`
 }
 
 type Dimensions struct {
@@ -242,7 +242,7 @@ type EADHeader struct {
 }
 
 type EADID struct {
-	URL            string `xml:"url,attr" json:"url,omitempty"`
+	URL string `xml:"url,attr" json:"url,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
@@ -317,7 +317,7 @@ type Index struct {
 type IndexEntry struct {
 	CorpName *AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 	Name     *AccessTermWithRole `xml:"name" json:"name,omitempty"`
-	Subject  *string         `xml:"subject" json:"subject,omitempty"`
+	Subject  *string             `xml:"subject" json:"subject,omitempty"`
 }
 
 type Item struct {
@@ -390,12 +390,12 @@ type P struct {
 	CorpName   []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 	Date       []*Date               `xml:"date" json:"date,omitempty"`
 	ExtRef     []*ExtRef             `xml:"extref" json:"extref,omitempty"`
-	GenreForm  []*string         `xml:"genreform" json:"genreform,omitempty"`
+	GenreForm  []*string             `xml:"genreform" json:"genreform,omitempty"`
 	List       []*List               `xml:"list" json:"list,omitempty"`
 	Name       []*AccessTermWithRole `xml:"name" json:"name,omitempty"`
 	Num        []*Num                `xml:"num" json:"num,omitempty"`
-	Occupation []*string         `xml:"occupation" json:"occupation,omitempty"`
-	Subject    []*string         `xml:"subject" json:"subject,omitempty"`
+	Occupation []*string             `xml:"occupation" json:"occupation,omitempty"`
+	Subject    []*string             `xml:"subject" json:"subject,omitempty"`
 	Title      []*Title              `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
@@ -434,8 +434,8 @@ type ProfileDesc struct {
 
 type PublicationStmt struct {
 	Address   *Address `xml:"address" json:"address,omitempty"`
-	P         []*P    `xml:"p" json:"p,omitempty"`
-	Publisher string  `xml:"publisher" json:"publisher,omitempty"`
+	P         []*P     `xml:"p" json:"p,omitempty"`
+	Publisher string   `xml:"publisher" json:"publisher,omitempty"`
 }
 
 type Repository struct {
@@ -472,7 +472,7 @@ type TitleStmt struct {
 }
 
 type UnitDate struct {
-	Type      string `xml:"type,attr" json:"type,omitempty"`
+	Type string `xml:"type,attr" json:"type,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
 }
