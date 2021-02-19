@@ -249,8 +249,6 @@ type EADHeader struct {
 }
 
 type EADID struct {
-	CountryCode    string `xml:"countrycode,attr" json:"countrycode,omitempty"`
-	MainAgencyCode string `xml:"mainagencycode,attr" json:"mainagencycode,omitempty"`
 	URL            string `xml:"url,attr" json:"url,omitempty"`
 
 	Value string `xml:",chardata" json:"value,chardata,omitempty"`
