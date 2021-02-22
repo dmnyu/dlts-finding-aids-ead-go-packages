@@ -108,6 +108,7 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 	conversionFunctionsForTypes := map[string]string{
 		"Abstract" : "getConvertedTextWithTags",
 		"BibRef" : "getConvertedTextWithTags",
+		"Creation" : "getConvertedTextWithTags",
 		"Event" : "getConvertedTextWithTags",
 		"Extent" : "getConvertedTextWithTags",
 		"Head" : "getConvertedTextWithTags",

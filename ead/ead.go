@@ -157,9 +157,7 @@ type ControlAccess struct {
 }
 
 type Creation struct {
-	Date Date `xml:"date" json:"date,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type DAO struct {
@@ -429,7 +427,7 @@ type PhysLoc struct {
 }
 
 type ProfileDesc struct {
-	Creation  Creation   `xml:"creation" json:"creation,omitempty"`
+	Creation  *Creation   `xml:"creation" json:"creation,omitempty"`
 	DescRules string     `xml:"descrules" json:"descrules,omitempty"`
 	LangUsage *LangUsage `xml:"langusage" json:"langusage,omitempty"`
 }
