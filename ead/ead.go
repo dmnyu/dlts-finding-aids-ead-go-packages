@@ -252,7 +252,7 @@ type EditionStmt struct {
 type Event struct {
 	Title *Title `xml:"title" json:"title,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type EventGrp struct {
@@ -264,7 +264,7 @@ type Extent struct {
 
 	Unit string `xml:"unit" json:"unit,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ExtPtr struct {
@@ -325,7 +325,7 @@ type Item struct {
 	PersName []*AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
 	Title    []*Title              `xml:"title" json:"title,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type LangMaterial struct {
@@ -410,14 +410,14 @@ type PhysDesc struct {
 	Dimensions *Dimensions `xml:"dimensions" json:"dimensions,omitempty"`
 	PhysFacet  *PhysFacet  `xml:"physfacet" json:"physfacet,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type PhysFacet struct {
 	ID    string `xml:"id,attr" json:"id,omitempty"`
 	Label string `xml:"label,attr" json:"label,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type PhysLoc struct {
@@ -453,7 +453,7 @@ type Title struct {
 	Source string `xml:"source,attr" json:"source,omitempty"`
 	Type   string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type TitleProper struct {
