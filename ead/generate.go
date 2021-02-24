@@ -125,8 +125,9 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 		"LegalStatus" : "getConvertedTextWithTags",
 		"Num" : "getConvertedTextWithTags",
 		"P" : "getConvertedTextWithTags",
-		"PhysDesc" : "getConvertedTextWithTags",
 		"PhysFacet" : "getConvertedTextWithTags",
+		// Do not add PhysDesc, whose MarshalJSON is created by generator
+		// writeOmitWhitespaceOnlyValueFieldsAndConvertTextWithTagsCodeToBuffer.
 		"PhysLoc" : "getConvertedTextWithTags",
 		"Repository" : "getConvertedTextWithTags",
 		"Title" : "getConvertedTextWithTagsNoLBConversion",
