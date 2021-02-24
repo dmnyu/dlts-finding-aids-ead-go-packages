@@ -38,7 +38,7 @@ type Address struct {
 type AddressLine struct {
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ArchDesc struct {
@@ -126,7 +126,7 @@ type ChronItem struct {
 	Date     Date        `xml:"date" json:"date,omitempty"`
 	EventGrp []*EventGrp `xml:"eventgrp,omitempty" json:"eventgrp,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ChronList struct {
@@ -141,7 +141,7 @@ type Container struct {
 	Parent    string `xml:"parent,attr" json:"parent,omitempty"`
 	Type      string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ControlAccess struct {
@@ -193,7 +193,7 @@ type DAOLoc struct {
 type Date struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type DefItem struct {
@@ -239,10 +239,14 @@ type EADHeader struct {
 	RevisionDesc *RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
 }
 
+// NOTE: Event though we are process Value as innerxml, we do not create a
+// MarshalJSON for it that processes it as mixed content because we have strict
+// validation rules for <eadid> that automatically reject any values that contain
+// mixed content.
 type EADID struct {
 	URL string `xml:"url,attr" json:"url,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type EditionStmt struct {
@@ -333,13 +337,13 @@ type LangMaterial struct {
 
 	Language *string `xml:"language" json:"language,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type LangUsage struct {
 	Language string `xml:"language" json:"language,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type LegalStatus struct {
@@ -368,7 +372,7 @@ type NoteStmt struct {
 type Num struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type Origination struct {
@@ -423,7 +427,7 @@ type PhysFacet struct {
 type PhysLoc struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ProfileDesc struct {
@@ -441,7 +445,7 @@ type PublicationStmt struct {
 type Repository struct {
 	CorpName *AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type RevisionDesc struct {
@@ -474,7 +478,7 @@ type TitleStmt struct {
 type UnitDate struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type UnitTitle struct {
