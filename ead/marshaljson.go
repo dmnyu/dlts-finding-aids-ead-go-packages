@@ -5,36 +5,6 @@ import (
 	"regexp"
 )
 
-func (container *Container) MarshalJSON() ([]byte, error) {
-	type ContainerWithBarcode Container
-
-	var barcode string
-	var label string
-	labelContainsBarcodeRegexp := regexp.MustCompile(`^(.+)\s+\[(\d{14})\]$`)
-	submatches := labelContainsBarcodeRegexp.FindStringSubmatch(container.Label)
-	if (len(submatches) > 0) {
-		barcode = submatches[2]
-		label = submatches[1]
-	} else {
-		label = container.Label
-	}
-
-	jsonData, err := json.Marshal(&struct {
-		Barcode string `json:"barcode,omitempty"`
-		Label   string `json:"label,omitempty"`
-		*ContainerWithBarcode
-	}{
-		Barcode:              barcode,
-		Label:                label,
-		ContainerWithBarcode: (*ContainerWithBarcode)(container),
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
-}
-
 // Note that this custom marshalling for DID will prevent PhysDesc from having a Value field
 // that is all whitespace if Extent is nil, but won't prevent PhysDesc from having
 // a Value field that is all whitespace if Extent is not nil.
