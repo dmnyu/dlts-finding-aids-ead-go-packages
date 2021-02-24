@@ -29,6 +29,50 @@ func (abstract *Abstract) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (addressline *AddressLine) MarshalJSON() ([]byte, error) {
+	type AddressLineWithTags AddressLine
+
+	result, err := getConvertedTextWithTags(addressline.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*AddressLineWithTags
+	}{
+		Value:               string(result),
+		AddressLineWithTags: (*AddressLineWithTags)(addressline),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (archref *ArchRef) MarshalJSON() ([]byte, error) {
+	type ArchRefWithTags ArchRef
+
+	result, err := getConvertedTextWithTags(archref.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*ArchRefWithTags
+	}{
+		Value:           string(result),
+		ArchRefWithTags: (*ArchRefWithTags)(archref),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (bibref *BibRef) MarshalJSON() ([]byte, error) {
 	type BibRefWithTags BibRef
 
@@ -43,6 +87,116 @@ func (bibref *BibRef) MarshalJSON() ([]byte, error) {
 	}{
 		Value:          string(result),
 		BibRefWithTags: (*BibRefWithTags)(bibref),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (chronitem *ChronItem) MarshalJSON() ([]byte, error) {
+	type ChronItemWithTags ChronItem
+
+	result, err := getConvertedTextWithTags(chronitem.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*ChronItemWithTags
+	}{
+		Value:             string(result),
+		ChronItemWithTags: (*ChronItemWithTags)(chronitem),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (container *Container) MarshalJSON() ([]byte, error) {
+	type ContainerWithTags Container
+
+	result, err := getConvertedTextWithTags(container.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*ContainerWithTags
+	}{
+		Value:             string(result),
+		ContainerWithTags: (*ContainerWithTags)(container),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (creation *Creation) MarshalJSON() ([]byte, error) {
+	type CreationWithTags Creation
+
+	result, err := getConvertedTextWithTags(creation.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*CreationWithTags
+	}{
+		Value:            string(result),
+		CreationWithTags: (*CreationWithTags)(creation),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (date *Date) MarshalJSON() ([]byte, error) {
+	type DateWithTags Date
+
+	result, err := getConvertedTextWithTags(date.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*DateWithTags
+	}{
+		Value:        string(result),
+		DateWithTags: (*DateWithTags)(date),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (dimensions *Dimensions) MarshalJSON() ([]byte, error) {
+	type DimensionsWithTags Dimensions
+
+	result, err := getConvertedTextWithTags(dimensions.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*DimensionsWithTags
+	}{
+		Value:              string(result),
+		DimensionsWithTags: (*DimensionsWithTags)(dimensions),
 	})
 	if err != nil {
 		return nil, err
@@ -161,6 +315,72 @@ func (langmaterial *LangMaterial) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (langusage *LangUsage) MarshalJSON() ([]byte, error) {
+	type LangUsageWithTags LangUsage
+
+	result, err := getConvertedTextWithTags(langusage.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*LangUsageWithTags
+	}{
+		Value:             string(result),
+		LangUsageWithTags: (*LangUsageWithTags)(langusage),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (legalstatus *LegalStatus) MarshalJSON() ([]byte, error) {
+	type LegalStatusWithTags LegalStatus
+
+	result, err := getConvertedTextWithTags(legalstatus.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*LegalStatusWithTags
+	}{
+		Value:               string(result),
+		LegalStatusWithTags: (*LegalStatusWithTags)(legalstatus),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (num *Num) MarshalJSON() ([]byte, error) {
+	type NumWithTags Num
+
+	result, err := getConvertedTextWithTags(num.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*NumWithTags
+	}{
+		Value:       string(result),
+		NumWithTags: (*NumWithTags)(num),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (p *P) MarshalJSON() ([]byte, error) {
 	type PWithTags P
 
@@ -205,6 +425,50 @@ func (physfacet *PhysFacet) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (physloc *PhysLoc) MarshalJSON() ([]byte, error) {
+	type PhysLocWithTags PhysLoc
+
+	result, err := getConvertedTextWithTags(physloc.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*PhysLocWithTags
+	}{
+		Value:           string(result),
+		PhysLocWithTags: (*PhysLocWithTags)(physloc),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (repository *Repository) MarshalJSON() ([]byte, error) {
+	type RepositoryWithTags Repository
+
+	result, err := getConvertedTextWithTags(repository.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*RepositoryWithTags
+	}{
+		Value:              string(result),
+		RepositoryWithTags: (*RepositoryWithTags)(repository),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
 func (title *Title) MarshalJSON() ([]byte, error) {
 	type TitleWithTags Title
 
@@ -241,6 +505,28 @@ func (titleproper *TitleProper) MarshalJSON() ([]byte, error) {
 	}{
 		Value:               string(result),
 		TitleProperWithTags: (*TitleProperWithTags)(titleproper),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
+func (unitdate *UnitDate) MarshalJSON() ([]byte, error) {
+	type UnitDateWithTags UnitDate
+
+	result, err := getConvertedTextWithTags(unitdate.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*UnitDateWithTags
+	}{
+		Value:            string(result),
+		UnitDateWithTags: (*UnitDateWithTags)(unitdate),
 	})
 	if err != nil {
 		return nil, err

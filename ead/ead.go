@@ -38,7 +38,7 @@ type Address struct {
 type AddressLine struct {
 	ExtPtr []*ExtPtr `xml:"extptr" json:"extptr,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ArchDesc struct {
@@ -126,7 +126,7 @@ type ChronItem struct {
 	Date     Date        `xml:"date" json:"date,omitempty"`
 	EventGrp []*EventGrp `xml:"eventgrp,omitempty" json:"eventgrp,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ChronList struct {
@@ -141,7 +141,7 @@ type Container struct {
 	Parent    string `xml:"parent,attr" json:"parent,omitempty"`
 	Type      string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ControlAccess struct {
@@ -157,9 +157,7 @@ type ControlAccess struct {
 }
 
 type Creation struct {
-	Date Date `xml:"date" json:"date,omitempty"`
-
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type DAO struct {
@@ -195,7 +193,7 @@ type DAOLoc struct {
 type Date struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type DefItem struct {
@@ -241,10 +239,14 @@ type EADHeader struct {
 	RevisionDesc *RevisionDesc `xml:"revisiondesc" json:"revisiondesc,omitempty"`
 }
 
+// NOTE: Event though we are process Value as innerxml, we do not create a
+// MarshalJSON for it that processes it as mixed content because we have strict
+// validation rules for <eadid> that automatically reject any values that contain
+// mixed content.
 type EADID struct {
 	URL string `xml:"url,attr" json:"url,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type EditionStmt struct {
@@ -254,7 +256,7 @@ type EditionStmt struct {
 type Event struct {
 	Title *Title `xml:"title" json:"title,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type EventGrp struct {
@@ -266,7 +268,7 @@ type Extent struct {
 
 	Unit string `xml:"unit" json:"unit,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ExtPtr struct {
@@ -327,7 +329,7 @@ type Item struct {
 	PersName []*AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
 	Title    []*Title              `xml:"title" json:"title,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type LangMaterial struct {
@@ -335,11 +337,13 @@ type LangMaterial struct {
 
 	Language *string `xml:"language" json:"language,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type LangUsage struct {
-	Language *string `xml:"language" json:"language,omitempty"`
+	Language string `xml:"language" json:"language,omitempty"`
+
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type LegalStatus struct {
@@ -368,7 +372,7 @@ type NoteStmt struct {
 type Num struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type Origination struct {
@@ -410,24 +414,24 @@ type PhysDesc struct {
 	Dimensions *Dimensions `xml:"dimensions" json:"dimensions,omitempty"`
 	PhysFacet  *PhysFacet  `xml:"physfacet" json:"physfacet,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type PhysFacet struct {
 	ID    string `xml:"id,attr" json:"id,omitempty"`
 	Label string `xml:"label,attr" json:"label,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type PhysLoc struct {
 	ID string `xml:"id,attr" json:"id,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type ProfileDesc struct {
-	Creation  Creation   `xml:"creation" json:"creation,omitempty"`
+	Creation  *Creation   `xml:"creation" json:"creation,omitempty"`
 	DescRules string     `xml:"descrules" json:"descrules,omitempty"`
 	LangUsage *LangUsage `xml:"langusage" json:"langusage,omitempty"`
 }
@@ -441,7 +445,7 @@ type PublicationStmt struct {
 type Repository struct {
 	CorpName *AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type RevisionDesc struct {
@@ -453,7 +457,7 @@ type Title struct {
 	Source string `xml:"source,attr" json:"source,omitempty"`
 	Type   string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type TitleProper struct {
@@ -474,7 +478,7 @@ type TitleStmt struct {
 type UnitDate struct {
 	Type string `xml:"type,attr" json:"type,omitempty"`
 
-	Value string `xml:",chardata" json:"value,chardata,omitempty"`
+	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type UnitTitle struct {
