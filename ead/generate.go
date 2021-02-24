@@ -107,16 +107,33 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 
 	conversionFunctionsForTypes := map[string]string{
 		"Abstract" : "getConvertedTextWithTags",
+		// Do not add AccessTermWithRole because it has a unique MarshalJSON method
+		// already defined which does relator code translation.
+		"AddressLine" : "getConvertedTextWithTags",
+		"ArchRef" : "getConvertedTextWithTags",
 		"BibRef" : "getConvertedTextWithTags",
+		"ChronItem" : "getConvertedTextWithTags",
+		"Container" : "getConvertedTextWithTags",
+		"Creation" : "getConvertedTextWithTags",
+		"Date" : "getConvertedTextWithTags",
+		"Dimensions" : "getConvertedTextWithTags",
 		"Event" : "getConvertedTextWithTags",
 		"Extent" : "getConvertedTextWithTags",
 		"Head" : "getConvertedTextWithTags",
 		"Item" : "getConvertedTextWithTags",
 		"LangMaterial" : "getConvertedTextWithTags",
+		"LangUsage" : "getConvertedTextWithTags",
+		"LegalStatus" : "getConvertedTextWithTags",
+		"Num" : "getConvertedTextWithTags",
 		"P" : "getConvertedTextWithTags",
 		"PhysFacet" : "getConvertedTextWithTags",
+		// Do not add PhysDesc, whose MarshalJSON is created by generator
+		// writeOmitWhitespaceOnlyValueFieldsAndConvertTextWithTagsCodeToBuffer.
+		"PhysLoc" : "getConvertedTextWithTags",
+		"Repository" : "getConvertedTextWithTags",
 		"Title" : "getConvertedTextWithTagsNoLBConversion",
 		"TitleProper" : "getConvertedTextWithTagsNoLBConversion",
+		"UnitDate" : "getConvertedTextWithTags",
 		"UnitTitle" : "getConvertedTextWithTags",
 	}
 
