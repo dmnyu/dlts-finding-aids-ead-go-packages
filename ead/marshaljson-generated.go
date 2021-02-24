@@ -29,28 +29,6 @@ func (abstract *Abstract) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
-func (accesstermwithrole *AccessTermWithRole) MarshalJSON() ([]byte, error) {
-	type AccessTermWithRoleWithTags AccessTermWithRole
-
-	result, err := getConvertedTextWithTags(accesstermwithrole.Value)
-	if err != nil {
-		return nil, err
-	}
-
-	jsonData, err := json.Marshal(&struct {
-		Value string `json:"value,chardata,omitempty"`
-		*AccessTermWithRoleWithTags
-	}{
-		Value:                      string(result),
-		AccessTermWithRoleWithTags: (*AccessTermWithRoleWithTags)(accesstermwithrole),
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return jsonData, nil
-}
-
 func (addressline *AddressLine) MarshalJSON() ([]byte, error) {
 	type AddressLineWithTags AddressLine
 

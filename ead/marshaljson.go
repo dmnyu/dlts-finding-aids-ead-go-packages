@@ -63,6 +63,12 @@ func (accessTermWithRole *AccessTermWithRole) MarshalJSON() ([]byte, error) {
 		}
 	}
 
+	result, err := getConvertedTextWithTags(accessTermWithRole.Value)
+	if err != nil {
+		return nil, err
+	}
+	accessTermWithRole.Value = string(result)
+
 	jsonData, err := json.Marshal(&struct {
 		Role string `xml:"role,attr" json:"role,omitempty"`
 		*accessTermWithRoleWithTranslatedRelatorCode

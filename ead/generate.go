@@ -107,7 +107,8 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 
 	conversionFunctionsForTypes := map[string]string{
 		"Abstract" : "getConvertedTextWithTags",
-		"AccessTermWithRole" : "getConvertedTextWithTags",
+		// Do not add AccessTermWithRole because it has a unique MarshalJSON method
+		// already defined which does relator code translation.
 		"AddressLine" : "getConvertedTextWithTags",
 		"ArchRef" : "getConvertedTextWithTags",
 		"BibRef" : "getConvertedTextWithTags",
