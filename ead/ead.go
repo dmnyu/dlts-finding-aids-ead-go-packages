@@ -130,7 +130,7 @@ type ChronItem struct {
 }
 
 type ChronList struct {
-	Head      []*Head      `xml:"head,omitemtpy" json:"head,omitempty"`
+	Head      *Head        `xml:"head,omitemtpy" json:"head,omitempty"`
 	ChronItem []*ChronItem `xml:"chronitem,omitempty" json:"chronitem,omitempty"`
 }
 
