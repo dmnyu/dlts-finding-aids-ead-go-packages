@@ -79,7 +79,7 @@ func _getConvertedTextWithTagsDefault(tagName string) string {
 
 func getRelatorAuthoritativeLabel(relatorID string) (string, error) {
 	// Map elements are from
-	// https://jira.nyu.edu/jira/secure/attachment/41923/relator-authoritative-labels-2021-01-05.csv
+	// https://github.com/nyudlts/fadesign_29-data-model/blob/1fa578e90a0239431154d150fe053f7982795e10/relator-authoritative-labels.csv
 	relatorAuthoritativeLabel := map[string]string{
 		"abr" : "Abridger",
 		"acp" : "Art copyist",
