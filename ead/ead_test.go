@@ -43,6 +43,10 @@ func TestJSONMarshaling(t *testing.T) {
 			t.Errorf("Unexpected error marshaling JSON: %s", err)
 		}
 
+		// reference file includes newline at end of file so
+		// add newline to jsonData
+		jsonData = append(jsonData, '\n')
+
 		referenceFileContents, err := ioutil.ReadFile("./testdata/v0.0.0/mos_2021.json")
 		if err != nil {
 			t.Errorf("Unexpected error reading reference file: %s", err)
