@@ -5,6 +5,7 @@ import (
 	"encoding/xml"
 	"io/ioutil"
 	"bytes"
+	"fmt"
 	"testing"
 )
 
@@ -53,7 +54,10 @@ func TestJSONMarshaling(t *testing.T) {
 		}
 
 		if !bytes.Equal(referenceFileContents, jsonData) {
-			t.Errorf("JSON Data does not match reference file")
+			jsonFile := "./testdata/tmp/failing-marshal.json"
+			errMsg := fmt.Sprintf("JSON Data does not match reference file. Writing marshaled JSON to: %s", jsonFile)
+			t.Errorf(errMsg)
+			_ = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 		}
 	})
 }
