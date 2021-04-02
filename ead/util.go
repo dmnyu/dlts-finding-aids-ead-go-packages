@@ -66,7 +66,7 @@ func _getConvertedTextWithTags(text string, convertLBTags bool) ([]byte, error) 
 				needClosingTag = true
 			}
 		case xml.CharData:
-			result += string(token)
+			result += strings.Replace(string(token), "\n", " ", -1)
 		}
 	}
 
