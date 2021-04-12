@@ -23,12 +23,20 @@ func assertEquals(t *testing.T, want string, got string, label string) {
 	}
 }
 
+func getOmegaEAD(t *testing.T) EAD {
+	EADXML, err := ioutil.ReadFile("./testdata/v0.0.0/Omega-EAD.xml")
+	failOnError(t, err, "Unexpected error")
+
+	var ead EAD
+	err = xml.Unmarshal([]byte(EADXML), &ead)
+	failOnError(t, err, "Unexpected error")
+
+	return ead
+}
+
 func TestXMLParsing(t *testing.T) {
 	t.Run("XML Parsing", func(t *testing.T) {
-		EADXML, err := ioutil.ReadFile("./testdata/v0.0.0/Omega-EAD.xml")
-		var ead EAD
-		err = xml.Unmarshal([]byte(EADXML), &ead)
-		failOnError(t, err, "Unexpected error")
+		ead := getOmegaEAD(t)
 
 		want := "collection"
 		got := ead.ArchDesc.Level
@@ -38,11 +46,7 @@ func TestXMLParsing(t *testing.T) {
 
 func TestJSONMarshaling(t *testing.T) {
 	t.Run("JSON Marshaling", func(t *testing.T) {
-		EADXML, err := ioutil.ReadFile("./testdata/v0.0.0/Omega-EAD.xml")
-		var ead EAD
-
-		err = xml.Unmarshal([]byte(EADXML), &ead)
-		failOnError(t, err, "Unexpected error unmarshaling XML")
+		ead := getOmegaEAD(t)
 
 		jsonData, err := json.MarshalIndent(ead, "", "    ")
 		failOnError(t, err, "Unexpected error marshaling JSON")
