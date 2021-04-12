@@ -1,14 +1,13 @@
 package ead
 
 import (
+	"bytes"
 	"encoding/json"
 	"encoding/xml"
-	"io/ioutil"
-	"bytes"
 	"fmt"
+	"io/ioutil"
 	"testing"
 )
-
 
 func failOnError(t *testing.T, err error, label string) {
 	if err != nil {
@@ -55,14 +54,17 @@ func TestJSONMarshaling(t *testing.T) {
 		// add newline to jsonData
 		jsonData = append(jsonData, '\n')
 
-		referenceFileContents, err := ioutil.ReadFile("./testdata/v0.0.0/mos_2021.json")
+		referenceFile := "./testdata/v0.0.0/mos_2021.json"
+		referenceFileContents, err := ioutil.ReadFile(referenceFile)
 		failOnError(t, err, "Unexpected error reading reference file")
 
 		if !bytes.Equal(referenceFileContents, jsonData) {
 			jsonFile := "./testdata/tmp/failing-marshal.json"
-			errMsg := fmt.Sprintf("JSON Data does not match reference file. Writing marshaled JSON to: %s", jsonFile)
+			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
+			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
+
+			errMsg := fmt.Sprintf("JSON Data does not match reference file %s. Wrote marshaled JSON to: %s", referenceFile, jsonFile)
 			t.Errorf(errMsg)
-			_ = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 		}
 	})
 }
