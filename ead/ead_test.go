@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-const testFixturePath string = "./testdata/v0.0.0"
+const testFixturePath string = "./testdata/v0.1.1"
 
 func failOnError(t *testing.T, err error, label string) {
 	if err != nil {
