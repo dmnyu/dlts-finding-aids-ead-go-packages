@@ -17,7 +17,7 @@ func failOnError(t *testing.T, err error, label string) {
 	}
 }
 
-func assertEquals(t *testing.T, want string, got string, label string) {
+func assertEqual(t *testing.T, want string, got string, label string) {
 	if want != got {
 		t.Errorf("%s Mismatch: want: %s, got: %s", label, want, got)
 	}
@@ -40,7 +40,7 @@ func TestXMLParsing(t *testing.T) {
 
 		want := "collection"
 		got := ead.ArchDesc.Level
-		assertEquals(t, want, got, "ArchDesc.Level")
+		assertEqual(t, want, got, "ArchDesc.Level")
 	})
 }
 
@@ -76,11 +76,11 @@ func TestUpdateRunInfo(t *testing.T) {
 
 		want := ""
 		got := sut.RunInfo.PkgVersion
-		assert(t, want, got, "Initial ead.RunInfo.PkgVersion")
+		assertEqual(t, want, got, "Initial ead.RunInfo.PkgVersion")
 
 		want = "0001-01-01T00:00:00Z"
 		got = sut.RunInfo.TimeStamp.Format(time.RFC3339)
-		assert(t, want, got, "Initial ead.RunInfo.TimeStamp")
+		assertEqual(t, want, got, "Initial ead.RunInfo.TimeStamp")
 
 		now := time.Now()
 		version := Version // from ead package constant
@@ -89,11 +89,11 @@ func TestUpdateRunInfo(t *testing.T) {
 
 		want = version
 		got = sut.RunInfo.PkgVersion
-		assert(t, want, got, "Post-assignment ead.RunInfo.PkgVersion")
+		assertEqual(t, want, got, "Post-assignment ead.RunInfo.PkgVersion")
 
 		want = now.Format(time.RFC3339)
 		got = sut.RunInfo.TimeStamp.Format(time.RFC3339)
-		assert(t, want, got, "Initial ead.RunInfo.TimeStamp")
+		assertEqual(t, want, got, "Initial ead.RunInfo.TimeStamp")
 
 	})
 }
