@@ -10,6 +10,8 @@ import (
 	"time"
 )
 
+const testFixturePath string = "./testdata/v0.0.0"
+
 func failOnError(t *testing.T, err error, label string) {
 	if err != nil {
 		t.Errorf("%s: %s", label, err)
@@ -24,7 +26,7 @@ func assertEqual(t *testing.T, want string, got string, label string) {
 }
 
 func getOmegaEAD(t *testing.T) EAD {
-	EADXML, err := ioutil.ReadFile("./testdata/v0.0.0/Omega-EAD.xml")
+	EADXML, err := ioutil.ReadFile(testFixturePath + "/" + "Omega-EAD.xml")
 	failOnError(t, err, "Unexpected error")
 
 	var ead EAD
@@ -55,7 +57,7 @@ func TestJSONMarshaling(t *testing.T) {
 		// add newline to jsonData
 		jsonData = append(jsonData, '\n')
 
-		referenceFile := "./testdata/v0.0.0/mos_2021.json"
+		referenceFile := testFixturePath + "/" + "mos_2021.json"
 		referenceFileContents, err := ioutil.ReadFile(referenceFile)
 		failOnError(t, err, "Unexpected error reading reference file")
 
