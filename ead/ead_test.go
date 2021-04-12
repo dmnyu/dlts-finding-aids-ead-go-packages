@@ -17,7 +17,7 @@ func failOnError(t *testing.T, err error, label string) {
 	}
 }
 
-func assert(t *testing.T, want string, got string, label string) {
+func assertEquals(t *testing.T, want string, got string, label string) {
 	if want != got {
 		t.Errorf("%s Mismatch: want: %s, got: %s", label, want, got)
 	}
@@ -32,7 +32,7 @@ func TestXMLParsing(t *testing.T) {
 
 		want := "collection"
 		got := ead.ArchDesc.Level
-		assert(t, want, got, "ArchDesc.Level")
+		assertEquals(t, want, got, "ArchDesc.Level")
 	})
 }
 
