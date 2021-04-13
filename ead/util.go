@@ -2,6 +2,7 @@ package ead
 
 import (
 	"encoding/xml"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
@@ -389,4 +390,9 @@ type RunInfo struct {
 func (r *RunInfo) SetRunInfo(version string, t time.Time) {
 	r.PkgVersion = version
 	r.TimeStamp = t
+}
+
+type FilteredString string
+func (s FilteredString) MarshalJSON() ([]byte, error) {
+	return json.Marshal(strings.ReplaceAll(string(s), "\n", " "))
 }
