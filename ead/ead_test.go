@@ -41,7 +41,7 @@ func TestXMLParsing(t *testing.T) {
 		ead := getOmegaEAD(t)
 
 		want := "collection"
-		got := ead.ArchDesc.Level
+		got := string(ead.ArchDesc.Level)
 		assertEqual(t, want, got, "ArchDesc.Level")
 	})
 }
