@@ -132,7 +132,7 @@ func writeConvertTextWithTagsCodeToBuffer(w *bytes.Buffer) {
 		"PhysLoc" : "getConvertedTextWithTags",
 		"Repository" : "getConvertedTextWithTags",
 		"Title" : "getConvertedTextWithTagsNoLBConversion",
-		"TitleProper" : "getConvertedTextWithTagsNoLBConversion",
+		// Do not add TitleProper because it requires custom marshaling.
 		"UnitDate" : "getConvertedTextWithTags",
 		"UnitTitle" : "getConvertedTextWithTags",
 	}
