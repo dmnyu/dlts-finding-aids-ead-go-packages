@@ -381,7 +381,7 @@ func regexpReplaceAllLiteralStringInTextSlice(textSlice []string, re *regexp.Reg
 	}
 }
 
-// info about the parsing/JSON generation process
+// RunInfo stores data related to the parsing/JSON generation process
 type RunInfo struct {
 	PkgVersion string    `json:"libversion"`
 	TimeStamp  time.Time `json:"timestamp"`
@@ -392,6 +392,7 @@ func (r *RunInfo) SetRunInfo(version string, t time.Time) {
 	r.TimeStamp = t
 }
 
+// FilteredString provides a centralized string cleanup mechanism
 type FilteredString string
 func (s FilteredString) MarshalJSON() ([]byte, error) {
 	return json.Marshal(strings.ReplaceAll(string(s), "\n", " "))
