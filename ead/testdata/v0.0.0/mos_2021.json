@@ -1,4 +1,8 @@
 {
+    "runinfo": {
+        "libversion": "",
+        "timestamp": "0001-01-01T00:00:00Z"
+    },
     "archdesc": {
         "level": "collection",
         "accessrestrict": [
@@ -13,7 +17,35 @@
                 },
                 "p": [
                     {
-                        "value": "\u003cspan class=\"ead-chronlist\"\u003e           \u003cspan class=\"ead-head\"\u003eThe following chronology provides a backdrop for the Board of Higher Education of             the City of New York cases included within this collection:\u003c/span\u003e           \u003cspan class=\"ead-chronitem\"\u003e             \u003cspan class=\"ead-date\"\u003e1939\u003c/span\u003e             \u003cspan class=\"ead-eventgrp\"\u003e               \u003cspan class=\"ead-event\"\u003eThe \u003cspan class=\"ead-emph ead-emph-italic\"\u003eNew York State Legislature\u003c/span\u003e enacted Section                 12-a of the \u003cspan class=\"ead-title\"\u003eCivil Service Law\u003c/span\u003e which provided in substance that \"no                 person shall be appointed to or retained in the public service nor in any public                 educational institution who becomes a member of any organization which advocates the                 overthrow of government by force or violence, or by any unlawful means (L. 1939, Ch.                 547).\"\u003c/span\u003e             \u003c/span\u003e           \u003c/span\u003e         \u003c/span\u003e"
+                        "value": "\u003cspan class=\"ead-chronlist\"\u003e           \u003cspan class=\"ead-head\"\u003eThe following chronology provides a backdrop for the Board of Higher Education of             the City of New York cases included within this collection:\u003c/span\u003e           \u003cspan class=\"ead-chronitem\"\u003e             \u003cspan class=\"ead-date\"\u003e1939\u003c/span\u003e             \u003cspan class=\"ead-eventgrp\"\u003e               \u003cspan class=\"ead-event\"\u003eThe \u003cspan class=\"ead-emph ead-emph-italic\"\u003eNew York State Legislature\u003c/span\u003e enacted Section                 12-a of the \u003cspan class=\"ead-title\"\u003eCivil Service Law\u003c/span\u003e which provided in substance that \"no                 person shall be appointed to or retained in the public service nor in any public                 educational institution who becomes a member of any organization which advocates the                 overthrow of government by force or violence, or by any unlawful means (L. 1939, Ch.                 547).\"\u003c/span\u003e             \u003c/span\u003e           \u003c/span\u003e         \u003c/span\u003e",
+                        "chronlist": [
+                            {
+                                "head": {
+                                    "value": "The following chronology provides a backdrop for the Board of Higher Education of             the City of New York cases included within this collection:"
+                                },
+                                "chronitem": [
+                                    {
+                                        "value": "             \u003cspan class=\"ead-date\"\u003e1939\u003c/span\u003e             \u003cspan class=\"ead-eventgrp\"\u003e               \u003cspan class=\"ead-event\"\u003eThe \u003cspan class=\"ead-emph ead-emph-italic\"\u003eNew York State Legislature\u003c/span\u003e enacted Section                 12-a of the \u003cspan class=\"ead-title\"\u003eCivil Service Law\u003c/span\u003e which provided in substance that \"no                 person shall be appointed to or retained in the public service nor in any public                 educational institution who becomes a member of any organization which advocates the                 overthrow of government by force or violence, or by any unlawful means (L. 1939, Ch.                 547).\"\u003c/span\u003e             \u003c/span\u003e           ",
+                                        "date": {
+                                            "value": "1939",
+                                            "type": "publication"
+                                        },
+                                        "eventgrp": [
+                                            {
+                                                "event": [
+                                                    {
+                                                        "value": "The \u003cspan class=\"ead-emph ead-emph-italic\"\u003eNew York State Legislature\u003c/span\u003e enacted Section                 12-a of the \u003cspan class=\"ead-title\"\u003eCivil Service Law\u003c/span\u003e which provided in substance that \"no                 person shall be appointed to or retained in the public service nor in any public                 educational institution who becomes a member of any organization which advocates the                 overthrow of government by force or violence, or by any unlawful means (L. 1939, Ch.                 547).\"",
+                                                        "title": {
+                                                            "value": "Civil Service Law"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "value": "\u003cspan class=\"ead-list\"\u003e           \u003cspan class=\"ead-listhead\"\u003e             \u003cspan class=\"ead-head01\"\u003eAbbreviation\u003c/span\u003e             \u003cspan class=\"ead-head02\"\u003eExpansion\u003c/span\u003e           \u003c/span\u003e           \u003cspan class=\"ead-defitem\"\u003e             \u003cspan class=\"ead-label\"\u003eMIT\u003c/span\u003e             \u003cspan class=\"ead-item\"\u003eMassachusetts Institute of Technology\u003c/span\u003e           \u003c/span\u003e           \u003cspan class=\"ead-defitem\"\u003e             \u003cspan class=\"ead-label\"\u003ePCV\u003c/span\u003e             \u003cspan class=\"ead-item\"\u003ePeace Corps Volunteer\u003c/span\u003e           \u003c/span\u003e         \u003c/span\u003e",
@@ -192,7 +224,8 @@
                     "extent": [
                         {
                             "value": "25 Linear Feet",
-                            "altrender": "materialtype spaceoccupied"
+                            "altrender": "materialtype spaceoccupied",
+                            "unit": "feet"
                         },
                         {
                             "value": "in 24 record cartons, \u003cspan class=\"ead-emph ead-emph-\"\u003e1 manuscript box\u003c/span\u003e, and 1 flat file           folder\u003cbr\u003e",
@@ -211,7 +244,6 @@
                     }
                 }
             ],
-            "id": "aspace_12345",
             "abstract": [
                 {
                     "value": "This is the \u003cspan class=\"ead-emph ead-emph-italic\"\u003eabstract\u003c/span\u003e.\u003cbr\u003e It has a \u003cspan class=\"ead-title\"\u003etitle\u003c/span\u003e in it.",
@@ -792,7 +824,6 @@
                     },
                     {
                         "value": "         \u003cspan class=\"ead-address\"\u003e           \u003cspan class=\"ead-addressline\"\u003eElmer Holmes Bobst Library\u003c/span\u003e           \u003cspan class=\"ead-addressline\"\u003e70 Washington Square South\u003c/span\u003e           \u003cspan class=\"ead-addressline\"\u003e2nd Floor\u003c/span\u003e           \u003cspan class=\"ead-addressline\"\u003eNew York, NY 10012\u003c/span\u003e           \u003cspan class=\"ead-addressline\"\u003especial.collections@nyu.edu\u003c/span\u003e           \u003cspan class=\"ead-addressline\"\u003eURL: \u003cspan class=\"ead-extptr\"\u003e\u003c/span\u003e\u003c/span\u003e         \u003c/span\u003e         \u003cspan class=\"ead-abbr\"\u003eALS\u003c/span\u003e         \u003cspan class=\"ead-archref\"\u003e           \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage             Papers (TAM 189)\u003c/span\u003e\u003c/span\u003e         \u003cspan class=\"ead-bibref\"\u003e\u003cspan class=\"ead-emph ead-emph-bold\"\u003eArdouin, Charles Nicholas Celigny\u003c/span\u003e. \u003cspan class=\"ead-title\"\u003eEssais sur l'histoire d'Haiti\u003c/span\u003e. Port-au-Prince, 1865.\u003c/span\u003e         \u003cspan class=\"ead-blockquote\"\u003e           \u003cspan class=\"ead-p\"\u003eNo doubt the estate has exerted a tremendous influence on the development of my             character. One may walk for an hour without glimpsing another soul, which has taught me             to love tranquility.\u003c/span\u003e         \u003c/span\u003e\u003cbr\u003e         \u003cspan class=\"ead-corpname\"\u003eTamiment Library\u003c/span\u003e         \u003cspan class=\"ead-date\"\u003eMarch 2021\u003c/span\u003e         \u003cspan class=\"ead-list\"\u003e           \u003cspan class=\"ead-listhead\"\u003e             \u003cspan class=\"ead-head01\"\u003eAbbreviation\u003c/span\u003e             \u003cspan class=\"ead-head02\"\u003eExpansion\u003c/span\u003e           \u003c/span\u003e           \u003cspan class=\"ead-defitem\"\u003e             \u003cspan class=\"ead-label\"\u003eMIT\u003c/span\u003e             \u003cspan class=\"ead-item\"\u003eMassachusetts Institute of Technology\u003c/span\u003e           \u003c/span\u003e         \u003c/span\u003e         \u003cspan class=\"ead-genreform\"\u003eOral histories (literary works)\u003c/span\u003e         \u003cspan class=\"ead-name\"\u003eRolodex\u003c/span\u003e         \u003cspan class=\"ead-num\"\u003eMOS.2021\u003c/span\u003e         \u003cspan class=\"ead-occupation\"\u003eFulbright scholars.\u003c/span\u003e         \u003cspan class=\"ead-subject\"\u003eIrish American women -- History -- 19th century.\u003c/span\u003e       ",
-                        "id": "aspace_8383838",
                         "abbr": [
                             "ALS"
                         ],
@@ -948,15 +979,7 @@
             {
                 "id": "aspace_ede025697b8e5bd48a2e9752bb4eb634",
                 "head": {
-                    "value": "\u003cspan class=\"ead-emph ead-emph-\"\u003eProcessing Information\u003c/span\u003e\u003cspan class=\"ead-extptr\"\u003e\u003c/span\u003e",
-                    "extptr": [
-                        {
-                            "href": "http://library.nyu.edu/about/collections/special-collections-and-archives/special-collections/",
-                            "show": "new",
-                            "title": "http://library.nyu.edu/about/collections/special-collections-and-archives/special-collections/",
-                            "type": "simple"
-                        }
-                    ]
+                    "value": "\u003cspan class=\"ead-emph ead-emph-\"\u003eProcessing Information\u003c/span\u003e\u003cspan class=\"ead-extptr\"\u003e\u003c/span\u003e"
                 },
                 "p": [
                     {
