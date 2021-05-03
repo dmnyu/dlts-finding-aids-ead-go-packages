@@ -82,3 +82,26 @@ func (accessTermWithRole *AccessTermWithRole) MarshalJSON() ([]byte, error) {
 
 	return jsonData, nil
 }
+
+func (titleproper *TitleProper) MarshalJSON() ([]byte, error) {
+	type TitleProperWithTags TitleProper
+
+	result, err := getConvertedTextWithTagsNoLBConversion(titleproper.Value)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonData, err := json.Marshal(&struct {
+		Value string `json:"value,chardata,omitempty"`
+		*TitleProperWithTags
+	}{
+		Value:               string(result),
+		TitleProperWithTags: (*TitleProperWithTags)(titleproper),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonData, nil
+}
+
