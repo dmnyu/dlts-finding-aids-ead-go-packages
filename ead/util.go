@@ -1,8 +1,8 @@
 package ead
 
 import (
-	"encoding/xml"
 	"encoding/json"
+	"encoding/xml"
 	"errors"
 	"fmt"
 	"io"
@@ -385,15 +385,18 @@ func regexpReplaceAllLiteralStringInTextSlice(textSlice []string, re *regexp.Reg
 type RunInfo struct {
 	PkgVersion string    `json:"libversion"`
 	TimeStamp  time.Time `json:"timestamp"`
+	SourceFile string    `json:"sourcefile"`
 }
 
-func (r *RunInfo) SetRunInfo(version string, t time.Time) {
+func (r *RunInfo) SetRunInfo(version string, t time.Time, sourceFile string) {
 	r.PkgVersion = version
 	r.TimeStamp = t
+	r.SourceFile = sourceFile
 }
 
 // FilteredString provides a centralized string cleanup mechanism
 type FilteredString string
+
 func (s FilteredString) MarshalJSON() ([]byte, error) {
 	return json.Marshal(strings.ReplaceAll(string(s), "\n", " "))
 }
