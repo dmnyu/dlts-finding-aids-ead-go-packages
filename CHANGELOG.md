@@ -1,5 +1,8 @@
 # Changelog
 
+#### v0.4.0
+  - add RunInfo.SourceFile to record the source EAD file path
+
 #### v0.3.0
   - add FilteredString type to strip out newlines from string fields
   - add RunInfo type to capture JSON-creation timestamp and EAD package version

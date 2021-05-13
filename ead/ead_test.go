@@ -86,8 +86,9 @@ func TestUpdateRunInfo(t *testing.T) {
 
 		now := time.Now()
 		version := Version // from ead package constant
+		sourceFile := "/a/very/fine/path/to/an/ead.xml"
 
-		sut.RunInfo.SetRunInfo(version, now)
+		sut.RunInfo.SetRunInfo(version, now, sourceFile)
 
 		want = version
 		got = sut.RunInfo.PkgVersion
@@ -95,7 +96,10 @@ func TestUpdateRunInfo(t *testing.T) {
 
 		want = now.Format(time.RFC3339)
 		got = sut.RunInfo.TimeStamp.Format(time.RFC3339)
-		assertEqual(t, want, got, "Initial ead.RunInfo.TimeStamp")
+		assertEqual(t, want, got, "Post-assignment ead.RunInfo.TimeStamp")
 
+		want = sourceFile
+		got = sut.RunInfo.SourceFile
+		assertEqual(t, want, got, "set ead.RunInfo.SourceFile")
 	})
 }
