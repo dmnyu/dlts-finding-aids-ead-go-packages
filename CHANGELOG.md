@@ -1,5 +1,9 @@
 # Changelog
 
+#### v0.5.0
+  - replace all instances of \r, \t, \n, and consecutive spaces in
+    EAD element values with a single space
+
 #### v0.4.0
   - add RunInfo.SourceFile to record the source EAD file path
 
