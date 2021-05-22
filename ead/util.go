@@ -72,7 +72,7 @@ func _getConvertedTextWithTags(text string, convertLBTags bool) ([]byte, error) 
 		}
 	}
 
-	return []byte(result), nil
+	return []byte(cleanupWhitespace(result)), nil
 }
 
 func _getConvertedTextWithTagsDefault(tagName string) string {
@@ -398,5 +398,16 @@ func (r *RunInfo) SetRunInfo(version string, t time.Time, sourceFile string) {
 type FilteredString string
 
 func (s FilteredString) MarshalJSON() ([]byte, error) {
-	return json.Marshal(strings.ReplaceAll(string(s), "\n", " "))
+	return json.Marshal(cleanupWhitespace(string(s)))
+}
+
+func cleanupWhitespace(s string) string {
+	// find occurrences of one or more consecutive \r, \n, \t, " "
+	re := regexp.MustCompile(`\r+|\n+|\t+|( )+`)
+	// replace occurences with a single space
+	result := re.ReplaceAllString(s, " ")
+	// run again in case previous operation resulted in
+	// consecutive spaces
+	result = re.ReplaceAllString(result, " ")
+	return result
 }
