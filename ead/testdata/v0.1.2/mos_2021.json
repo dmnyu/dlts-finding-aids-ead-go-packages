@@ -363,9 +363,11 @@
             ],
             "repository": {
                 "value": " \u003cspan class=\"ead-corpname\"\u003eTamiment Library and Robert F. Wagner Labor Archives\u003c/span\u003e ",
-                "corpname": {
-                    "value": "Tamiment Library and Robert F. Wagner Labor Archives"
-                }
+                "corpname": [
+                    {
+                        "value": "Tamiment Library and Robert F. Wagner Labor Archives"
+                    }
+                ]
             },
             "unitdate": [
                 {

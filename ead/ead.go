@@ -437,7 +437,7 @@ type PublicationStmt struct {
 }
 
 type Repository struct {
-	CorpName *AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
+	CorpName []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
