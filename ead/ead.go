@@ -372,9 +372,9 @@ type Num struct {
 type Origination struct {
 	Label FilteredString `xml:"label,attr" json:"label,omitempty"`
 
-	CorpName *AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
-	FamName  *AccessTermWithRole `xml:"famname" json:"famname,omitempty"`
-	PersName *AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
+	CorpName []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
+	FamName  *AccessTermWithRole   `xml:"famname" json:"famname,omitempty"`
+	PersName *AccessTermWithRole   `xml:"persname" json:"persname,omitempty"`
 }
 
 type P struct {

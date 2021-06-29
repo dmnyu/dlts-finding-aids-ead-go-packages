@@ -347,10 +347,12 @@
                 },
                 {
                     "label": "source",
-                    "corpname": {
-                        "role": "Donor",
-                        "value": "Tamiment Library"
-                    }
+                    "corpname": [
+                        {
+                            "role": "Donor",
+                            "value": "Tamiment Library"
+                        }
+                    ]
                 },
                 {
                     "label": "Creator",
@@ -968,9 +970,11 @@
                                                         "origination": [
                                                             {
                                                                 "label": "Creator",
-                                                                "corpname": {
-                                                                    "value": "Workers' Party of Ireland"
-                                                                }
+                                                                "corpname": [
+                                                                    {
+                                                                        "value": "Workers' Party of Ireland"
+                                                                    }
+                                                                ]
                                                             },
                                                             {
                                                                 "label": "Creator",
@@ -1531,9 +1535,11 @@
                                                 "origination": [
                                                     {
                                                         "label": "Creator",
-                                                        "corpname": {
-                                                            "value": "World Trade Center (New York, N.Y.)"
-                                                        }
+                                                        "corpname": [
+                                                            {
+                                                                "value": "World Trade Center (New York, N.Y.)"
+                                                            }
+                                                        ]
                                                     },
                                                     {
                                                         "label": "Creator",
@@ -2094,9 +2100,11 @@
                                         "origination": [
                                             {
                                                 "label": "Creator",
-                                                "corpname": {
-                                                    "value": "Yivo Institute for Jewish Research"
-                                                }
+                                                "corpname": [
+                                                    {
+                                                        "value": "Yivo Institute for Jewish Research"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "label": "Creator",
@@ -2654,9 +2662,11 @@
                                 "origination": [
                                     {
                                         "label": "Creator",
-                                        "corpname": {
-                                            "value": "9 to 5, National Association of Working Women (U.S.)"
-                                        }
+                                        "corpname": [
+                                            {
+                                                "value": "9 to 5, National Association of Working Women (U.S.)"
+                                            }
+                                        ]
                                     },
                                     {
                                         "label": "Creator",
@@ -3358,9 +3368,11 @@
                         "origination": [
                             {
                                 "label": "Creator",
-                                "corpname": {
-                                    "value": "80 Washington Square East Galleries"
-                                }
+                                "corpname": [
+                                    {
+                                        "value": "80 Washington Square East Galleries"
+                                    }
+                                ]
                             },
                             {
                                 "label": "Creator",
