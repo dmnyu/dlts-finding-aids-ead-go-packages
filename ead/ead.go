@@ -291,7 +291,7 @@ type FileDesc struct {
 type FormattedNoteWithHead struct {
 	ID FilteredString `xml:"id,attr" json:"id,omitempty"`
 
-	ChronList   *ChronList   `xml:"chronlist" json:"chronlist,omitempty"`
+	ChronList   []*ChronList `xml:"chronlist" json:"chronlist,omitempty"`
 	DefItem     []*DefItem   `xml:"defitem,omitemtpy" json:"defitem,omitempty"`
 	Head        *Head        `xml:"head,omitemtpy" json:"head,omitempty"`
 	LegalStatus *LegalStatus `xml:"legalstatus,omitemtpy" json:"legalstatus,omitempty"`
