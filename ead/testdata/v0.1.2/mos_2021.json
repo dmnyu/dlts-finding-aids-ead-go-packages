@@ -4013,36 +4013,38 @@
                 ]
             },
             "publicationstmt": {
-                "address": {
-                    "addressline": [
-                        {
-                            "value": "Elmer Holmes Bobst Library"
-                        },
-                        {
-                            "value": "70 Washington Square South"
-                        },
-                        {
-                            "value": "2nd Floor"
-                        },
-                        {
-                            "value": "New York, NY 10012"
-                        },
-                        {
-                            "value": "special.collections@nyu.edu"
-                        },
-                        {
-                            "value": "URL: \u003cspan class=\"ead-extptr\"\u003e\u003c/span\u003e",
-                            "extptr": [
-                                {
-                                    "href": "http://library.nyu.edu/about/collections/special-collections-and-archives/special-collections/",
-                                    "show": "new",
-                                    "title": "http://library.nyu.edu/about/collections/special-collections-and-archives/special-collections/",
-                                    "type": "simple"
-                                }
-                            ]
-                        }
-                    ]
-                },
+                "address": [
+                    {
+                        "addressline": [
+                            {
+                                "value": "Elmer Holmes Bobst Library"
+                            },
+                            {
+                                "value": "70 Washington Square South"
+                            },
+                            {
+                                "value": "2nd Floor"
+                            },
+                            {
+                                "value": "New York, NY 10012"
+                            },
+                            {
+                                "value": "special.collections@nyu.edu"
+                            },
+                            {
+                                "value": "URL: \u003cspan class=\"ead-extptr\"\u003e\u003c/span\u003e",
+                                "extptr": [
+                                    {
+                                        "href": "http://library.nyu.edu/about/collections/special-collections-and-archives/special-collections/",
+                                        "show": "new",
+                                        "title": "http://library.nyu.edu/about/collections/special-collections-and-archives/special-collections/",
+                                        "type": "simple"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
                 "p": [
                     {
                         "value": "\u003cspan class=\"ead-date\"\u003eMarch 2021\u003c/span\u003e",

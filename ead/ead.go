@@ -431,7 +431,7 @@ type ProfileDesc struct {
 }
 
 type PublicationStmt struct {
-	Address   *Address       `xml:"address" json:"address,omitempty"`
+	Address   []*Address     `xml:"address" json:"address,omitempty"`
 	P         []*P           `xml:"p" json:"p,omitempty"`
 	Publisher FilteredString `xml:"publisher" json:"publisher,omitempty"`
 }
