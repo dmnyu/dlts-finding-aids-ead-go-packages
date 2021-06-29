@@ -4116,9 +4116,11 @@
         "revisiondesc": {
             "change": [
                 {
-                    "date": {
-                        "value": "March 2021"
-                    },
+                    "date": [
+                        {
+                            "value": "March 2021"
+                        }
+                    ],
                     "item": {
                         "value": "Updated by Megan O'Shea in order to include this note"
                     }
