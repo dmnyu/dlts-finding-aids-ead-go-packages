@@ -117,7 +117,7 @@ type C struct {
 
 type Change struct {
 	Date []*Date `xml:"date" json:"date,omitempty"`
-	Item Item    `xml:"item" json:"item,omitempty"`
+	Item []*Item `xml:"item" json:"item,omitempty"`
 }
 
 type ChronItem struct {

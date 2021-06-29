@@ -4135,9 +4135,11 @@
                             "value": "March 2021"
                         }
                     ],
-                    "item": {
-                        "value": "Updated by Megan O'Shea in order to include this note"
-                    }
+                    "item": [
+                        {
+                            "value": "Updated by Megan O'Shea in order to include this note"
+                        }
+                    ]
                 }
             ]
         }
