@@ -374,7 +374,7 @@ type Origination struct {
 
 	CorpName []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 	FamName  []*AccessTermWithRole `xml:"famname" json:"famname,omitempty"`
-	PersName *AccessTermWithRole   `xml:"persname" json:"persname,omitempty"`
+	PersName []*AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
 }
 
 type P struct {

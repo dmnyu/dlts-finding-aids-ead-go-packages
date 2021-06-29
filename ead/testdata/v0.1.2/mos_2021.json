@@ -332,17 +332,21 @@
             "origination": [
                 {
                     "label": "Creator",
-                    "persname": {
-                        "role": "Donor",
-                        "value": " Megan O'Shea"
-                    }
+                    "persname": [
+                        {
+                            "role": "Donor",
+                            "value": " Megan O'Shea"
+                        }
+                    ]
                 },
                 {
                     "label": "source",
-                    "persname": {
-                        "role": "Donor",
-                        "value": "Debs, Eugene V. (Eugene Victor), 1855-1926"
-                    }
+                    "persname": [
+                        {
+                            "role": "Donor",
+                            "value": "Debs, Eugene V. (Eugene Victor), 1855-1926"
+                        }
+                    ]
                 },
                 {
                     "label": "Creator",
@@ -364,9 +368,11 @@
                 },
                 {
                     "label": "Creator",
-                    "persname": {
-                        "value": " Weatherly Stephan"
-                    }
+                    "persname": [
+                        {
+                            "value": " Weatherly Stephan"
+                        }
+                    ]
                 }
             ],
             "repository": {
@@ -996,9 +1002,11 @@
                                                             },
                                                             {
                                                                 "label": "Creator",
-                                                                "persname": {
-                                                                    "value": "Alum, Rolando A."
-                                                                }
+                                                                "persname": [
+                                                                    {
+                                                                        "value": "Alum, Rolando A."
+                                                                    }
+                                                                ]
                                                             }
                                                         ],
                                                         "physloc": [
@@ -1571,9 +1579,11 @@
                                                     },
                                                     {
                                                         "label": "Creator",
-                                                        "persname": {
-                                                            "value": "Yonge, Charlotte Mary, 1823-1901"
-                                                        }
+                                                        "persname": [
+                                                            {
+                                                                "value": "Yonge, Charlotte Mary, 1823-1901"
+                                                            }
+                                                        ]
                                                     }
                                                 ],
                                                 "physloc": [
@@ -2146,9 +2156,11 @@
                                             },
                                             {
                                                 "label": "Creator",
-                                                "persname": {
-                                                    "value": "Zwillinger, Rhonda"
-                                                }
+                                                "persname": [
+                                                    {
+                                                        "value": "Zwillinger, Rhonda"
+                                                    }
+                                                ]
                                             }
                                         ],
                                         "physloc": [
@@ -2718,9 +2730,11 @@
                                     },
                                     {
                                         "label": "Creator",
-                                        "persname": {
-                                            "value": "Adams, B. O."
-                                        }
+                                        "persname": [
+                                            {
+                                                "value": "Adams, B. O."
+                                            }
+                                        ]
                                     }
                                 ],
                                 "physloc": [
@@ -3434,9 +3448,11 @@
                             },
                             {
                                 "label": "Creator",
-                                "persname": {
-                                    "value": "Aaron, Florence"
-                                }
+                                "persname": [
+                                    {
+                                        "value": "Aaron, Florence"
+                                    }
+                                ]
                             }
                         ],
                         "physloc": [
