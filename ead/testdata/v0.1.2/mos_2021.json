@@ -218,41 +218,43 @@
                 ]
             }
         ],
-        "controlaccess": {
-            "corpname": [
-                {
-                    "role": "Donor",
-                    "value": "Tamiment Library"
-                }
-            ],
-            "function": [
-                "War Powers Conference"
-            ],
-            "genreform": [
-                "Oral histories (literary works)"
-            ],
-            "geogname": [
-                "Boston (Mass.) -- Intellectual life -- 20th century."
-            ],
-            "occupation": [
-                "Fulbright scholars."
-            ],
-            "persname": [
-                {
-                    "role": "Donor",
-                    "value": "Debs, Eugene V. (Eugene Victor), 1855-1926"
-                }
-            ],
-            "subject": [
-                "Irish American women -- History -- 19th century."
-            ],
-            "title": [
-                {
-                    "value": "New York Nichibei.",
-                    "source": "local"
-                }
-            ]
-        },
+        "controlaccess": [
+            {
+                "corpname": [
+                    {
+                        "role": "Donor",
+                        "value": "Tamiment Library"
+                    }
+                ],
+                "function": [
+                    "War Powers Conference"
+                ],
+                "genreform": [
+                    "Oral histories (literary works)"
+                ],
+                "geogname": [
+                    "Boston (Mass.) -- Intellectual life -- 20th century."
+                ],
+                "occupation": [
+                    "Fulbright scholars."
+                ],
+                "persname": [
+                    {
+                        "role": "Donor",
+                        "value": "Debs, Eugene V. (Eugene Victor), 1855-1926"
+                    }
+                ],
+                "subject": [
+                    "Irish American women -- History -- 19th century."
+                ],
+                "title": [
+                    {
+                        "value": "New York Nichibei.",
+                        "source": "local"
+                    }
+                ]
+            }
+        ],
         "custodhist": [
             {
                 "id": "aspace_03c962dea0c06463b3615c01bc8ac97e",

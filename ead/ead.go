@@ -49,7 +49,7 @@ type ArchDesc struct {
 	Arrangement       []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
 	Bibliography      []*Bibliography          `xml:"bibliography" json:"bibliography,omitempty"`
 	BiogHist          []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
-	ControlAccess     *ControlAccess           `xml:"controlaccess" json:"controlaccess,omitempty"`
+	ControlAccess     []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
 	CustodHist        []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
 	DID               DID                      `xml:"did" json:"did,omitempty"`
 	DSC               *DSC                     `xml:"dsc" json:"dsc,omitempty"`
