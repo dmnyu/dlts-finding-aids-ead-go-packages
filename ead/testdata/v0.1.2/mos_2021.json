@@ -342,10 +342,12 @@
                 },
                 {
                     "label": "Creator",
-                    "famname": {
-                        "role": "Donor",
-                        "value": "Belfrage family"
-                    }
+                    "famname": [
+                        {
+                            "role": "Donor",
+                            "value": "Belfrage family"
+                        }
+                    ]
                 },
                 {
                     "label": "source",
@@ -982,9 +984,11 @@
                                                             },
                                                             {
                                                                 "label": "Creator",
-                                                                "famname": {
-                                                                    "value": "Blaustein Family"
-                                                                }
+                                                                "famname": [
+                                                                    {
+                                                                        "value": "Blaustein Family"
+                                                                    }
+                                                                ]
                                                             },
                                                             {
                                                                 "label": "Creator",
@@ -1547,9 +1551,11 @@
                                                     },
                                                     {
                                                         "label": "Creator",
-                                                        "famname": {
-                                                            "value": "Draper family"
-                                                        }
+                                                        "famname": [
+                                                            {
+                                                                "value": "Draper family"
+                                                            }
+                                                        ]
                                                     },
                                                     {
                                                         "label": "Creator",
@@ -2112,9 +2118,11 @@
                                             },
                                             {
                                                 "label": "Creator",
-                                                "famname": {
-                                                    "value": "Pinsof family"
-                                                }
+                                                "famname": [
+                                                    {
+                                                        "value": "Pinsof family"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "label": "Creator",
@@ -2674,9 +2682,11 @@
                                     },
                                     {
                                         "label": "Creator",
-                                        "famname": {
-                                            "value": "Chen family"
-                                        }
+                                        "famname": [
+                                            {
+                                                "value": "Chen family"
+                                            }
+                                        ]
                                     },
                                     {
                                         "label": "Creator",
@@ -3380,9 +3390,11 @@
                             },
                             {
                                 "label": "Creator",
-                                "famname": {
-                                    "value": "Blaustein Family"
-                                }
+                                "famname": [
+                                    {
+                                        "value": "Blaustein Family"
+                                    }
+                                ]
                             },
                             {
                                 "label": "Creator",
