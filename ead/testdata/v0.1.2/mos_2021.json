@@ -99,15 +99,19 @@
                                 "type": "deflist",
                                 "defitem": [
                                     {
-                                        "item": {
-                                            "value": "Massachusetts Institute of Technology"
-                                        },
+                                        "item": [
+                                            {
+                                                "value": "Massachusetts Institute of Technology"
+                                            }
+                                        ],
                                         "label": "MIT"
                                     },
                                     {
-                                        "item": {
-                                            "value": "Peace Corps Volunteer"
-                                        },
+                                        "item": [
+                                            {
+                                                "value": "Peace Corps Volunteer"
+                                            }
+                                        ],
                                         "label": "PCV"
                                     }
                                 ]
@@ -1079,9 +1083,11 @@
                                                                     "type": "deflist",
                                                                     "defitem": [
                                                                         {
-                                                                            "item": {
-                                                                                "value": "Massachusetts Institute of Technology"
-                                                                            },
+                                                                            "item": [
+                                                                                {
+                                                                                    "value": "Massachusetts Institute of Technology"
+                                                                                }
+                                                                            ],
                                                                             "label": "MIT"
                                                                         }
                                                                     ]
@@ -1090,9 +1096,11 @@
                                                                     "type": "deflist",
                                                                     "defitem": [
                                                                         {
-                                                                            "item": {
-                                                                                "value": "Massachusetts Institute of Technology"
-                                                                            },
+                                                                            "item": [
+                                                                                {
+                                                                                    "value": "Massachusetts Institute of Technology"
+                                                                                }
+                                                                            ],
                                                                             "label": "MIT"
                                                                         }
                                                                     ]
@@ -1173,9 +1181,11 @@
                                                                             "type": "deflist",
                                                                             "defitem": [
                                                                                 {
-                                                                                    "item": {
-                                                                                        "value": "Massachusetts Institute of Technology"
-                                                                                    },
+                                                                                    "item": [
+                                                                                        {
+                                                                                            "value": "Massachusetts Institute of Technology"
+                                                                                        }
+                                                                                    ],
                                                                                     "label": "MIT"
                                                                                 }
                                                                             ]
@@ -1184,9 +1194,11 @@
                                                                             "type": "deflist",
                                                                             "defitem": [
                                                                                 {
-                                                                                    "item": {
-                                                                                        "value": "Massachusetts Institute of Technology"
-                                                                                    },
+                                                                                    "item": [
+                                                                                        {
+                                                                                            "value": "Massachusetts Institute of Technology"
+                                                                                        }
+                                                                                    ],
                                                                                     "label": "MIT"
                                                                                 }
                                                                             ]
@@ -1646,9 +1658,11 @@
                                                             "type": "deflist",
                                                             "defitem": [
                                                                 {
-                                                                    "item": {
-                                                                        "value": "Massachusetts Institute of Technology"
-                                                                    },
+                                                                    "item": [
+                                                                        {
+                                                                            "value": "Massachusetts Institute of Technology"
+                                                                        }
+                                                                    ],
                                                                     "label": "MIT"
                                                                 }
                                                             ]
@@ -1657,9 +1671,11 @@
                                                             "type": "deflist",
                                                             "defitem": [
                                                                 {
-                                                                    "item": {
-                                                                        "value": "Massachusetts Institute of Technology"
-                                                                    },
+                                                                    "item": [
+                                                                        {
+                                                                            "value": "Massachusetts Institute of Technology"
+                                                                        }
+                                                                    ],
                                                                     "label": "MIT"
                                                                 }
                                                             ]
@@ -1740,9 +1756,11 @@
                                                                     "type": "deflist",
                                                                     "defitem": [
                                                                         {
-                                                                            "item": {
-                                                                                "value": "Massachusetts Institute of Technology"
-                                                                            },
+                                                                            "item": [
+                                                                                {
+                                                                                    "value": "Massachusetts Institute of Technology"
+                                                                                }
+                                                                            ],
                                                                             "label": "MIT"
                                                                         }
                                                                     ]
@@ -1751,9 +1769,11 @@
                                                                     "type": "deflist",
                                                                     "defitem": [
                                                                         {
-                                                                            "item": {
-                                                                                "value": "Massachusetts Institute of Technology"
-                                                                            },
+                                                                            "item": [
+                                                                                {
+                                                                                    "value": "Massachusetts Institute of Technology"
+                                                                                }
+                                                                            ],
                                                                             "label": "MIT"
                                                                         }
                                                                     ]
@@ -2213,9 +2233,11 @@
                                                     "type": "deflist",
                                                     "defitem": [
                                                         {
-                                                            "item": {
-                                                                "value": "Massachusetts Institute of Technology"
-                                                            },
+                                                            "item": [
+                                                                {
+                                                                    "value": "Massachusetts Institute of Technology"
+                                                                }
+                                                            ],
                                                             "label": "MIT"
                                                         }
                                                     ]
@@ -2224,9 +2246,11 @@
                                                     "type": "deflist",
                                                     "defitem": [
                                                         {
-                                                            "item": {
-                                                                "value": "Massachusetts Institute of Technology"
-                                                            },
+                                                            "item": [
+                                                                {
+                                                                    "value": "Massachusetts Institute of Technology"
+                                                                }
+                                                            ],
                                                             "label": "MIT"
                                                         }
                                                     ]
@@ -2307,9 +2331,11 @@
                                                             "type": "deflist",
                                                             "defitem": [
                                                                 {
-                                                                    "item": {
-                                                                        "value": "Massachusetts Institute of Technology"
-                                                                    },
+                                                                    "item": [
+                                                                        {
+                                                                            "value": "Massachusetts Institute of Technology"
+                                                                        }
+                                                                    ],
                                                                     "label": "MIT"
                                                                 }
                                                             ]
@@ -2318,9 +2344,11 @@
                                                             "type": "deflist",
                                                             "defitem": [
                                                                 {
-                                                                    "item": {
-                                                                        "value": "Massachusetts Institute of Technology"
-                                                                    },
+                                                                    "item": [
+                                                                        {
+                                                                            "value": "Massachusetts Institute of Technology"
+                                                                        }
+                                                                    ],
                                                                     "label": "MIT"
                                                                 }
                                                             ]
@@ -2777,9 +2805,11 @@
                                             "type": "deflist",
                                             "defitem": [
                                                 {
-                                                    "item": {
-                                                        "value": "Massachusetts Institute of Technology"
-                                                    },
+                                                    "item": [
+                                                        {
+                                                            "value": "Massachusetts Institute of Technology"
+                                                        }
+                                                    ],
                                                     "label": "MIT"
                                                 }
                                             ]
@@ -2788,9 +2818,11 @@
                                             "type": "deflist",
                                             "defitem": [
                                                 {
-                                                    "item": {
-                                                        "value": "Massachusetts Institute of Technology"
-                                                    },
+                                                    "item": [
+                                                        {
+                                                            "value": "Massachusetts Institute of Technology"
+                                                        }
+                                                    ],
                                                     "label": "MIT"
                                                 }
                                             ]
@@ -2871,9 +2903,11 @@
                                                     "type": "deflist",
                                                     "defitem": [
                                                         {
-                                                            "item": {
-                                                                "value": "Massachusetts Institute of Technology"
-                                                            },
+                                                            "item": [
+                                                                {
+                                                                    "value": "Massachusetts Institute of Technology"
+                                                                }
+                                                            ],
                                                             "label": "MIT"
                                                         }
                                                     ]
@@ -2882,9 +2916,11 @@
                                                     "type": "deflist",
                                                     "defitem": [
                                                         {
-                                                            "item": {
-                                                                "value": "Massachusetts Institute of Technology"
-                                                            },
+                                                            "item": [
+                                                                {
+                                                                    "value": "Massachusetts Institute of Technology"
+                                                                }
+                                                            ],
                                                             "label": "MIT"
                                                         }
                                                     ]
@@ -3493,9 +3529,11 @@
                                     "type": "deflist",
                                     "defitem": [
                                         {
-                                            "item": {
-                                                "value": "Massachusetts Institute of Technology"
-                                            },
+                                            "item": [
+                                                {
+                                                    "value": "Massachusetts Institute of Technology"
+                                                }
+                                            ],
                                             "label": "MIT"
                                         }
                                     ]
@@ -3504,9 +3542,11 @@
                                     "type": "deflist",
                                     "defitem": [
                                         {
-                                            "item": {
-                                                "value": "Massachusetts Institute of Technology"
-                                            },
+                                            "item": [
+                                                {
+                                                    "value": "Massachusetts Institute of Technology"
+                                                }
+                                            ],
                                             "label": "MIT"
                                         }
                                     ]
@@ -3587,9 +3627,11 @@
                                             "type": "deflist",
                                             "defitem": [
                                                 {
-                                                    "item": {
-                                                        "value": "Massachusetts Institute of Technology"
-                                                    },
+                                                    "item": [
+                                                        {
+                                                            "value": "Massachusetts Institute of Technology"
+                                                        }
+                                                    ],
                                                     "label": "MIT"
                                                 }
                                             ]
@@ -3598,9 +3640,11 @@
                                             "type": "deflist",
                                             "defitem": [
                                                 {
-                                                    "item": {
-                                                        "value": "Massachusetts Institute of Technology"
-                                                    },
+                                                    "item": [
+                                                        {
+                                                            "value": "Massachusetts Institute of Technology"
+                                                        }
+                                                    ],
                                                     "label": "MIT"
                                                 }
                                             ]
@@ -3876,9 +3920,11 @@
                                 "type": "deflist",
                                 "defitem": [
                                     {
-                                        "item": {
-                                            "value": "Massachusetts Institute of Technology"
-                                        },
+                                        "item": [
+                                            {
+                                                "value": "Massachusetts Institute of Technology"
+                                            }
+                                        ],
                                         "label": "MIT"
                                     }
                                 ]

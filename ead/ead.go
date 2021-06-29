@@ -195,7 +195,7 @@ type Date struct {
 }
 
 type DefItem struct {
-	Item  Item           `xml:"item" json:"item,omitempty"`
+	Item  []*Item        `xml:"item" json:"item,omitempty"`
 	Label FilteredString `xml:"label" json:"label,omitempty"`
 }
 
