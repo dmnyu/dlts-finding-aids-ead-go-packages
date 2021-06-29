@@ -1047,9 +1047,11 @@
                                                             },
                                                             "indexentry": [
                                                                 {
-                                                                    "corpname": {
-                                                                        "value": "Level 6 Index item"
-                                                                    }
+                                                                    "corpname": [
+                                                                        {
+                                                                            "value": "Level 6 Index item"
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         }
@@ -1608,9 +1610,11 @@
                                                     },
                                                     "indexentry": [
                                                         {
-                                                            "corpname": {
-                                                                "value": "Level 5 Index Item"
-                                                            }
+                                                            "corpname": [
+                                                                {
+                                                                    "value": "Level 5 Index Item"
+                                                                }
+                                                            ]
                                                         }
                                                     ]
                                                 }
@@ -2169,9 +2173,11 @@
                                             },
                                             "indexentry": [
                                                 {
-                                                    "corpname": {
-                                                        "value": "Level 4 Index item"
-                                                    }
+                                                    "corpname": [
+                                                        {
+                                                            "value": "Level 4 Index item"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
@@ -2727,9 +2733,11 @@
                                     },
                                     "indexentry": [
                                         {
-                                            "corpname": {
-                                                "value": "Level 3 Index item"
-                                            }
+                                            "corpname": [
+                                                {
+                                                    "value": "Level 3 Index item"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -3429,9 +3437,11 @@
                             },
                             "indexentry": [
                                 {
-                                    "corpname": {
-                                        "value": "Level 2 Index term 1"
-                                    }
+                                    "corpname": [
+                                        {
+                                            "value": "Level 2 Index term 1"
+                                        }
+                                    ]
                                 },
                                 {
                                     "name": {
