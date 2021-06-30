@@ -313,7 +313,7 @@ type Index struct {
 type IndexEntry struct {
 	CorpName []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 	Name     []*AccessTermWithRole `xml:"name" json:"name,omitempty"`
-	Subject  *FilteredString       `xml:"subject" json:"subject,omitempty"`
+	Subject  []*FilteredString     `xml:"subject" json:"subject,omitempty"`
 }
 
 type Item struct {

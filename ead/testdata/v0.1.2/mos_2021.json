@@ -3541,7 +3541,9 @@
                                     ]
                                 },
                                 {
-                                    "subject": "Level 2 Index term 3"
+                                    "subject": [
+                                        "Level 2 Index term 3"
+                                    ]
                                 }
                             ]
                         }
