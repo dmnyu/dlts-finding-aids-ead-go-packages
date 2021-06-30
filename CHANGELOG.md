@@ -1,5 +1,23 @@
 # Changelog
 
+#### v0.6.0
+  - change Address in PublicationStmt to an array
+  - change ChronList in FormattedNoteWithHead to an array
+  - change ControlAccess in ArchDesc to an array
+  - change CorpName in IndexEntry to an array
+  - change CorpName in Origination to an array
+  - change CorpName in Repository to an array
+  - change Date in Change to an array
+  - change Date in ChronItem to an array
+  - change FamName in Origination to an array
+  - change Item in Change to an array
+  - change Item in DefItem to an array
+  - change Name in IndexEntry to an array
+  - change PersName in Origination to an array
+  - change PhysLoc in ArchRef to an array
+  - change Subject in IndexEntry to an array
+  - change Title in Event to an array
+
 #### v0.5.0
   - replace all instances of \r, \t, \n, and consecutive spaces in
     EAD element values with a single space
