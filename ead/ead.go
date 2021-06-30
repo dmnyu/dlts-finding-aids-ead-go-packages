@@ -5,7 +5,7 @@ package ead
 // Based on: "Data model for parsing EAD <archdesc> elements": https://jira.nyu.edu/jira/browse/FADESIGN-29.
 
 const (
-	Version = "0.5.0"
+	Version = "0.6.0"
 )
 
 type EAD struct {
@@ -49,7 +49,7 @@ type ArchDesc struct {
 	Arrangement       []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
 	Bibliography      []*Bibliography          `xml:"bibliography" json:"bibliography,omitempty"`
 	BiogHist          []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
-	ControlAccess     *ControlAccess           `xml:"controlaccess" json:"controlaccess,omitempty"`
+	ControlAccess     []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
 	CustodHist        []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
 	DID               DID                      `xml:"did" json:"did,omitempty"`
 	DSC               *DSC                     `xml:"dsc" json:"dsc,omitempty"`
@@ -66,7 +66,7 @@ type ArchDesc struct {
 }
 
 type ArchRef struct {
-	PhysLoc *PhysLoc `xml:"physloc" json:"physloc,omitempty"`
+	PhysLoc []*PhysLoc `xml:"physloc" json:"physloc,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -116,12 +116,12 @@ type C struct {
 }
 
 type Change struct {
-	Date Date `xml:"date" json:"date,omitempty"`
-	Item Item `xml:"item" json:"item,omitempty"`
+	Date []*Date `xml:"date" json:"date,omitempty"`
+	Item []*Item `xml:"item" json:"item,omitempty"`
 }
 
 type ChronItem struct {
-	Date     Date        `xml:"date" json:"date,omitempty"`
+	Date     []*Date     `xml:"date" json:"date,omitempty"`
 	EventGrp []*EventGrp `xml:"eventgrp,omitempty" json:"eventgrp,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
@@ -195,7 +195,7 @@ type Date struct {
 }
 
 type DefItem struct {
-	Item  Item           `xml:"item" json:"item,omitempty"`
+	Item  []*Item        `xml:"item" json:"item,omitempty"`
 	Label FilteredString `xml:"label" json:"label,omitempty"`
 }
 
@@ -249,7 +249,7 @@ type EditionStmt struct {
 }
 
 type Event struct {
-	Title *Title `xml:"title" json:"title,omitempty"`
+	Title []*Title `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -291,7 +291,7 @@ type FileDesc struct {
 type FormattedNoteWithHead struct {
 	ID FilteredString `xml:"id,attr" json:"id,omitempty"`
 
-	ChronList   *ChronList   `xml:"chronlist" json:"chronlist,omitempty"`
+	ChronList   []*ChronList `xml:"chronlist" json:"chronlist,omitempty"`
 	DefItem     []*DefItem   `xml:"defitem,omitemtpy" json:"defitem,omitempty"`
 	Head        *Head        `xml:"head,omitemtpy" json:"head,omitempty"`
 	LegalStatus *LegalStatus `xml:"legalstatus,omitemtpy" json:"legalstatus,omitempty"`
@@ -311,9 +311,9 @@ type Index struct {
 }
 
 type IndexEntry struct {
-	CorpName *AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
-	Name     *AccessTermWithRole `xml:"name" json:"name,omitempty"`
-	Subject  *FilteredString     `xml:"subject" json:"subject,omitempty"`
+	CorpName []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
+	Name     []*AccessTermWithRole `xml:"name" json:"name,omitempty"`
+	Subject  []*FilteredString     `xml:"subject" json:"subject,omitempty"`
 }
 
 type Item struct {
@@ -372,9 +372,9 @@ type Num struct {
 type Origination struct {
 	Label FilteredString `xml:"label,attr" json:"label,omitempty"`
 
-	CorpName *AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
-	FamName  *AccessTermWithRole `xml:"famname" json:"famname,omitempty"`
-	PersName *AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
+	CorpName []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
+	FamName  []*AccessTermWithRole `xml:"famname" json:"famname,omitempty"`
+	PersName []*AccessTermWithRole `xml:"persname" json:"persname,omitempty"`
 }
 
 type P struct {
@@ -431,13 +431,13 @@ type ProfileDesc struct {
 }
 
 type PublicationStmt struct {
-	Address   *Address       `xml:"address" json:"address,omitempty"`
+	Address   []*Address     `xml:"address" json:"address,omitempty"`
 	P         []*P           `xml:"p" json:"p,omitempty"`
 	Publisher FilteredString `xml:"publisher" json:"publisher,omitempty"`
 }
 
 type Repository struct {
-	CorpName *AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
+	CorpName []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
