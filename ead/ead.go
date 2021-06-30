@@ -249,7 +249,7 @@ type EditionStmt struct {
 }
 
 type Event struct {
-	Title *Title `xml:"title" json:"title,omitempty"`
+	Title []*Title `xml:"title" json:"title,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
