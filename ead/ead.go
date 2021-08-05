@@ -133,11 +133,11 @@ type ChronList struct {
 }
 
 type Container struct {
-	AltRender FilteredString `xml:"altrender,attr" json:"altrender,omitempty"`
-	ID        FilteredString `xml:"id,attr" json:"id,omitempty"`
-	Label     FilteredString `xml:"label,attr" json:"label,omitempty"`
-	Parent    FilteredString `xml:"parent,attr" json:"parent,omitempty"`
-	Type      FilteredString `xml:"type,attr" json:"type,omitempty"`
+	AltRender FilteredString      `xml:"altrender,attr" json:"altrender,omitempty"`
+	ID        FilteredString      `xml:"id,attr" json:"id,omitempty"`
+	Label     FilteredLabelString `xml:"label,attr" json:"label,omitempty"`
+	Parent    FilteredString      `xml:"parent,attr" json:"parent,omitempty"`
+	Type      FilteredString      `xml:"type,attr" json:"type,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -195,8 +195,8 @@ type Date struct {
 }
 
 type DefItem struct {
-	Item  []*Item        `xml:"item" json:"item,omitempty"`
-	Label FilteredString `xml:"label" json:"label,omitempty"`
+	Item  []*Item             `xml:"item" json:"item,omitempty"`
+	Label FilteredLabelString `xml:"label" json:"label,omitempty"`
 }
 
 type DID struct {
@@ -216,8 +216,8 @@ type DID struct {
 }
 
 type Dimensions struct {
-	ID    FilteredString `xml:"id,attr" json:"id,omitempty"`
-	Label FilteredString `xml:"label,attr" json:"label,omitempty"`
+	ID    FilteredString      `xml:"id,attr" json:"id,omitempty"`
+	Label FilteredLabelString `xml:"label,attr" json:"label,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
@@ -370,7 +370,7 @@ type Num struct {
 }
 
 type Origination struct {
-	Label FilteredString `xml:"label,attr" json:"label,omitempty"`
+	Label FilteredLabelString `xml:"label,attr" json:"label,omitempty"`
 
 	CorpName []*AccessTermWithRole `xml:"corpname" json:"corpname,omitempty"`
 	FamName  []*AccessTermWithRole `xml:"famname" json:"famname,omitempty"`
@@ -400,9 +400,9 @@ type P struct {
 }
 
 type PhysDesc struct {
-	AltRender FilteredString `xml:"altrender,attr" json:"altrender,omitempty"`
-	ID        FilteredString `xml:"id,attr" json:"id,omitempty"`
-	Label     FilteredString `xml:"label,attr" json:"label,omitempty"`
+	AltRender FilteredString      `xml:"altrender,attr" json:"altrender,omitempty"`
+	ID        FilteredString      `xml:"id,attr" json:"id,omitempty"`
+	Label     FilteredLabelString `xml:"label,attr" json:"label,omitempty"`
 
 	Extent     []*Extent   `xml:"extent" json:"extent,omitempty"`
 	Dimensions *Dimensions `xml:"dimensions" json:"dimensions,omitempty"`
@@ -412,8 +412,8 @@ type PhysDesc struct {
 }
 
 type PhysFacet struct {
-	ID    FilteredString `xml:"id,attr" json:"id,omitempty"`
-	Label FilteredString `xml:"label,attr" json:"label,omitempty"`
+	ID    FilteredString      `xml:"id,attr" json:"id,omitempty"`
+	Label FilteredLabelString `xml:"label,attr" json:"label,omitempty"`
 
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }

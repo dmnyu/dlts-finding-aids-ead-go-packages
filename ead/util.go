@@ -409,5 +409,22 @@ func cleanupWhitespace(s string) string {
 	// run again in case previous operation resulted in
 	// consecutive spaces
 	result = re.ReplaceAllString(result, " ")
+	// clean off any leading/trailing whitespace
+	result = strings.TrimSpace(result)
+	return result
+}
+
+type FilteredLabelString FilteredString
+
+func (s FilteredLabelString) MarshalJSON() ([]byte, error) {
+
+	return json.Marshal(cleanupWhitespace(removeBracketedText(string(s))))
+}
+
+func removeBracketedText(s string) string {
+	// find bracketed text
+	re := regexp.MustCompile(`\[.+\]`)
+	// remove occurences
+	result := re.ReplaceAllString(s, "")
 	return result
 }

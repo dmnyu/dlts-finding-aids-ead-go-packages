@@ -279,7 +279,7 @@
         "did": {
             "physdesc": [
                 {
-                    "value": " \u003cspan class=\"ead-extent\"\u003e25 Linear Feet\u003c/span\u003e \u003cspan class=\"ead-extent\"\u003ein \u003cspan class=\"ead-emph ead-emph-bold\"\u003e24 record cartons\u003c/span\u003e, \u003cbr\u003e1 manuscript box, and 1 flat file folder\u003c/span\u003e \u003cspan class=\"ead-dimensions\"\u003e\u003cspan class=\"ead-dimensions\"\u003e24\" x 24\"\u003c/span\u003e\u003c/span\u003e ",
+                    "value": "\u003cspan class=\"ead-extent\"\u003e25 Linear Feet\u003c/span\u003e \u003cspan class=\"ead-extent\"\u003ein \u003cspan class=\"ead-emph ead-emph-bold\"\u003e24 record cartons\u003c/span\u003e, \u003cbr\u003e1 manuscript box, and 1 flat file folder\u003c/span\u003e \u003cspan class=\"ead-dimensions\"\u003e\u003cspan class=\"ead-dimensions\"\u003e24\" x 24\"\u003c/span\u003e\u003c/span\u003e",
                     "altrender": "whole",
                     "extent": [
                         {
@@ -296,7 +296,7 @@
                     }
                 },
                 {
-                    "value": " \u003cspan class=\"ead-physfacet\"\u003eThis is the \u003cspan class=\"ead-emph ead-emph-italic\"\u003ephysical facet\u003c/span\u003e of the collection.\u003c/span\u003e ",
+                    "value": "\u003cspan class=\"ead-physfacet\"\u003eThis is the \u003cspan class=\"ead-emph ead-emph-italic\"\u003ephysical facet\u003c/span\u003e of the collection.\u003c/span\u003e",
                     "physfacet": {
                         "value": "This is the \u003cspan class=\"ead-emph ead-emph-italic\"\u003ephysical facet\u003c/span\u003e of the collection.",
                         "id": "aspace_22323",
@@ -337,7 +337,7 @@
                     "persname": [
                         {
                             "role": "Donor",
-                            "value": " Megan O'Shea"
+                            "value": "Megan O'Shea"
                         }
                     ]
                 },
@@ -372,13 +372,13 @@
                     "label": "Creator",
                     "persname": [
                         {
-                            "value": " Weatherly Stephan"
+                            "value": "Weatherly Stephan"
                         }
                     ]
                 }
             ],
             "repository": {
-                "value": " \u003cspan class=\"ead-corpname\"\u003eTamiment Library and Robert F. Wagner Labor Archives\u003c/span\u003e ",
+                "value": "\u003cspan class=\"ead-corpname\"\u003eTamiment Library and Robert F. Wagner Labor Archives\u003c/span\u003e",
                 "corpname": [
                     {
                         "value": "Tamiment Library and Robert F. Wagner Labor Archives"
@@ -1156,7 +1156,7 @@
                                                                     ],
                                                                     "archref": [
                                                                         {
-                                                                            "value": " \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
+                                                                            "value": "\u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
                                                                         }
                                                                     ],
                                                                     "bibref": [
@@ -1735,7 +1735,7 @@
                                                             ],
                                                             "archref": [
                                                                 {
-                                                                    "value": " \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
+                                                                    "value": "\u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
                                                                 }
                                                             ],
                                                             "bibref": [
@@ -2314,7 +2314,7 @@
                                                     ],
                                                     "archref": [
                                                         {
-                                                            "value": " \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
+                                                            "value": "\u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
                                                         }
                                                     ],
                                                     "bibref": [
@@ -2890,7 +2890,7 @@
                                             ],
                                             "archref": [
                                                 {
-                                                    "value": " \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
+                                                    "value": "\u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
                                                 }
                                             ],
                                             "bibref": [
@@ -3362,7 +3362,7 @@
                                 "id": "aspace_fb8fc30fbb1f790bf2719a30511c5040",
                                 "title": [
                                     {
-                                        "value": "\u003cspan class=\"ead-emph ead-emph-bold\"\u003ebold\u003c/span\u003etitle ",
+                                        "value": "\u003cspan class=\"ead-emph ead-emph-bold\"\u003ebold\u003c/span\u003etitle",
                                         "render": "bold",
                                         "source": "DACS",
                                         "type": "book"
@@ -3624,7 +3624,7 @@
                                     ],
                                     "archref": [
                                         {
-                                            "value": " \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
+                                            "value": "\u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
                                         }
                                     ],
                                     "bibref": [
@@ -3883,7 +3883,7 @@
                 },
                 "p": [
                     {
-                        "value": "This is the General note. \u003cspan class=\"ead-address\"\u003e \u003cspan class=\"ead-addressline\"\u003eElmer Holmes Bobst Library\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003e70 Washington Square South\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003e2nd Floor\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003eNew York, NY 10012\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003especial.collections@nyu.edu\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003eURL: \u003cspan class=\"ead-extptr\"\u003e\u003c/span\u003e\u003c/span\u003e \u003c/span\u003e \u003cspan class=\"ead-abbr\"\u003eALS\u003c/span\u003e \u003cspan class=\"ead-archref\"\u003e \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e\u003c/span\u003e \u003cspan class=\"ead-bibref\"\u003e\u003cspan class=\"ead-emph ead-emph-bold\"\u003eArdouin, Charles Nicholas Celigny\u003c/span\u003e. \u003cspan class=\"ead-title\"\u003eEssais sur l'histoire d'Haiti\u003c/span\u003e. Port-au-Prince, 1865.\u003c/span\u003e \u003cspan class=\"ead-blockquote\"\u003e \u003cspan class=\"ead-p\"\u003eNo doubt the estate has exerted a tremendous influence on the development of my character. One may walk for an hour without glimpsing another soul, which has taught me to love tranquility.\u003c/span\u003e \u003c/span\u003e\u003cbr\u003e \u003cspan class=\"ead-corpname\"\u003eTamiment Library\u003c/span\u003e \u003cspan class=\"ead-date\"\u003eMarch 2021\u003c/span\u003e \u003cspan class=\"ead-list\"\u003e \u003cspan class=\"ead-listhead\"\u003e \u003cspan class=\"ead-head01\"\u003eAbbreviation\u003c/span\u003e \u003cspan class=\"ead-head02\"\u003eExpansion\u003c/span\u003e \u003c/span\u003e \u003cspan class=\"ead-defitem\"\u003e \u003cspan class=\"ead-label\"\u003eMIT\u003c/span\u003e \u003cspan class=\"ead-item\"\u003eMassachusetts Institute of Technology\u003c/span\u003e \u003c/span\u003e \u003c/span\u003e \u003cspan class=\"ead-genreform\"\u003eOral histories (literary works)\u003c/span\u003e \u003cspan class=\"ead-name\"\u003eRolodex\u003c/span\u003e \u003cspan class=\"ead-num\"\u003eMOS.2021\u003c/span\u003e \u003cspan class=\"ead-occupation\"\u003eFulbright scholars.\u003c/span\u003e \u003cspan class=\"ead-subject\"\u003eIrish American women -- History -- 19th century.\u003c/span\u003e ",
+                        "value": "This is the General note. \u003cspan class=\"ead-address\"\u003e \u003cspan class=\"ead-addressline\"\u003eElmer Holmes Bobst Library\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003e70 Washington Square South\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003e2nd Floor\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003eNew York, NY 10012\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003especial.collections@nyu.edu\u003c/span\u003e \u003cspan class=\"ead-addressline\"\u003eURL: \u003cspan class=\"ead-extptr\"\u003e\u003c/span\u003e\u003c/span\u003e \u003c/span\u003e \u003cspan class=\"ead-abbr\"\u003eALS\u003c/span\u003e \u003cspan class=\"ead-archref\"\u003e \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e\u003c/span\u003e \u003cspan class=\"ead-bibref\"\u003e\u003cspan class=\"ead-emph ead-emph-bold\"\u003eArdouin, Charles Nicholas Celigny\u003c/span\u003e. \u003cspan class=\"ead-title\"\u003eEssais sur l'histoire d'Haiti\u003c/span\u003e. Port-au-Prince, 1865.\u003c/span\u003e \u003cspan class=\"ead-blockquote\"\u003e \u003cspan class=\"ead-p\"\u003eNo doubt the estate has exerted a tremendous influence on the development of my character. One may walk for an hour without glimpsing another soul, which has taught me to love tranquility.\u003c/span\u003e \u003c/span\u003e\u003cbr\u003e \u003cspan class=\"ead-corpname\"\u003eTamiment Library\u003c/span\u003e \u003cspan class=\"ead-date\"\u003eMarch 2021\u003c/span\u003e \u003cspan class=\"ead-list\"\u003e \u003cspan class=\"ead-listhead\"\u003e \u003cspan class=\"ead-head01\"\u003eAbbreviation\u003c/span\u003e \u003cspan class=\"ead-head02\"\u003eExpansion\u003c/span\u003e \u003c/span\u003e \u003cspan class=\"ead-defitem\"\u003e \u003cspan class=\"ead-label\"\u003eMIT\u003c/span\u003e \u003cspan class=\"ead-item\"\u003eMassachusetts Institute of Technology\u003c/span\u003e \u003c/span\u003e \u003c/span\u003e \u003cspan class=\"ead-genreform\"\u003eOral histories (literary works)\u003c/span\u003e \u003cspan class=\"ead-name\"\u003eRolodex\u003c/span\u003e \u003cspan class=\"ead-num\"\u003eMOS.2021\u003c/span\u003e \u003cspan class=\"ead-occupation\"\u003eFulbright scholars.\u003c/span\u003e \u003cspan class=\"ead-subject\"\u003eIrish American women -- History -- 19th century.\u003c/span\u003e",
                         "abbr": [
                             "ALS"
                         ],
@@ -3921,7 +3921,7 @@
                         ],
                         "archref": [
                             {
-                                "value": " \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
+                                "value": "\u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
                             }
                         ],
                         "bibref": [
@@ -4061,7 +4061,7 @@
                         "value": "This is the Related Materials note. Those using the collection may also be interested in P132, held in this repository, which includes photographs of Pemberly, Darcy's estate and childhood home. In an April 1795 letter to his friend, Charles Bingley, Darcy wrote \u003cspan class=\"ead-blockquote\"\u003e\u003cspan class=\"ead-p\"\u003eNo doubt the estate has exerted a tremendous influence on the development of my character. One may walk for an hour without glimpsing another soul, which has taught me to love tranquility.\u003c/span\u003e\u003c/span\u003e \u003cspan class=\"ead-archref\"\u003e \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e\u003c/span\u003e",
                         "archref": [
                             {
-                                "value": " \u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
+                                "value": "\u003cspan class=\"ead-extref\"\u003eThe Sally Belfrage Papers (TAM 189)\u003c/span\u003e"
                             }
                         ]
                     }

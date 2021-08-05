@@ -133,7 +133,7 @@ func TestBarcodeRemovalFromLabels(t *testing.T) {
 		failOnError(t, err, "Unexpected error reading reference file")
 
 		if !bytes.Equal(referenceFileContents, jsonData) {
-			jsonFile := "./testdata/tmp/failing-marshal.json"
+			jsonFile := "./testdata/tmp/failing-test-barcode-removal.json"
 			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
 
