@@ -6,13 +6,14 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
+	"path/filepath"
 	"testing"
 	"time"
 )
 
-const testFixturePath string = "./testdata"
-const omegaTestFixturePath string = testFixturePath + "/omega/v0.1.2"
-const falesTestFixturePath string = testFixturePath + "/fales"
+var testFixturePath string = filepath.Join(".", "testdata")
+var omegaTestFixturePath string = filepath.Join(testFixturePath, "omega", "v0.1.2")
+var falesTestFixturePath string = filepath.Join(testFixturePath, "fales")
 
 func failOnError(t *testing.T, err error, label string) {
 	if err != nil {
@@ -142,4 +143,3 @@ func TestBarcodeRemovalFromLabels(t *testing.T) {
 		}
 	})
 }
-
