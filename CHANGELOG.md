@@ -1,5 +1,9 @@
 # Changelog
 
+#### v0.7.0
+  - remove bracketed text from Label values
+  - remove leading/trailing spaces from FilteredString values
+
 #### v0.6.0
   - change Address in PublicationStmt to an array
   - change ChronList in FormattedNoteWithHead to an array
