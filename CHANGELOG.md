@@ -1,5 +1,9 @@
 # Changelog
 
+#### v0.8.0
+  - add PubInfo type
+  - add PubInfo member to EAD struct
+
 #### v0.7.0
   - remove bracketed text from Label values
   - remove leading/trailing spaces from FilteredString values
