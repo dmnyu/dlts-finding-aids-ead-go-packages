@@ -87,7 +87,7 @@ func TestJSONMarshaling(t *testing.T) {
 }
 
 func TestUpdateRunInfo(t *testing.T) {
-	t.Run("JSON Marshaling", func(t *testing.T) {
+	t.Run("Update RunInfo", func(t *testing.T) {
 		var sut EAD
 
 		want := ""
@@ -115,6 +115,24 @@ func TestUpdateRunInfo(t *testing.T) {
 		want = sourceFile
 		got = sut.RunInfo.SourceFile
 		assertEqual(t, want, got, "set ead.RunInfo.SourceFile")
+	})
+}
+
+func TestUpdatePubInfo(t *testing.T) {
+	t.Run("Update PubInfo", func(t *testing.T) {
+		var sut EAD
+
+		want := ""
+		got := sut.PubInfo.ThemeID
+		assertEqual(t, want, got, "Initial ead.PubInfo.ThemeID")
+
+		themeid := "cdf80c84-2655-4a01-895d-fbf9a374c1df"
+		sut.PubInfo.SetPubInfo(themeid)
+
+		want = themeid
+		got = sut.PubInfo.ThemeID
+		assertEqual(t, want, got, "Post-assignment ead.PubInfo.ThemeID")
+
 	})
 }
 

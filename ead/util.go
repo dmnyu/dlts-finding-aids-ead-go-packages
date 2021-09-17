@@ -394,6 +394,15 @@ func (r *RunInfo) SetRunInfo(version string, t time.Time, sourceFile string) {
 	r.SourceFile = sourceFile
 }
 
+// PubInfo stores data used by the publication system
+type PubInfo struct {
+	ThemeID    string    `json:"themeid"`
+}
+
+func (p *PubInfo) SetPubInfo(themeid string) {
+	p.ThemeID = themeid
+}
+
 // FilteredString provides a centralized string cleanup mechanism
 type FilteredString string
 
