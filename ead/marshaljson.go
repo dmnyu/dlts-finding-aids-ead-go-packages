@@ -105,3 +105,16 @@ func (titleproper *TitleProper) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+
+/* TitleStmt.TitleProper flattening strategy:
+   func (titleStmt *TitleStmt) MarshalJSON() ([]byte, error) {
+      var titleStmtOutput  TitleStmtOutput
+      // convert TitleProper array into a single string
+      // marshall JSON on the output variable and return the result
+*/
+
+func (titleStmt *TitleStmt) MarshalJSON() ([]byte, error) {
+	return titleStmt.MarshalJSON()
+}
+
+
