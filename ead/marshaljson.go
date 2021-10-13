@@ -105,8 +105,8 @@ func (titleproper *TitleProper) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
-func (titleStmt TitleStmt) MarshalJSON() ([]byte, error) {
-	titleStmtOutput, err := convertTitleStmtToTitleStmtOutput(&titleStmt)
+func (titleStmt *TitleStmt) MarshalJSON() ([]byte, error) {
+	titleStmtOutput, err := convertTitleStmtToTitleStmtOutput(titleStmt)
 
 	jsonData, err := json.Marshal(titleStmtOutput)
 	if err != nil {

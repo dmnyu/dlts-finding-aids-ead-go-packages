@@ -286,7 +286,7 @@ type FileDesc struct {
 	EditionStmt     *EditionStmt    `xml:"editionstmt" json:"editionstmt,omitempty"`
 	NoteStmt        *NoteStmt       `xml:"notestmt" json:"notestmt,omitempty"`
 	PublicationStmt PublicationStmt `xml:"publicationstmt" json:"publicationstmt,omitempty"`
-	TitleStmt       TitleStmt       `xml:"titlestmt" json:"titlestmt,omitempty"`
+	TitleStmt       *TitleStmt      `xml:"titlestmt" json:"titlestmt,omitempty"`
 }
 
 type FormattedNoteWithHead struct {
