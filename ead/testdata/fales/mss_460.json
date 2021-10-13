@@ -3023,16 +3023,7 @@
             },
             "titlestmt": {
                 "author": "Megan O'Shea and Bess Pittman",
-                "titleproper": [
-                    {
-                        "value": "Guide to the Adele Fournet Papers on the Bit Rosie Web Series \u003cspan class=\"ead-num\"\u003eMSS.460\u003c/span\u003e",
-                        "num": [
-                            {
-                                "value": "MSS.460"
-                            }
-                        ]
-                    }
-                ]
+                "titleproper": "Guide to the Adele Fournet Papers on the Bit Rosie Web Series \u003cspan class=\"ead-num\"\u003eMSS.460\u003c/span\u003e"
             }
         },
         "profiledesc": {
