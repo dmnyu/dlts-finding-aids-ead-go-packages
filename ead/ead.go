@@ -463,11 +463,20 @@ type TitleProper struct {
 	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
+// this type is used to receive the incoming XML <titlestmt>
 type TitleStmt struct {
 	Author      FilteredString `xml:"author" json:"author,omitempty"`
 	Sponsor     FilteredString `xml:"sponsor" json:"sponsor,omitempty"`
 	SubTitle    FilteredString `xml:"subtitle" json:"subtitle,omitempty"`
 	TitleProper []*TitleProper `xml:"titleproper" json:"titleproper,omitempty"`
+}
+
+// This type is used to generate a TitleStmt with a flattened TitleProper array
+type TitleStmtOutput struct {
+	Author      FilteredString `xml:"author" json:"author,omitempty"`
+	Sponsor     FilteredString `xml:"sponsor" json:"sponsor,omitempty"`
+	SubTitle    FilteredString `xml:"subtitle" json:"subtitle,omitempty"`
+	TitleProper FilteredString `xml:"titleproper" json:"titleproper,omitempty"`
 }
 
 type UnitDate struct {
