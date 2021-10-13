@@ -458,21 +458,3 @@ func flattenTitleProper(titleProper []*TitleProper) ([]byte, error) {
 
 	return getConvertedTextWithTagsNoLBConversion(titleToFlatten.Value)
 }
-
-func convertTitleStmtToTitleStmtOutput(titleStmt *TitleStmt) (*TitleStmtOutput, error) {
-
-	// fail fast
-	flattenedTitleProper, err := flattenTitleProper(titleStmt.TitleProper)
-	if err != nil {
-		return nil, err
-	}
-
-	var titleStmtOutput TitleStmtOutput
-
-	titleStmtOutput.Author = titleStmt.Author
-	titleStmtOutput.Sponsor = titleStmt.Sponsor
-	titleStmtOutput.SubTitle = titleStmt.SubTitle
-	titleStmtOutput.TitleProper = FilteredString(flattenedTitleProper)
-
-	return &titleStmtOutput, nil
-}
