@@ -26,18 +26,18 @@ func (did *DID) MarshalJSON() ([]byte, error) {
 	var err error
 	if physDescNoEmpties != nil {
 		jsonData, err = json.Marshal(&struct {
-			PhysDesc     []*PhysDesc     `xml:"physdesc" json:"physdesc,omitempty"`
+			PhysDesc []*PhysDesc `xml:"physdesc" json:"physdesc,omitempty"`
 			*DIDWithNoEmptyPhysDesc
 		}{
-			PhysDesc: physDescNoEmpties,
+			PhysDesc:               physDescNoEmpties,
 			DIDWithNoEmptyPhysDesc: (*DIDWithNoEmptyPhysDesc)(did),
 		})
 	} else {
 		jsonData, err = json.Marshal(&struct {
-			PhysDesc     []*PhysDesc     `xml:"physdesc" json:"physdesc,omitempty"`
+			PhysDesc []*PhysDesc `xml:"physdesc" json:"physdesc,omitempty"`
 			*DIDWithNoEmptyPhysDesc
 		}{
-			PhysDesc: nil,
+			PhysDesc:               nil,
 			DIDWithNoEmptyPhysDesc: (*DIDWithNoEmptyPhysDesc)(did),
 		})
 	}
@@ -54,7 +54,7 @@ func (accessTermWithRole *AccessTermWithRole) MarshalJSON() ([]byte, error) {
 
 	var (
 		role string
-		err error
+		err  error
 	)
 	if accessTermWithRole.Role != "" {
 		role, err = getRelatorAuthoritativeLabel(accessTermWithRole.Role)
@@ -105,3 +105,19 @@ func (titleproper *TitleProper) MarshalJSON() ([]byte, error) {
 	return jsonData, nil
 }
 
+func (titleStmt *TitleStmt) MarshalJSON() ([]byte, error) {
+	type TitleStmtAlias TitleStmt
+
+	flattenedTitleProper, err := flattenTitleProper(titleStmt.TitleProper)
+	if err != nil {
+		return nil, err
+	}
+
+	return json.Marshal(&struct {
+		*TitleStmtAlias
+		FlattenedTitleProper FilteredString `json:"titleproper,omitempty"`
+	}{
+		TitleStmtAlias:       (*TitleStmtAlias)(titleStmt),
+		FlattenedTitleProper: FilteredString(flattenedTitleProper),
+	})
+}

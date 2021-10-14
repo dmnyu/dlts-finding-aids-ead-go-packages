@@ -4184,20 +4184,7 @@
                 "author": "Megan O'Shea",
                 "sponsor": "Creation of this finding aid funded by New York University Libraries.",
                 "subtitle": "A Wicked Awesome Resource Record",
-                "titleproper": [
-                    {
-                        "value": "This is the Finding Aid Filing Title",
-                        "type": "filing"
-                    },
-                    {
-                        "value": "Guide to Megan O'Shea's \u003cspan class=\"ead-emph ead-emph-italic\"\u003eOne\u003c/span\u003e Resource to \u003cspan class=\"ead-lb\"\u003e\u003c/span\u003e Rule Them All \u003cspan class=\"ead-num\"\u003eMOS.2021\u003c/span\u003e",
-                        "num": [
-                            {
-                                "value": "MOS.2021"
-                            }
-                        ]
-                    }
-                ]
+                "titleproper": "Guide to Megan O'Shea's \u003cspan class=\"ead-emph ead-emph-italic\"\u003eOne\u003c/span\u003e Resource to \u003cspan class=\"ead-lb\"\u003e\u003c/span\u003e Rule Them All \u003cspan class=\"ead-num\"\u003eMOS.2021\u003c/span\u003e"
             }
         },
         "profiledesc": {

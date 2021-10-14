@@ -1,5 +1,8 @@
 # Changelog
 
+#### v0.9.0
+  - flatten TitleProper from an array into a single FilteredString
+
 #### v0.8.0
   - add PubInfo type
   - add PubInfo member to EAD struct

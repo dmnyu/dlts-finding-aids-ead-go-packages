@@ -396,7 +396,7 @@ func (r *RunInfo) SetRunInfo(version string, t time.Time, sourceFile string) {
 
 // PubInfo stores data used by the publication system
 type PubInfo struct {
-	ThemeID    string    `json:"themeid"`
+	ThemeID string `json:"themeid"`
 }
 
 func (p *PubInfo) SetPubInfo(themeid string) {
@@ -436,4 +436,25 @@ func removeBracketedText(s string) string {
 	// remove occurences
 	result := re.ReplaceAllString(s, "")
 	return result
+}
+
+func flattenTitleProper(titleProper []*TitleProper) ([]byte, error) {
+
+	var titleToFlatten *TitleProper
+
+	// capture first titleProper not of type "filing"
+	for _, t := range titleProper {
+		titleToFlatten = t
+		// ignore "filing" title
+		if titleToFlatten.Type != "filing" {
+			break
+		}
+	}
+
+	// we only found the "filing" title. This is a problem!
+	if titleToFlatten.Type == "filing" {
+		return nil, fmt.Errorf("Unable to find correct title\n")
+	}
+
+	return getConvertedTextWithTagsNoLBConversion(titleToFlatten.Value)
 }
