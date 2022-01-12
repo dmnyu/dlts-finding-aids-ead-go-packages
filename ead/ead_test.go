@@ -12,7 +12,7 @@ import (
 )
 
 var testFixturePath string = filepath.Join(".", "testdata")
-var omegaTestFixturePath string = filepath.Join(testFixturePath, "omega", "v0.1.2")
+var omegaTestFixturePath string = filepath.Join(testFixturePath, "omega", "v0.1.4")
 var falesTestFixturePath string = filepath.Join(testFixturePath, "fales")
 
 func failOnError(t *testing.T, err error, label string) {
