@@ -5,12 +5,13 @@ package ead
 // Based on: "Data model for parsing EAD <archdesc> elements": https://jira.nyu.edu/jira/browse/FADESIGN-29.
 
 const (
-	Version = "0.9.0"
+	Version = "0.10.0"
 )
 
 type EAD struct {
 	RunInfo   RunInfo   `json:"runinfo"`
 	PubInfo   PubInfo   `json:"pubinfo"`
+	Donors    Donors    `json:"donors,omitempty"`
 	ArchDesc  *ArchDesc `xml:"archdesc" json:"archdesc,omitempty"`
 	EADHeader EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
 }

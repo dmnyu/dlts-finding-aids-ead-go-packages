@@ -1,5 +1,8 @@
 # Changelog
 
+#### v0.10.0
+  - add Donors member to EAD struct
+
 #### v0.9.0
   - flatten TitleProper from an array into a single FilteredString
 
