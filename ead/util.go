@@ -394,6 +394,9 @@ func (r *RunInfo) SetRunInfo(version string, t time.Time, sourceFile string) {
 	r.SourceFile = sourceFile
 }
 
+// Donors is slice containing Donor names
+type Donors []string
+
 // PubInfo stores data used by the publication system
 type PubInfo struct {
 	ThemeID string `json:"themeid"`
