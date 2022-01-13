@@ -28,6 +28,17 @@ func assertEqual(t *testing.T, want string, got string, label string) {
 	}
 }
 
+func assertStringSlicesEqual(t *testing.T, want []string, got []string, label string) {
+	if len(want) != len(got) {
+		t.Errorf("%s Mismatch: want: %v, got: %v", label, want, got)
+	}
+	for i := range want {
+		if want[i] != got[i] {
+			t.Errorf("%s Mismatch: want: %v, got: %v", label, want[i], got[i])
+		}
+	}
+}
+
 func getOmegaEAD(t *testing.T) EAD {
 	EADXML, err := ioutil.ReadFile(omegaTestFixturePath + "/" + "Omega-EAD.xml")
 	failOnError(t, err, "Unexpected error")
@@ -159,5 +170,21 @@ func TestBarcodeRemovalFromLabels(t *testing.T) {
 			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", referenceFile, jsonFile)
 			t.Errorf(errMsg)
 		}
+	})
+}
+
+func TestUpdateDonors(t *testing.T) {
+	t.Run("Update Donors", func(t *testing.T) {
+		var sut EAD
+
+		want := []string(nil)
+		got := sut.Donors
+		assertStringSlicesEqual(t, want, got, "Initial ead.Donors")
+
+		donors := []string{"a", "x", "c", "d"}
+		sut.Donors = donors
+		want = donors
+		got = sut.Donors
+		assertStringSlicesEqual(t, want, got, "Post-update ead.Donors")
 	})
 }
