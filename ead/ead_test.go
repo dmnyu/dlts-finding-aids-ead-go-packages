@@ -215,4 +215,3 @@ func TestJSONMarshalingWithDonors(t *testing.T) {
 		}
 	})
 }
-
