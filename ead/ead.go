@@ -10,8 +10,8 @@ const (
 
 type EAD struct {
 	RunInfo   RunInfo   `json:"runinfo"`
-	Donors    Donors    `json:"donors,omitempty"`
 	PubInfo   PubInfo   `json:"pubinfo"`
+	Donors    Donors    `json:"donors,omitempty"`
 	ArchDesc  *ArchDesc `xml:"archdesc" json:"archdesc,omitempty"`
 	EADHeader EADHeader `xml:"eadheader" json:"eadheader,omitempty"`
 }
