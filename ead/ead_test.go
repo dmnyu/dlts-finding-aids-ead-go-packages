@@ -28,7 +28,7 @@ func assertEqual(t *testing.T, want string, got string, label string) {
 	}
 }
 
-func assertStringSlicesEqual(t *testing.T, want []string, got []string, label string) {
+func assertFilteredStringSlicesEqual(t *testing.T, want []FilteredString, got []FilteredString, label string) {
 	if len(want) != len(got) {
 		t.Errorf("%s Mismatch: want: %v, got: %v", label, want, got)
 	}
@@ -91,7 +91,7 @@ func TestJSONMarshaling(t *testing.T) {
 			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
 
-			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", referenceFile, jsonFile)
+			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", jsonFile, referenceFile)
 			t.Errorf(errMsg)
 		}
 	})
@@ -167,7 +167,7 @@ func TestBarcodeRemovalFromLabels(t *testing.T) {
 			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
 
-			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", referenceFile, jsonFile)
+			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", jsonFile, referenceFile)
 			t.Errorf(errMsg)
 		}
 	})
@@ -177,15 +177,15 @@ func TestUpdateDonors(t *testing.T) {
 	t.Run("Update Donors", func(t *testing.T) {
 		var sut EAD
 
-		want := []string(nil)
+		want := []FilteredString(nil)
 		got := sut.Donors
-		assertStringSlicesEqual(t, want, got, "Initial ead.Donors")
+		assertFilteredStringSlicesEqual(t, want, got, "Initial ead.Donors")
 
-		donors := []string{"a", "x", "c", "d"}
+		donors := []FilteredString{"a", "x", "c", "d"}
 		sut.Donors = donors
 		want = donors
 		got = sut.Donors
-		assertStringSlicesEqual(t, want, got, "Post-update ead.Donors")
+		assertFilteredStringSlicesEqual(t, want, got, "Post-update ead.Donors")
 	})
 }
 
@@ -193,7 +193,7 @@ func TestJSONMarshalingWithDonors(t *testing.T) {
 	t.Run("JSON Marshaling with Donors", func(t *testing.T) {
 		ead := getOmegaEAD(t)
 
-		ead.Donors = []string{"a", "x", "Q", "d"}
+		ead.Donors = []FilteredString{" a", "x ", " Q ", "d"}
 		jsonData, err := json.MarshalIndent(ead, "", "    ")
 		failOnError(t, err, "Unexpected error marshaling JSON")
 
@@ -210,7 +210,7 @@ func TestJSONMarshalingWithDonors(t *testing.T) {
 			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
 
-			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", referenceFile, jsonFile)
+			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", jsonFile, referenceFile)
 			t.Errorf(errMsg)
 		}
 	})

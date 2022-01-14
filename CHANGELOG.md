@@ -1,5 +1,8 @@
 # Changelog
 
+#### v0.10.1
+  - change Donors type to []FilteredString (from []string)
+
 #### v0.10.0
   - add Donors member to EAD struct
 
