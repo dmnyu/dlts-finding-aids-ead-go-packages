@@ -395,7 +395,7 @@ func (r *RunInfo) SetRunInfo(version string, t time.Time, sourceFile string) {
 }
 
 // Donors is slice containing Donor names
-type Donors []string
+type Donors []FilteredString
 
 // PubInfo stores data used by the publication system
 type PubInfo struct {
