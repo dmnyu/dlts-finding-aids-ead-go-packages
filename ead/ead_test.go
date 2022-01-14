@@ -193,7 +193,7 @@ func TestJSONMarshalingWithDonors(t *testing.T) {
 	t.Run("JSON Marshaling with Donors", func(t *testing.T) {
 		ead := getOmegaEAD(t)
 
-		ead.Donors = []string{"a", "x", "Q", "d"}
+		ead.Donors = []string{" a", "x ", " Q ", "d"}
 		jsonData, err := json.MarshalIndent(ead, "", "    ")
 		failOnError(t, err, "Unexpected error marshaling JSON")
 
