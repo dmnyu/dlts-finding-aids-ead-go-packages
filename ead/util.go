@@ -409,8 +409,12 @@ func (p *PubInfo) SetPubInfo(themeid string) {
 // FilteredString provides a centralized string cleanup mechanism
 type FilteredString string
 
+func (s FilteredString) String() string {
+	return cleanupWhitespace(string(s))
+}
+
 func (s FilteredString) MarshalJSON() ([]byte, error) {
-	return json.Marshal(cleanupWhitespace(string(s)))
+	return json.Marshal(s.String())
 }
 
 func cleanupWhitespace(s string) string {
