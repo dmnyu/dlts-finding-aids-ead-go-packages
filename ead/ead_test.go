@@ -91,7 +91,7 @@ func TestJSONMarshaling(t *testing.T) {
 			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
 
-			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", referenceFile, jsonFile)
+			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", jsonFile, referenceFile)
 			t.Errorf(errMsg)
 		}
 	})
@@ -167,7 +167,7 @@ func TestBarcodeRemovalFromLabels(t *testing.T) {
 			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
 
-			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", referenceFile, jsonFile)
+			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", jsonFile, referenceFile)
 			t.Errorf(errMsg)
 		}
 	})
@@ -210,7 +210,7 @@ func TestJSONMarshalingWithDonors(t *testing.T) {
 			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
 
-			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", referenceFile, jsonFile)
+			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", jsonFile, referenceFile)
 			t.Errorf(errMsg)
 		}
 	})
