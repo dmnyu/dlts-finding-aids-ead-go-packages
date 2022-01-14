@@ -1,5 +1,8 @@
 # Changelog
 
+#### v0.11.0
+  - add FilteredString String() function
+
 #### v0.10.1
   - change Donors type to []FilteredString (from []string)
 
