@@ -1,5 +1,8 @@
 # Changelog
 
+#### v0.12.0
+  - set DAO Role to "external-link" if DAO Role is empty
+
 #### v0.11.0
   - add FilteredString String() function
 
