@@ -3,6 +3,7 @@ package ead
 import (
 	"encoding/json"
 	"regexp"
+	"strings"
 )
 
 // Note that this custom marshalling for DID will prevent PhysDesc from having a Value field
@@ -119,5 +120,20 @@ func (titleStmt *TitleStmt) MarshalJSON() ([]byte, error) {
 	}{
 		TitleStmtAlias:       (*TitleStmtAlias)(titleStmt),
 		FlattenedTitleProper: FilteredString(flattenedTitleProper),
+	})
+}
+
+// set blank DAO Role attributes to "external-link"
+func (dao *DAO) MarshalJSON() ([]byte, error) {
+	// if DAO Role is empty, set it to external link
+	type DAOAlias DAO
+	if len(strings.TrimSpace(string(dao.Role))) == 0 {
+		dao.Role = "external-link"
+	}
+
+	return json.Marshal(&struct {
+		*DAOAlias
+	}{
+		DAOAlias: (*DAOAlias)(dao),
 	})
 }
