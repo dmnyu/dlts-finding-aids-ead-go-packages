@@ -1,11 +1,11 @@
 {
     "runinfo": {
-        "libversion": "0.11.0",
-        "timestamp": "2022-01-21T15:32:56.563822-05:00",
-        "sourcefile": "/Users/jgp/go/src/github.com/nyulibraries/dlts-finding-aids-ead-go-packages/ead/testdata/nyhs/nyhs_foundling.xml"
+        "libversion": "",
+        "timestamp": "0001-01-01T00:00:00Z",
+        "sourcefile": ""
     },
     "pubinfo": {
-        "themeid": "nyhs"
+        "themeid": ""
     },
     "archdesc": {
         "level": "collection",
@@ -10577,6 +10577,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157625003614252/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -11943,6 +11944,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157625003624722/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -12015,6 +12017,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157625067409486/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -12362,6 +12365,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624879245015/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view images",
                                                 "type": "simple",
@@ -12546,6 +12550,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157625003745600/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -14956,6 +14961,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624942743465/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -15086,6 +15092,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624942753081/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -15244,6 +15251,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624879315283/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected image",
                                                 "type": "simple",
@@ -16301,6 +16309,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624879330963/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -16346,6 +16355,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157625003858546/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -16595,6 +16605,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://farm2.static.flickr.com/1432/4720825761_c64b454ef4_t.jpg",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "NY Foundling \"orphan train\" image",
                                                 "type": "simple",
@@ -16609,6 +16620,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624325115704/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view images",
                                                 "type": "simple",
@@ -17654,6 +17666,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624879944291/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -18704,6 +18717,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624880054613/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -21384,6 +21398,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624880082921/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected images",
                                                 "type": "simple",
@@ -21653,6 +21668,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157625004635676/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected image",
                                                 "type": "simple",
@@ -23274,6 +23290,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/4721477968/sizes/t/in/set-72157624200428965/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Sister Anna Michella with baby and Foundling cradle",
                                         "type": "simple",
@@ -23288,6 +23305,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624200428965/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view image",
                                         "type": "simple",
@@ -23826,6 +23844,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157625004731114/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view image",
                                                 "type": "simple",
@@ -24096,6 +24115,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624880262681/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view image",
                                                 "type": "simple",
@@ -24140,6 +24160,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157624880286553/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view selected image",
                                                 "type": "simple",
@@ -24354,6 +24375,7 @@
                                             {
                                                 "actuate": "onRequest",
                                                 "href": "http://www.flickr.com/photos/n-yhs/sets/72157625004771814/",
+                                                "role": "external-link",
                                                 "show": "new",
                                                 "title": "Click to view image",
                                                 "type": "simple",
@@ -27071,6 +27093,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624784446711/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "click to view image",
                                         "type": "simple",
@@ -27085,6 +27108,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/4954555116/sizes/t/in/set-72157624784446711/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "68th Street buildings exterior",
                                         "type": "simple",
@@ -27129,6 +27153,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/4953965311/in/set-72157624909059440/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "click to view image",
                                         "type": "simple",
@@ -27143,6 +27168,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/4953965311/sizes/t/in/set-72157624909059440/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "68th St. building exteriors",
                                         "type": "simple",
@@ -27327,6 +27353,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624784468855/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view image",
                                         "type": "simple",
@@ -27567,6 +27594,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624909070602/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -27611,6 +27639,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624909081482/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -27655,6 +27684,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624784490479/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -27699,6 +27729,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624909090800/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -27743,6 +27774,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624909182542/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -27815,6 +27847,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624822542823/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view images",
                                         "type": "simple",
@@ -27887,6 +27920,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624784594103/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected image",
                                         "type": "simple",
@@ -27988,6 +28022,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624784599143/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view image",
                                         "type": "simple",
@@ -28032,6 +28067,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624909207772/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -28188,6 +28224,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624909212988/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -28289,6 +28326,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624909217042/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected image",
                                         "type": "simple",
@@ -28389,6 +28427,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624962702670/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected image",
                                         "type": "simple",
@@ -28630,6 +28669,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624962641294/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -29309,6 +29349,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/4882602386/sizes/t/in/set-72157624578386249/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Selection from Volume 67",
                                         "type": "simple",
@@ -29323,6 +29364,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624578386249/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -29361,6 +29403,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157625045984970/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -29399,6 +29442,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157625060247766/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
@@ -29437,6 +29481,7 @@
                                     {
                                         "actuate": "onRequest",
                                         "href": "http://www.flickr.com/photos/n-yhs/sets/72157624935511447/",
+                                        "role": "external-link",
                                         "show": "new",
                                         "title": "Click to view selected images",
                                         "type": "simple",
