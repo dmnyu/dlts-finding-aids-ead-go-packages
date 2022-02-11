@@ -165,6 +165,8 @@ type DAO struct {
 	Href    FilteredString `xml:"href,attr" json:"href,omitempty"`
 	Role    FilteredString `xml:"role,attr" json:"role,omitempty"`
 	Show    FilteredString `xml:"show,attr" json:"show,omitempty"`
+	DOType  FilteredString `json:"do_type,omitempty"`
+	Count   uint64         `json:"count,omitempty"`
 	Title   FilteredString `xml:"title,attr" json:"title,omitempty"`
 	Type    FilteredString `xml:"type,attr" json:"type,omitempty"`
 
