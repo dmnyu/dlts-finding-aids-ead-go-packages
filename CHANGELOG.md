@@ -1,5 +1,8 @@
 # Changelog
 
+#### v0.13.0
+  - add DOType and Count members to DAO type
+
 #### v0.12.0
   - set DAO Role to "external-link" if DAO Role is empty
 

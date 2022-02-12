@@ -16,6 +16,31 @@ var omegaTestFixturePath string = filepath.Join(testFixturePath, "omega", "v0.1.
 var falesTestFixturePath string = filepath.Join(testFixturePath, "fales")
 var nyhsTestFixturePath string = filepath.Join(testFixturePath, "nyhs")
 
+func testProcessDID(did *DID) {
+	daos := did.DAO
+	// populate digital object DOType and Count members
+	for _, dao := range daos {
+		switch dao.Href {
+		case "https://hdl.handle.net/2333.1/xgxd28gq":
+			dao.DOType = "image_set"
+			dao.Count = 32
+		case "https://hdl.handle.net/2333.1/m63xss7g":
+			dao.DOType = "image_set"
+			dao.Count = 6
+		case "https://hdl.handle.net/2333.1/ttdz0j92":
+			dao.DOType = "image_set"
+			dao.Count = 3
+		}
+	}
+}
+
+func testProcessCs(cs []*C) {
+	for _, c := range cs {
+		testProcessCs(c.C)
+		testProcessDID(&c.DID)
+	}
+}
+
 func failOnError(t *testing.T, err error, label string) {
 	if err != nil {
 		t.Errorf("%s: %s", label, err)
@@ -245,6 +270,37 @@ func TestJSONMarshalingWithEmptyDAORoles(t *testing.T) {
 
 		if !bytes.Equal(referenceFileContents, jsonData) {
 			jsonFile := "./testdata/tmp/failing-empty-role-marshal.json"
+			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
+			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
+
+			errMsg := fmt.Sprintf("JSON Data does not match reference file.\ndiff %s %s", jsonFile, referenceFile)
+			t.Errorf(errMsg)
+		}
+	})
+}
+
+func TestJSONMarshalingWithDonorsAndImageAndImageSets(t *testing.T) {
+	t.Run("JSON Marshaling with Donors", func(t *testing.T) {
+		ead := getOmegaEAD(t)
+
+		ead.Donors = []FilteredString{" a", "x ", " Q ", "d"}
+
+		testProcessDID(&ead.ArchDesc.DID)
+		testProcessCs(ead.ArchDesc.DSC.C)
+
+		jsonData, err := json.MarshalIndent(ead, "", "    ")
+		failOnError(t, err, "Unexpected error marshaling JSON")
+
+		// reference file includes newline at end of file so
+		// add newline to jsonData
+		jsonData = append(jsonData, '\n')
+
+		referenceFile := omegaTestFixturePath + "/" + "mos_2021-with-donors-with-image-counts.json"
+		referenceFileContents, err := ioutil.ReadFile(referenceFile)
+		failOnError(t, err, "Unexpected error reading reference file")
+
+		if !bytes.Equal(referenceFileContents, jsonData) {
+			jsonFile := "./testdata/tmp/failing-donor-marshal.json"
 			err = ioutil.WriteFile(jsonFile, []byte(jsonData), 0644)
 			failOnError(t, err, fmt.Sprintf("Unexpected error writing %s", jsonFile))
 
