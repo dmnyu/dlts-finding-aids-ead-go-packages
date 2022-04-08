@@ -1,5 +1,8 @@
 # Changelog
 
+#### v0.14.0
+  - update to use Go modules
+
 #### v0.13.0
   - add DOType and Count members to DAO type
 
