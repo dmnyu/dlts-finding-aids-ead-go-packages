@@ -3,7 +3,6 @@ package ead
 import (
 	"encoding/json"
 	"encoding/xml"
-	"fmt"
 	"io/ioutil"
 	"path/filepath"
 	"testing"
@@ -21,7 +20,9 @@ func TestNoteChildOrder(t *testing.T) {
 		// reference file includes newline at end of file so
 		// add newline to jsonData
 		jsonData = append(jsonData, '\n')
-		fmt.Println(string(jsonData))
+		if err := ioutil.WriteFile("omega-ead-test.xml", jsonData, 0755); err != nil {
+			failOnError(t, err, "Unexpected error writing json to file")
+		}
 	})
 }
 
@@ -32,6 +33,5 @@ func getOrderXMLOmega(t *testing.T) EAD {
 	var ead EAD
 	err = xml.Unmarshal([]byte(EADXML), &ead)
 	failOnError(t, err, "Unexpected error")
-
 	return ead
 }

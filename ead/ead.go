@@ -2,7 +2,10 @@
 
 package ead
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+	"fmt"
+)
 
 // Based on: "Data model for parsing EAD <archdesc> elements": https://jira.nyu.edu/jira/browse/FADESIGN-29.
 
@@ -298,31 +301,43 @@ type FormattedNoteWithHead struct {
 	ID       FilteredString       `xml:"id,attr" json:"id,omitempty"`
 	Head     *Head                `xml:"head,omitemtpy" json:"head,omitempty"`
 	Children []FormattedNoteChild `xml:",any"`
-	/*
-		ChronList   []*ChronList `xml:"chronlist" json:"chronlist,omitempty"`
-		DefItem     []*DefItem   `xml:"defitem,omitemtpy" json:"defitem,omitempty"`
-
-		LegalStatus *LegalStatus `xml:"legalstatus,omitemtpy" json:"legalstatus,omitempty"`
-		List        []*List      `xml:"list,omitemtpy" json:"list,omitempty"`
-		P           []*P         `xml:"p,omitempty" json:"p,omitempty"`
-	*/
-
 }
 
 type FormattedNoteChild struct {
 	Element string
-	Value   string
+	Value   interface{}
 }
 
 func (fnc *FormattedNoteChild) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
-	var s string
-	if err := d.DecodeElement(&s, &start); err != nil {
-		return err
+	tagName := start.Name.Local
+	switch tagName {
+	case "list":
+		var l List
+		if err := d.DecodeElement(&l, &start); err != nil {
+			return err
+		}
+		fnc.Element = tagName
+		fnc.Value = l
+		return nil
+	case "legalstatus":
+		var ls LegalStatus
+		if err := d.DecodeElement(&ls, &start); err != nil {
+			return err
+		}
+		fnc.Element = tagName
+		fnc.Value = ls
+		return nil
+	case "p":
+		var p P
+		if err := d.DecodeElement(&p, &start); err != nil {
+			return err
+		}
+		fnc.Element = tagName
+		fnc.Value = p
+		return nil
+	default:
+		return fmt.Errorf("unsupported element error %s", tagName)
 	}
-
-	fnc.Element = start.Name.Local
-	fnc.Value = s
-	return nil
 }
 
 type Head struct {
