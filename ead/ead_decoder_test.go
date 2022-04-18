@@ -20,7 +20,7 @@ func TestNoteChildOrder(t *testing.T) {
 		// reference file includes newline at end of file so
 		// add newline to jsonData
 		jsonData = append(jsonData, '\n')
-		if err := ioutil.WriteFile("omega-ead-test.xml", jsonData, 0755); err != nil {
+		if err := ioutil.WriteFile(filepath.Join(testFixturePath, "omega-ead-test.json"), jsonData, 0755); err != nil {
 			failOnError(t, err, "Unexpected error writing json to file")
 		}
 	})

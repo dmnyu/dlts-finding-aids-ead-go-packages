@@ -2,11 +2,6 @@
 
 package ead
 
-import (
-	"encoding/xml"
-	"fmt"
-)
-
 // Based on: "Data model for parsing EAD <archdesc> elements": https://jira.nyu.edu/jira/browse/FADESIGN-29.
 
 const (
@@ -298,46 +293,9 @@ type FileDesc struct {
 }
 
 type FormattedNoteWithHead struct {
-	ID       FilteredString       `xml:"id,attr" json:"id,omitempty"`
-	Head     *Head                `xml:"head,omitemtpy" json:"head,omitempty"`
-	Children []FormattedNoteChild `xml:",any"`
-}
-
-type FormattedNoteChild struct {
-	Element string
-	Value   interface{}
-}
-
-func (fnc *FormattedNoteChild) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
-	tagName := start.Name.Local
-	switch tagName {
-	case "list":
-		var l List
-		if err := d.DecodeElement(&l, &start); err != nil {
-			return err
-		}
-		fnc.Element = tagName
-		fnc.Value = l
-		return nil
-	case "legalstatus":
-		var ls LegalStatus
-		if err := d.DecodeElement(&ls, &start); err != nil {
-			return err
-		}
-		fnc.Element = tagName
-		fnc.Value = ls
-		return nil
-	case "p":
-		var p P
-		if err := d.DecodeElement(&p, &start); err != nil {
-			return err
-		}
-		fnc.Element = tagName
-		fnc.Value = p
-		return nil
-	default:
-		return fmt.Errorf("unsupported element error %s", tagName)
-	}
+	ID       FilteredString `xml:"id,attr" json:"id,omitempty"`
+	Head     *Head          `xml:"head" json:"head,omitempty"`
+	Children []EADChild     `xml:",any"`
 }
 
 type Head struct {
