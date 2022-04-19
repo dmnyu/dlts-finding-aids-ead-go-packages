@@ -11,12 +11,23 @@ type EADChild struct {
 }
 
 func (eadChild *EADChild) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
-	tagName := start.Name.Local
-	switch tagName {
+	switch start.Name.Local {
+	case "accessrestrict", "accruals", "acqinfo", "altformavail", "appraisal", "arrangement", "bioghist",
+		"custodhist", "odd", "otherfindaid", "originalsloc", "phystech", "prefercite",
+		"processinfo", "relatedmaterial", "scopecontent", "separatedmaterial", "userestrict":
+		return decodeFormattedNote(eadChild, d, start)
+	case "bibliography":
+		return decodeBibliography(eadChild, d, start)
+	case "controlaccess":
+		return decodeControlAccess(eadChild, d, start)
 	case "chronlist":
 		return decodeChronList(eadChild, d, start)
 	case "defitem":
 		return decodeDefItem(eadChild, d, start)
+	case "did":
+		return decodeDID(eadChild, d, start)
+	case "dsc":
+		return decodeDSC(eadChild, d, start)
 	case "extref":
 		return decodeExtref(eadChild, d, start)
 	case "legalstatus":
@@ -26,7 +37,7 @@ func (eadChild *EADChild) UnmarshalXML(d *xml.Decoder, start xml.StartElement) e
 	case "p":
 		return decodeP(eadChild, d, start)
 	default:
-		return fmt.Errorf("unsupported element error %s", tagName)
+		return fmt.Errorf("unsupported element error %s", start.Name.Local)
 	}
 }
 
@@ -37,6 +48,26 @@ func decodeLegalStatus(eadChild *EADChild, d *xml.Decoder, start xml.StartElemen
 	}
 	eadChild.Name = start.Name.Local
 	eadChild.Value = ls
+	return nil
+}
+
+func decodeBibliography(eadChild *EADChild, d *xml.Decoder, start xml.StartElement) error {
+	var bib *Bibliography
+	if err := d.DecodeElement(&bib, &start); err != nil {
+		return err
+	}
+	eadChild.Name = start.Name.Local
+	eadChild.Value = bib
+	return nil
+}
+
+func decodeControlAccess(eadChild *EADChild, d *xml.Decoder, start xml.StartElement) error {
+	var ca *ControlAccess
+	if err := d.DecodeElement(&ca, &start); err != nil {
+		return err
+	}
+	eadChild.Name = start.Name.Local
+	eadChild.Value = ca
 	return nil
 }
 
@@ -60,6 +91,26 @@ func decodeDefItem(eadChild *EADChild, d *xml.Decoder, start xml.StartElement) e
 	return nil
 }
 
+func decodeDID(eadChild *EADChild, d *xml.Decoder, start xml.StartElement) error {
+	var did *DID
+	if err := d.DecodeElement(&did, &start); err != nil {
+		return err
+	}
+	eadChild.Name = start.Name.Local
+	eadChild.Value = did
+	return nil
+}
+
+func decodeDSC(eadChild *EADChild, d *xml.Decoder, start xml.StartElement) error {
+	var dsc *DSC
+	if err := d.DecodeElement(&dsc, &start); err != nil {
+		return err
+	}
+	eadChild.Name = start.Name.Local
+	eadChild.Value = dsc
+	return nil
+}
+
 func decodeExtref(eadChild *EADChild, d *xml.Decoder, start xml.StartElement) error {
 	var er *ExtRef
 	if err := d.DecodeElement(&er, &start); err != nil {
@@ -67,6 +118,16 @@ func decodeExtref(eadChild *EADChild, d *xml.Decoder, start xml.StartElement) er
 	}
 	eadChild.Name = start.Name.Local
 	eadChild.Value = er
+	return nil
+}
+
+func decodeFormattedNote(eadChild *EADChild, d *xml.Decoder, start xml.StartElement) error {
+	var fnh *FormattedNoteWithHead
+	if err := d.DecodeElement(&fnh, &start); err != nil {
+		return err
+	}
+	eadChild.Name = start.Name.Local
+	eadChild.Value = fnh
 	return nil
 }
 

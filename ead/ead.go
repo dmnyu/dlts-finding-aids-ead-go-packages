@@ -20,8 +20,7 @@ type Abstract struct {
 	ID FilteredString `xml:"id,attr" json:"id,omitempty"`
 
 	Title []*Title `xml:"title" json:"title,omitempty"`
-
-	Value string `xml:",innerxml" json:"value,chardata,omitempty"`
+	Value string   `xml:",innerxml" json:"value,chardata,omitempty"`
 }
 
 type AccessTermWithRole struct {
@@ -41,30 +40,32 @@ type AddressLine struct {
 }
 
 type ArchDesc struct {
-	Level FilteredString `xml:"level,attr" json:"level,attr,omitempty"`
-
-	AccessRestrict    []*FormattedNoteWithHead `xml:"accessrestrict" json:"accessrestrict,omitempty"`
-	Accruals          []*FormattedNoteWithHead `xml:"accruals" json:"accruals,omitempty"`
-	AcqInfo           []*FormattedNoteWithHead `xml:"acqinfo" json:"acqinfo,omitempty"`
-	AltFormAvailable  []*FormattedNoteWithHead `xml:"altformavailable" json:"altformavailable,omitempty"`
-	Appraisal         []*FormattedNoteWithHead `xml:"appraisal" json:"appraisal,omitempty"`
-	Arrangement       []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
-	Bibliography      []*Bibliography          `xml:"bibliography" json:"bibliography,omitempty"`
-	BiogHist          []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
-	ControlAccess     []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
-	CustodHist        []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
-	DID               DID                      `xml:"did" json:"did,omitempty"`
-	DSC               *DSC                     `xml:"dsc" json:"dsc,omitempty"`
-	Odd               []*FormattedNoteWithHead `xml:"odd" json:"odd,omitempty"`
-	OtherFindAid      []*FormattedNoteWithHead `xml:"otherfindaid" json:"otherfindaid,omitempty"`
-	OriginalsLoc      []*FormattedNoteWithHead `xml:"originalsloc" json:"originalsloc,omitempty"`
-	PhysTech          []*FormattedNoteWithHead `xml:"phystech" json:"phystech,omitempty"`
-	PreferCite        []*FormattedNoteWithHead `xml:"prefercite" json:"prefercite,omitempty"`
-	ProcessInfo       []*FormattedNoteWithHead `xml:"processinfo" json:"processinfo,omitempty"`
-	RelatedMaterial   []*FormattedNoteWithHead `xml:"relatedmaterial" json:"relatedmaterial,omitempty"`
-	ScopeContent      []*FormattedNoteWithHead `xml:"scopecontent" json:"scopecontent,omitempty"`
-	SeparatedMaterial []*FormattedNoteWithHead `xml:"separatedmaterial" json:"separatedmaterial,omitempty"`
-	UserRestrict      []*FormattedNoteWithHead `xml:"userestrict" json:"userestrict,omitempty"`
+	Level    FilteredString `xml:"level,attr" json:"level,attr,omitempty"`
+	Children []*EADChild    `xml:",any"`
+	/*
+		AccessRestrict    []*FormattedNoteWithHead `xml:"accessrestrict" json:"accessrestrict,omitempty"`
+		Accruals          []*FormattedNoteWithHead `xml:"accruals" json:"accruals,omitempty"`
+		AcqInfo           []*FormattedNoteWithHead `xml:"acqinfo" json:"acqinfo,omitempty"`
+		AltFormAvailable  []*FormattedNoteWithHead `xml:"altformavailable" json:"altformavailable,omitempty"`
+		Appraisal         []*FormattedNoteWithHead `xml:"appraisal" json:"appraisal,omitempty"`
+		Arrangement       []*FormattedNoteWithHead `xml:"arrangement" json:"arrangement,omitempty"`
+		Bibliography      []*Bibliography          `xml:"bibliography" json:"bibliography,omitempty"`
+		BiogHist          []*FormattedNoteWithHead `xml:"bioghist" json:"bioghist,omitempty"`
+		ControlAccess     []*ControlAccess         `xml:"controlaccess" json:"controlaccess,omitempty"`
+		CustodHist        []*FormattedNoteWithHead `xml:"custodhist" json:"custodhist,omitempty"`
+		DID               DID                      `xml:"did" json:"did,omitempty"`
+		DSC               *DSC                     `xml:"dsc" json:"dsc,omitempty"`
+		Odd               []*FormattedNoteWithHead `xml:"odd" json:"odd,omitempty"`
+		OtherFindAid      []*FormattedNoteWithHead `xml:"otherfindaid" json:"otherfindaid,omitempty"`
+		OriginalsLoc      []*FormattedNoteWithHead `xml:"originalsloc" json:"originalsloc,omitempty"`
+		PhysTech          []*FormattedNoteWithHead `xml:"phystech" json:"phystech,omitempty"`
+		PreferCite        []*FormattedNoteWithHead `xml:"prefercite" json:"prefercite,omitempty"`
+		ProcessInfo       []*FormattedNoteWithHead `xml:"processinfo" json:"processinfo,omitempty"`
+		RelatedMaterial   []*FormattedNoteWithHead `xml:"relatedmaterial" json:"relatedmaterial,omitempty"`
+		ScopeContent      []*FormattedNoteWithHead `xml:"scopecontent" json:"scopecontent,omitempty"`
+		SeparatedMaterial []*FormattedNoteWithHead `xml:"separatedmaterial" json:"separatedmaterial,omitempty"`
+		UserRestrict      []*FormattedNoteWithHead `xml:"userestrict" json:"userestrict,omitempty"`
+	*/
 }
 
 type ArchRef struct {
@@ -295,7 +296,7 @@ type FileDesc struct {
 type FormattedNoteWithHead struct {
 	ID       FilteredString `xml:"id,attr" json:"id,omitempty"`
 	Head     *Head          `xml:"head" json:"head,omitempty"`
-	Children []EADChild     `xml:",any"`
+	Children []*EADChild    `xml:",any"`
 }
 
 type Head struct {
