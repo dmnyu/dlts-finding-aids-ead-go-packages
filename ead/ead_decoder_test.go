@@ -30,10 +30,14 @@ func TestNoteChildOrder(t *testing.T) {
 
 func getOrderXMLOmega(t *testing.T) EAD {
 	EADXML, err := ioutil.ReadFile(filepath.Join(testFixtureDataPath, "Omega-EAD.xml"))
-	t.Error(err)
+	if err != nil {
+		t.Error(err)
+	}
 
 	var ead EAD
 	err = xml.Unmarshal([]byte(EADXML), &ead)
-	t.Error(err)
+	if err != nil {
+		t.Error(err)
+	}
 	return ead
 }
