@@ -297,6 +297,14 @@ type FormattedNoteWithHead struct {
 	ID       FilteredString `xml:"id,attr" json:"id,omitempty"`
 	Head     *Head          `xml:"head" json:"head,omitempty"`
 	Children []*EADChild    `xml:",any"`
+
+	/*	ChronList   []*ChronList `xml:"chronlist" json:"chronlist,omitempty"`
+		DefItem     []*DefItem   `xml:"defitem,omitemtpy" json:"defitem,omitempty"`
+		Head        *Head        `xml:"head,omitemtpy" json:"head,omitempty"`
+		LegalStatus *LegalStatus `xml:"legalstatus,omitemtpy" json:"legalstatus,omitempty"`
+		List        []*List      `xml:"list,omitemtpy" json:"list,omitempty"`
+		P           []*P         `xml:"p,omitempty" json:"p,omitempty"`
+	*/
 }
 
 type Head struct {
