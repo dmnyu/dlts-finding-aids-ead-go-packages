@@ -6,7 +6,7 @@ import (
 )
 
 type EADChild struct {
-	Name  string      `json:"name"`
+	//Name  string      `json:"name"`
 	Value interface{} `json:"value,omitempty"`
 }
 
@@ -56,7 +56,7 @@ func decodeElement(eadChild *EADChild, strct any, d *xml.Decoder, start xml.Star
 	if err := d.DecodeElement(&strct, &start); err != nil {
 		return err
 	}
-	eadChild.Name = start.Name.Local
+	//eadChild.Name = start.Name.Local
 	eadChild.Value = strct
 	return nil
 }
